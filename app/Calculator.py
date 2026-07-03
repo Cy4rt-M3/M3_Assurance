@@ -1,16 +1,20 @@
 def add(a, b):
     return a + b
 
+
 def subtract(a, b):
     return a - b
 
+
 def multiply(a, b):
     return a * b
+
 
 def divide(a, b):
     if b == 0:
         return "Error: Cannot divide by zero"
     return a / b
+
 
 def main():
     while True:
@@ -42,6 +46,7 @@ def main():
             print("Result:", multiply(a, b))
         elif choice == "4":
             print("Result:", divide(a, b))
+
 
 if __name__ == "__main__":
     main()
