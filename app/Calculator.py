@@ -1,6 +1,3 @@
-
-
-
 def add(a: float, b: float) -> float:
     return a + b
 
@@ -13,7 +10,7 @@ def multiply(a: float, b: float) -> float:
     return a * b
 
 
-def divide(a: float, b: float) -> float | str: 
+def divide(a: float, b: float) -> float | str:
     if b == 0:
         return "Error: Cannot divide by zero"
     return a / b
@@ -34,7 +31,7 @@ def get_numbers() -> tuple[float, float]:
     return a, b
 
 
-def calculate(choice: str, a: float, b: float) -> float | str: 
+def calculate(choice: str, a: float, b: float) -> float | str:
     if choice == "1":
         return add(a, b)
     if choice == "2":
