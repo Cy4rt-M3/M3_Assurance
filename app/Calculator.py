@@ -1,22 +1,25 @@
-def add(a, b):
+from typing import Union
+
+
+def add(a: float, b: float) -> float:
     return a + b
 
 
-def subtract(a, b):
+def subtract(a: float, b: float) -> float:
     return a - b
 
 
-def multiply(a, b):
+def multiply(a: float, b: float) -> float:
     return a * b
 
 
-def divide(a, b):
+def divide(a: float, b: float) -> Union[float, str]:
     if b == 0:
         return "Error: Cannot divide by zero"
     return a / b
 
 
-def display_menu():
+def display_menu() -> None:
     print("\nPython CLI Calculator")
     print("1. Add")
     print("2. Subtract")
@@ -25,13 +28,13 @@ def display_menu():
     print("5. Exit")
 
 
-def get_numbers():
+def get_numbers() -> tuple[float, float]:
     a = float(input("Enter first number: "))
     b = float(input("Enter second number: "))
     return a, b
 
 
-def calculate(choice, a, b):
+def calculate(choice: str, a: float, b: float) -> Union[float, str]:
     if choice == "1":
         return add(a, b)
     if choice == "2":
@@ -41,7 +44,7 @@ def calculate(choice, a, b):
     return divide(a, b)
 
 
-def main():
+def main() -> None:
     while True:
         display_menu()
 
@@ -56,7 +59,8 @@ def main():
             continue
 
         a, b = get_numbers()
-        print("Result:", calculate(choice, a, b))
+        result = calculate(choice, a, b)
+        print("Result:", result)
 
 
 if __name__ == "__main__":
