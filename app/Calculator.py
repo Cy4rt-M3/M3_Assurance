@@ -62,7 +62,7 @@ def create_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def main(argv=None):
+def main(argv: list[str] | None = None) -> int:
     """Execution entry point for CLI calculator."""
     parser = create_parser()
     args = parser.parse_args(argv)
