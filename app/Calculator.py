@@ -16,29 +16,34 @@ def divide(a, b):
     return a / b
 
 
+OPERATIONS = {
+    "1": ("Addition", add),
+    "2": ("Subtraction", subtract),
+    "3": ("Multiplication", multiply),
+    "4": ("Division", divide),
+}
+
+
 def main():
     print("Python CLI Calculator")
-    print("1. Add")
-    print("2. Subtract")
-    print("3. Multiply")
-    print("4. Divide")
+
+    for key, (name, _) in OPERATIONS.items():
+        print(f"{key}. {name}")
 
     choice = input("Enter your choice (1-4): ")
+
+    if choice not in OPERATIONS:
+        print("Invalid choice")
+        return
 
     a = float(input("Enter first number: "))
     b = float(input("Enter second number: "))
 
-    if choice == "1":
-        print("Result:", add(a, b))
-    elif choice == "2":
-        print("Result:", subtract(a, b))
-    elif choice == "3":
-        print("Result:", multiply(a, b))
-    elif choice == "4":
-        print("Result:", divide(a, b))
-    else:
-        print("Invalid choice")
+    _, operation = OPERATIONS[choice]
+    print("Result:", operation(a, b))
 
 
 if __name__ == "__main__":
     main()
+
+    
