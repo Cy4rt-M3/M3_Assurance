@@ -83,3 +83,9 @@ indent-style = "space"
 
 [tool.bandit]
 exclude_dirs = [".venv", ".ruff_cache", "alembic"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.15.20",
+]
