@@ -1,22 +1,27 @@
-def add(a, b):
+from typing import Callable
+
+Operation = Callable[[float, float], float | str]
+
+
+def add(a: float, b: float) -> float:
     return a + b
 
 
-def subtract(a, b):
+def subtract(a: float, b: float) -> float:
     return a - b
 
 
-def multiply(a, b):
+def multiply(a: float, b: float) -> float:
     return a * b
 
 
-def divide(a, b):
+def divide(a: float, b: float) -> float | str:
     if b == 0:
         return "Cannot divide by zero"
     return a / b
 
 
-OPERATIONS = {
+OPERATIONS: dict[str, tuple[str, Operation]] = {
     "1": ("Addition", add),
     "2": ("Subtraction", subtract),
     "3": ("Multiplication", multiply),
@@ -24,7 +29,7 @@ OPERATIONS = {
 }
 
 
-def main():
+def main() -> None:
     print("Python CLI Calculator")
 
     for key, (name, _) in OPERATIONS.items():
@@ -40,7 +45,9 @@ def main():
     b = float(input("Enter second number: "))
 
     _, operation = OPERATIONS[choice]
-    print("Result:", operation(a, b))
+    result = operation(a, b)
+
+    print("Result:", result)
 
 
 if __name__ == "__main__":
