@@ -1,5 +1,5 @@
 import pytest
-from app.Calculator import add, divide, multiply, subtract
+from apps.apps.calculator import add, divide, multiply, subtract
 
 
 @pytest.fixture(scope="session", autouse=True)
