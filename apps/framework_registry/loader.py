@@ -40,7 +40,9 @@ def load_framework_file(path: Path) -> tuple[Framework, list[Control]]:
     return framework, controls
 
 
-def load_all_frameworks(definitions_dir: Path = DEFINITIONS_DIR) -> dict[str, tuple[Framework, list[Control]]]:
+def load_all_frameworks(
+    definitions_dir: Path = DEFINITIONS_DIR,
+) -> dict[str, tuple[Framework, list[Control]]]:
     """Scans the definitions directory for *.json files and returns a dict
     keyed by framework_id -> (Framework, [Control, ...])."""
     results: dict[str, tuple[Framework, list[Control]]] = {}
