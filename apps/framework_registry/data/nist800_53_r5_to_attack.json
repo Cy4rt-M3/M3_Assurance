@@ -1,1 +1,9 @@
-
+[
+  {
+    "control_id": "AC-2",
+    "category": "Access Control",
+    "name": "Account Management",
+    "description": "The organization manages information system accounts...",
+    "attack_mapping": ["T1078", "T1098"]
+  }
+]
