@@ -1,1 +1,10 @@
-
+{
+  "framework_id": "nist_csf_2_0",
+  "name": "NIST Cybersecurity Framework 2.0",
+  "version": "2.0",
+  "description": "NIST Cybersecurity Framework version 2.0",
+  "regions": [
+    "Global"
+  ],
+  "controls": []
+}
