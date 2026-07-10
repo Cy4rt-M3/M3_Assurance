@@ -39,9 +39,7 @@ def test_build_full_pipeline(tmp_path, monkeypatch):
     crosswalk_path = tmp_path / "crosswalk.json"
     crosswalk_path.write_text("{}")
     attack_path = tmp_path / "attack.json"
-    attack_path.write_text(
-        json.dumps({"mappings": {"AC-03": ["T1548", "T1611"]}})
-    )
+    attack_path.write_text(json.dumps({"mappings": {"AC-03": ["T1548", "T1611"]}}))
     out_path = tmp_path / "out.json"
 
     bam.build(csf_path, crosswalk_path, attack_path, out_path)
