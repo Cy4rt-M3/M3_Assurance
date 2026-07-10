@@ -43,7 +43,9 @@ def load_crosswalk(path: Path) -> dict[str, list[str]]:
     )
 
 
-def build(csf_json_path: Path, crosswalk_path: Path, attack_data_path: Path, out_path: Path):
+def build(
+    csf_json_path: Path, crosswalk_path: Path, attack_data_path: Path, out_path: Path
+):
     csf = json.loads(csf_json_path.read_text())
     crosswalk = load_crosswalk(crosswalk_path)
     attack_data = load_attack_data(attack_data_path)
@@ -63,11 +65,15 @@ def build(csf_json_path: Path, crosswalk_path: Path, attack_data_path: Path, out
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: build_attack_mapping.py <crosswalk_file> <nist_csf_2_0.json> <output.json>")
+        print(
+            "Usage: build_attack_mapping.py <crosswalk_file> <nist_csf_2_0.json> <output.json>"
+        )
         sys.exit(1)
     build(
         csf_json_path=Path(sys.argv[2]),
         crosswalk_path=Path(sys.argv[1]),
-        attack_data_path=Path(__file__).parent / "data" / "nist800_53_r5_to_attack.json",
+        attack_data_path=Path(__file__).parent
+        / "data"
+        / "nist800_53_r5_to_attack.json",
         out_path=Path(sys.argv[3]),
     )
