@@ -2,11 +2,11 @@
 
 from fastapi import FastAPI, HTTPException
 
+from apps.framework_registry.loader import load_all_frameworks
+from apps.framework_registry.models import Control, Framework
 from apps.shared.cache import build_redis, check_redis
 from apps.shared.db import build_engine, check_db
 from apps.shared.settings import Settings
-from apps.framework_registry.loader import load_all_frameworks
-from apps.framework_registry.models import Framework, Control
 
 _settings = Settings()
 _engine = build_engine(_settings.database_url)
