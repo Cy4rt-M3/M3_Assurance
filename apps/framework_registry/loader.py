@@ -12,7 +12,8 @@ DEFINITIONS_DIR = Path(__file__).parent / "definitions"
 
 def _to_control(raw: dict, framework_id: str) -> Control:
     """Map a raw JSON control entry (function/category/category_id/description)
-    onto the Control model (control_id/framework_id/category/name/description/attack_mapping)."""
+    onto the Control model
+    (control_id/framework_id/category/name/description/attack_mapping)."""
     category = raw.get("category") or raw.get("category_id") or ""
     return Control(
         control_id=raw["control_id"],
