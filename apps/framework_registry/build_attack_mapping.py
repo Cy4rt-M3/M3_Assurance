@@ -1,10 +1,12 @@
 """
 Builds attack_mapping for every NIST CSF 2.0 control by joining:
   1. NIST's official CSF 2.0 -> SP 800-53 Rev 5 crosswalk (user-supplied)
-  2. CTID's verified SP 800-53 Rev 5 -> ATT&CK mapping (data/nist800_53_r5_to_attack.json)
+  2. CTID's verified SP 800-53 Rev 5 -> ATT&CK mapping
+     (data/nist800_53_r5_to_attack.json)
 
 Usage:
-    python3 build_attack_mapping.py <csf_crosswalk_file> <nist_csf_2_0.json> <output.json>
+    python3 build_attack_mapping.py <crosswalk_file> <nist_csf_2_0.json> \
+        <output.json>
 
 The crosswalk file can be:
   - The OLIR JSON export from
@@ -66,7 +68,8 @@ def build(
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         print(
-            "Usage: build_attack_mapping.py <crosswalk_file> <nist_csf_2_0.json> <output.json>"
+            "Usage: build_attack_mapping.py <crosswalk_file> "
+            "<nist_csf_2_0.json> <output.json>"
         )
         sys.exit(1)
     build(
