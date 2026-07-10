@@ -83,3 +83,8 @@ indent-style = "space"
 
 [tool.bandit]
 exclude_dirs = [".venv", ".ruff_cache", "alembic"]
+
+[dependency-groups]
+dev = [
+    "asyncpg-stubs>=0.31.3",
+]
