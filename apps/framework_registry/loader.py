@@ -4,13 +4,14 @@ into validated Framework / Control pydantic models.
 
 import json
 from pathlib import Path
+from typing import Any
 
 from apps.framework_registry.models import Control, Framework
 
 DEFINITIONS_DIR = Path(__file__).parent / "definitions"
 
 
-def _to_control(raw: dict, framework_id: str) -> Control:
+def _to_control(raw: dict[str, Any], framework_id: str) -> Control:
     """Map a raw JSON control entry (function/category/category_id/description)
     onto the Control model
     (control_id/framework_id/category/name/description/attack_mapping)."""
@@ -27,7 +28,7 @@ def _to_control(raw: dict, framework_id: str) -> Control:
 
 def load_framework_file(path: Path) -> tuple[Framework, list[Control]]:
     with open(path, encoding="utf-8") as f:
-        raw = json.load(f)
+        raw: dict[str, Any] = json.load(f)
 
     framework = Framework(
         framework_id=raw["framework_id"],
