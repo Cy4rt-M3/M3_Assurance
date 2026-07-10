@@ -1,4 +1,4 @@
-from typing import Callable
+from collections.abc import Callable
 
 Operation = Callable[[float, float], float | str]
 
