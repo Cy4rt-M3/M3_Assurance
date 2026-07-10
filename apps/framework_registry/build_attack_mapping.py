@@ -65,7 +65,7 @@ def build(
     print(f"Populated attack_mapping for {mapped}/{len(csf['controls'])} controls")
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     if len(sys.argv) != 4:
         print(
             "Usage: build_attack_mapping.py <crosswalk_file> "
