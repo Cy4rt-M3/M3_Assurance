@@ -5,7 +5,7 @@ into validated Framework / Control pydantic models.
 import json
 from pathlib import Path
 
-from apps.framework_registry.models import Framework, Control
+from apps.framework_registry.models import Control, Framework
 
 DEFINITIONS_DIR = Path(__file__).parent / "definitions"
 
@@ -26,7 +26,7 @@ def _to_control(raw: dict, framework_id: str) -> Control:
 
 
 def load_framework_file(path: Path) -> tuple[Framework, list[Control]]:
-    with open(path, "r", encoding="utf-8") as f:
+    with open(path, encoding="utf-8") as f:
         raw = json.load(f)
 
     framework = Framework(
