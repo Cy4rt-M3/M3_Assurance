@@ -61,6 +61,7 @@ def test_cross_walk_model():
     )
     assert cw.equivalence_level == "Partial"
 
+
 # --- loader.py ---
 
 
@@ -138,6 +139,7 @@ def test_load_all_frameworks(tmp_path: Path) -> None:
     (tmp_path / "abc.json").write_text(json.dumps(data))
     results = load_all_frameworks(tmp_path)
     assert "abc" in results
+
 
 # --- main.py endpoints ---
 
