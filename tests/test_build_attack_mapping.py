@@ -1,22 +1,24 @@
 """Tests for build_attack_mapping.py"""
 
 import json
+from pathlib import Path
 
 import pytest
 
 from apps.framework_registry import build_attack_mapping as bam
 
 
-def test_load_attack_data(tmp_path):
+def test_load_attack_data(tmp_path: Path) -> None:
     data = {"mappings": {"AC-03": ["T1548", "T1611"]}}
-    fpath = tmp_path / "attack.json"
+    fpath: Path = tmp_path / "attack.json"
     fpath.write_text(json.dumps(data))
     result = bam.load_attack_data(fpath)
     assert result["AC-03"] == ["T1548", "T1611"]
 
 
-def test_load_crosswalk_raises_not_implemented(tmp_path):
-    fpath = tmp_path / "crosswalk.json"
+def test_load_crosswalk_raises_not_implemented(tmp_path: Path) -> None:
+    fpath: Path = tmp_path / "crosswalk.json"
+    ...
     fpath.write_text("{}")
     with pytest.raises(NotImplementedError):
         bam.load_crosswalk(fpath)
