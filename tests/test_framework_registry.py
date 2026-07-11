@@ -1,11 +1,13 @@
 """Tests for framework_registry service."""
 
 import json
+from pathlib import Path
+from typing import Any
 
 import pytest
 
 from apps.framework_registry.loader import (
-    _to_control,
+    _to_control,  # type: ignore[reportPrivateUsage]
     load_all_frameworks,
     load_framework_file,
 )
@@ -93,7 +95,7 @@ def test_to_control_category_id_fallback():
     assert ctrl.category == "CAT-ID"
 
 
-def test_load_framework_file(tmp_path):
+def test_load_framework_file(tmp_path: Path) -> None:
     data = {
         "framework_id": "test_fw",
         "name": "Test Framework",
@@ -104,20 +106,20 @@ def test_load_framework_file(tmp_path):
             {"control_id": "TEST-01", "category": "Cat", "description": "Desc"}
         ],
     }
-    fpath = tmp_path / "test_fw.json"
+    fpath: Path = tmp_path / "test_fw.json"
     fpath.write_text(json.dumps(data))
     framework, controls = load_framework_file(fpath)
     assert framework.framework_id == "test_fw"
     assert len(controls) == 1
 
 
-def test_load_framework_file_defaults(tmp_path):
+def test_load_framework_file_defaults(tmp_path: Path) -> None:
     data = {
         "framework_id": "test_fw2",
         "name": "Test Framework 2",
         "version": "1.0",
     }
-    fpath = tmp_path / "test_fw2.json"
+    fpath: Path = tmp_path / "test_fw2.json"
     fpath.write_text(json.dumps(data))
     framework, controls = load_framework_file(fpath)
     assert framework.description == ""
@@ -125,8 +127,8 @@ def test_load_framework_file_defaults(tmp_path):
     assert controls == []
 
 
-def test_load_all_frameworks(tmp_path):
-    data = {
+def test_load_all_frameworks(tmp_path: Path) -> None:
+    data: dict[str, Any] = {
         "framework_id": "abc",
         "name": "ABC",
         "version": "1.0",
