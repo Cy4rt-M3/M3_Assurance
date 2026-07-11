@@ -23,8 +23,12 @@ def test_load_crosswalk_raises_not_implemented(tmp_path: Path) -> None:
         bam.load_crosswalk(fpath)
 
 
+def _fake_load_crosswalk(path: Path) -> dict[str, list[str]]:
+    return {"CTRL-1": ["AC-03"]}
+
+
 def test_build_full_pipeline(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(bam, "load_crosswalk", lambda path: {"CTRL-1": ["AC-03"]})
+    monkeypatch.setattr(bam, "load_crosswalk", _fake_load_crosswalk)
 
     csf_path: Path = tmp_path / "csf.json"
     csf_path.write_text(
