@@ -18,16 +18,15 @@ def test_load_attack_data(tmp_path: Path) -> None:
 
 def test_load_crosswalk_raises_not_implemented(tmp_path: Path) -> None:
     fpath: Path = tmp_path / "crosswalk.json"
-    ...
     fpath.write_text("{}")
     with pytest.raises(NotImplementedError):
         bam.load_crosswalk(fpath)
 
 
-def test_build_full_pipeline(tmp_path, monkeypatch):
+def test_build_full_pipeline(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(bam, "load_crosswalk", lambda path: {"CTRL-1": ["AC-03"]})
 
-    csf_path = tmp_path / "csf.json"
+    csf_path: Path = tmp_path / "csf.json"
     csf_path.write_text(
         json.dumps(
             {
@@ -38,11 +37,11 @@ def test_build_full_pipeline(tmp_path, monkeypatch):
             }
         )
     )
-    crosswalk_path = tmp_path / "crosswalk.json"
+    crosswalk_path: Path = tmp_path / "crosswalk.json"
     crosswalk_path.write_text("{}")
-    attack_path = tmp_path / "attack.json"
+    attack_path: Path = tmp_path / "attack.json"
     attack_path.write_text(json.dumps({"mappings": {"AC-03": ["T1548", "T1611"]}}))
-    out_path = tmp_path / "out.json"
+    out_path: Path = tmp_path / "out.json"
 
     bam.build(csf_path, crosswalk_path, attack_path, out_path)
 
