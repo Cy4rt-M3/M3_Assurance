@@ -19,7 +19,9 @@ import logging
 
 from database import BlastRadiusScore, get_session, init_db
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s"
+)
 logger = logging.getLogger("blast_radius_engine")
 
 EXPOSURE_SCORES = {
@@ -39,7 +41,9 @@ CRITICALITY_SCORES = {
 CONNECTIVITY_CAP = 50  # connections at/above this count score as maximum risk
 
 
-def _connectivity_score(connected_assets_count: int, cap: int = CONNECTIVITY_CAP) -> float:
+def _connectivity_score(
+    connected_assets_count: int, cap: int = CONNECTIVITY_CAP
+) -> float:
     if connected_assets_count < 0:
         raise ValueError("connected_assets_count cannot be negative")
     return min(100.0, (connected_assets_count / cap) * 100)
@@ -144,7 +148,9 @@ def score_and_save(
 ) -> dict:
     """Calculates and saves one asset's Blast Radius score in one step."""
     init_db(db_path)
-    result = calculate_blast_radius(asset_id, exposure_level, criticality, connected_assets_count)
+    result = calculate_blast_radius(
+        asset_id, exposure_level, criticality, connected_assets_count
+    )
     save_result(result, db_path)
     return result
 
@@ -175,7 +181,9 @@ if __name__ == "__main__":
             break
         print("Please enter a whole number (0 or more).")
 
-    result = score_and_save(asset_id, exposure_level, criticality, connected_assets_count)
+    result = score_and_save(
+        asset_id, exposure_level, criticality, connected_assets_count
+    )
 
     print("\nResult (also saved to blast_radius.db):")
     print(result)

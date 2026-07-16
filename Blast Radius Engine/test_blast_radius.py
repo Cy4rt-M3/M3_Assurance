@@ -20,6 +20,7 @@ from database import BlastRadiusScore, get_session, init_db
 
 # --- calculate_blast_radius: correctness ---
 
+
 def test_internet_facing_critical_scores_high():
     result = calculate_blast_radius("srv-1", "internet_facing", "critical", 50)
     assert result["blast_radius_score"] > 85
@@ -49,6 +50,7 @@ def test_weights_sum_correctly():
 
 # --- calculate_blast_radius: error handling ---
 
+
 def test_invalid_exposure_level_raises():
     with pytest.raises(ValueError, match="Unknown exposure_level"):
         calculate_blast_radius("srv-6", "not_a_real_level", "critical", 5)
@@ -65,6 +67,7 @@ def test_negative_connections_raises():
 
 
 # --- database: upsert behavior ---
+
 
 @pytest.fixture
 def temp_db(tmp_path):

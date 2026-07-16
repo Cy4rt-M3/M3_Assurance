@@ -13,15 +13,24 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 from database import BlastRadiusScore, get_session, init_db
-from blast_radius_engine import calculate_blast_radius, save_result, EXPOSURE_SCORES, CRITICALITY_SCORES
+from blast_radius_engine import (
+    calculate_blast_radius,
+    save_result,
+    EXPOSURE_SCORES,
+    CRITICALITY_SCORES,
+)
 
 app = FastAPI(title="Blast Radius Engine")
 
 
 class AssetInput(BaseModel):
     asset_id: str
-    exposure_level: str = Field(..., description=f"One of: {list(EXPOSURE_SCORES.keys())}")
-    criticality: str = Field(..., description=f"One of: {list(CRITICALITY_SCORES.keys())}")
+    exposure_level: str = Field(
+        ..., description=f"One of: {list(EXPOSURE_SCORES.keys())}"
+    )
+    criticality: str = Field(
+        ..., description=f"One of: {list(CRITICALITY_SCORES.keys())}"
+    )
     connected_assets_count: int = Field(..., ge=0)
 
 
@@ -76,7 +85,9 @@ def get_blast_radius(asset_id: str):
             .first()
         )
         if not row:
-            raise HTTPException(status_code=404, detail=f"No data found for asset '{asset_id}'")
+            raise HTTPException(
+                status_code=404, detail=f"No data found for asset '{asset_id}'"
+            )
         return row
     finally:
         session.close()

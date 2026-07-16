@@ -29,7 +29,9 @@ import logging
 
 from database import RiskScore, get_session, init_db
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s"
+)
 logger = logging.getLogger("weighted_scoring_engine")
 
 CVSS_WEIGHT = 0.40
@@ -52,7 +54,9 @@ def classify_risk_band(score: float) -> str:
     return "Low"  # fallback, shouldn't normally be reached
 
 
-def calculate_risk_score(cvss_score: float, epss_score: float, blast_radius_score: float) -> dict:
+def calculate_risk_score(
+    cvss_score: float, epss_score: float, blast_radius_score: float
+) -> dict:
     """
     Combines CVSS (0-10), EPSS (0-1), and Blast Radius (0-100) into one
     final 0-100 risk score. CVSS and EPSS are scaled up to 0-100 first
@@ -63,10 +67,12 @@ def calculate_risk_score(cvss_score: float, epss_score: float, blast_radius_scor
     if not (0 <= epss_score <= 1):
         raise ValueError(f"epss_score must be between 0 and 1, got {epss_score}")
     if not (0 <= blast_radius_score <= 100):
-        raise ValueError(f"blast_radius_score must be between 0 and 100, got {blast_radius_score}")
+        raise ValueError(
+            f"blast_radius_score must be between 0 and 100, got {blast_radius_score}"
+        )
 
-    cvss_normalized = cvss_score * 10        # 0-10  -> 0-100
-    epss_normalized = epss_score * 100       # 0-1   -> 0-100
+    cvss_normalized = cvss_score * 10  # 0-10  -> 0-100
+    epss_normalized = epss_score * 100  # 0-1   -> 0-100
     # blast_radius_score is already 0-100
 
     composite_score = (
@@ -87,7 +93,9 @@ def calculate_risk_score(cvss_score: float, epss_score: float, blast_radius_scor
     }
 
 
-def fetch_cvss_epss(cve_id: str, threat_intel_db_path: str = "../task1_threat_intel/threat_intel.db"):
+def fetch_cvss_epss(
+    cve_id: str, threat_intel_db_path: str = "../task1_threat_intel/threat_intel.db"
+):
     """
     Looks up the stored CVSS/EPSS data for a CVE from Task 1's database.
     Returns (cvss_score, epss_score) or (None, None) if not found.
@@ -108,11 +116,15 @@ def fetch_cvss_epss(cve_id: str, threat_intel_db_path: str = "../task1_threat_in
             return None, None
         return row[0], row[1]
     except sqlite3.Error as exc:
-        logger.error("Could not read threat_intel.db at %s: %s", threat_intel_db_path, exc)
+        logger.error(
+            "Could not read threat_intel.db at %s: %s", threat_intel_db_path, exc
+        )
         return None, None
 
 
-def fetch_blast_radius(asset_id: str, blast_radius_db_path: str = "../task2_blast_radius/blast_radius.db"):
+def fetch_blast_radius(
+    asset_id: str, blast_radius_db_path: str = "../task2_blast_radius/blast_radius.db"
+):
     """
     Looks up the stored Blast Radius score for an asset from Task 2's database.
     Returns the score, or None if not found.
@@ -130,11 +142,15 @@ def fetch_blast_radius(asset_id: str, blast_radius_db_path: str = "../task2_blas
             return None
         return row[0]
     except sqlite3.Error as exc:
-        logger.error("Could not read blast_radius.db at %s: %s", blast_radius_db_path, exc)
+        logger.error(
+            "Could not read blast_radius.db at %s: %s", blast_radius_db_path, exc
+        )
         return None
 
 
-def save_result(cve_id: str, asset_id: str, result: dict, db_path: str = "risk_scores.db") -> None:
+def save_result(
+    cve_id: str, asset_id: str, result: dict, db_path: str = "risk_scores.db"
+) -> None:
     """
     Saves the final risk score for a (cve_id, asset_id) pair.
     Re-scoring the same pair UPDATES the existing row instead of
@@ -198,9 +214,13 @@ if __name__ == "__main__":
 
     missing = []
     if cvss_score is None:
-        missing.append(f"CVSS/EPSS for {cve_id} (run Task 1's pipeline for this CVE first)")
+        missing.append(
+            f"CVSS/EPSS for {cve_id} (run Task 1's pipeline for this CVE first)"
+        )
     if blast_radius_score is None:
-        missing.append(f"Blast Radius for {asset_id} (run Task 2's engine for this asset first)")
+        missing.append(
+            f"Blast Radius for {asset_id} (run Task 2's engine for this asset first)"
+        )
 
     if missing:
         print("\nCouldn't find:")
@@ -212,9 +232,13 @@ if __name__ == "__main__":
         if epss_score is None:
             epss_score = float(input("Enter EPSS score (0-1): ").strip())
         if blast_radius_score is None:
-            blast_radius_score = float(input("Enter Blast Radius score (0-100): ").strip())
+            blast_radius_score = float(
+                input("Enter Blast Radius score (0-100): ").strip()
+            )
 
-    result = score_and_save(cve_id, asset_id, cvss_score, epss_score, blast_radius_score)
+    result = score_and_save(
+        cve_id, asset_id, cvss_score, epss_score, blast_radius_score
+    )
 
     print("\nFinal Risk Score (also saved to risk_scores.db):")
     print(result)

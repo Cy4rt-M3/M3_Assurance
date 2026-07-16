@@ -20,6 +20,7 @@ from database import RiskScore, get_session, init_db
 
 # --- calculate_risk_score: correctness ---
 
+
 def test_max_inputs_produce_max_score():
     result = calculate_risk_score(cvss_score=10, epss_score=1.0, blast_radius_score=100)
     assert result["composite_score"] == 100.0
@@ -45,12 +46,15 @@ def test_known_worked_example():
     # EPSS=0.99999 (normalized ~100) * 0.35 = ~35
     # Blast Radius=86 * 0.25 = 21.5
     # Total ~= 96.5
-    result = calculate_risk_score(cvss_score=10, epss_score=0.99999, blast_radius_score=86)
+    result = calculate_risk_score(
+        cvss_score=10, epss_score=0.99999, blast_radius_score=86
+    )
     assert result["composite_score"] == pytest.approx(96.5, abs=0.1)
     assert result["risk_band"] == "Critical"
 
 
 # --- calculate_risk_score: input validation ---
+
 
 def test_cvss_out_of_range_raises():
     with pytest.raises(ValueError, match="cvss_score must be between"):
@@ -69,21 +73,26 @@ def test_blast_radius_out_of_range_raises():
 
 # --- classify_risk_band ---
 
-@pytest.mark.parametrize("score,expected_band", [
-    (0, "Low"),
-    (39.9, "Low"),
-    (40, "Medium"),
-    (64.9, "Medium"),
-    (65, "High"),
-    (84.9, "High"),
-    (85, "Critical"),
-    (100, "Critical"),
-])
+
+@pytest.mark.parametrize(
+    "score,expected_band",
+    [
+        (0, "Low"),
+        (39.9, "Low"),
+        (40, "Medium"),
+        (64.9, "Medium"),
+        (65, "High"),
+        (84.9, "High"),
+        (85, "Critical"),
+        (100, "Critical"),
+    ],
+)
 def test_risk_band_thresholds(score, expected_band):
     assert classify_risk_band(score) == expected_band
 
 
 # --- database: upsert behavior ---
+
 
 @pytest.fixture
 def temp_db(tmp_path):

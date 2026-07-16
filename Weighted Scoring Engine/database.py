@@ -23,12 +23,12 @@ class RiskScore(Base):
     cve_id = Column(String, nullable=False, index=True)
     asset_id = Column(String, nullable=False, index=True)
 
-    cvss_score = Column(Float, nullable=False)          # 0-10 as given
-    epss_score = Column(Float, nullable=False)           # 0-1 as given
-    blast_radius_score = Column(Float, nullable=False)   # 0-100 as given
+    cvss_score = Column(Float, nullable=False)  # 0-10 as given
+    epss_score = Column(Float, nullable=False)  # 0-1 as given
+    blast_radius_score = Column(Float, nullable=False)  # 0-100 as given
 
-    composite_score = Column(Float, nullable=False)      # final 0-100 score
-    risk_band = Column(String, nullable=False)           # Low / Medium / High / Critical
+    composite_score = Column(Float, nullable=False)  # final 0-100 score
+    risk_band = Column(String, nullable=False)  # Low / Medium / High / Critical
 
     calculated_at = Column(DateTime, default=datetime.utcnow, nullable=False)
 

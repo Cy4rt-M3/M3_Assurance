@@ -19,7 +19,9 @@ import requests
 
 from database import ThreatIntel, get_session, init_db
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s"
+)
 logger = logging.getLogger("threat_intel_pipeline")
 
 NVD_API_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
@@ -44,23 +46,38 @@ def _get_with_retry(url: str, params: dict) -> requests.Response:
             response = requests.get(url, params=params, timeout=REQUEST_TIMEOUT_SECONDS)
 
             if response.status_code == 429 or response.status_code >= 500:
-                wait = BACKOFF_BASE_SECONDS ** attempt
-                logger.warning("Retrying %s after status %s (wait %ss)",
-                                url, response.status_code, wait)
+                wait = BACKOFF_BASE_SECONDS**attempt
+                logger.warning(
+                    "Retrying %s after status %s (wait %ss)",
+                    url,
+                    response.status_code,
+                    wait,
+                )
                 time.sleep(wait)
                 continue
 
             response.raise_for_status()
             return response
 
-        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as exc:
+        except (
+            requests.exceptions.Timeout,
+            requests.exceptions.ConnectionError,
+        ) as exc:
             last_error = exc
-            wait = BACKOFF_BASE_SECONDS ** attempt
-            logger.warning("Network error on %s (attempt %s/%s): %s. Retrying in %ss",
-                            url, attempt, MAX_RETRIES, exc, wait)
+            wait = BACKOFF_BASE_SECONDS**attempt
+            logger.warning(
+                "Network error on %s (attempt %s/%s): %s. Retrying in %ss",
+                url,
+                attempt,
+                MAX_RETRIES,
+                exc,
+                wait,
+            )
             time.sleep(wait)
 
-    raise RuntimeError(f"Failed to fetch {url} after {MAX_RETRIES} attempts") from last_error
+    raise RuntimeError(
+        f"Failed to fetch {url} after {MAX_RETRIES} attempts"
+    ) from last_error
 
 
 def get_cvss_score(cve_id: str) -> dict:
@@ -118,9 +135,13 @@ def enrich_cve(cve_id: str) -> dict:
 
     if not is_valid_cve_id(cve_id):
         return {
-            "cve_id": cve_id, "cvss_score": None, "severity": None,
-            "epss_score": None, "epss_percentile": None,
-            "status": "error", "error": "Invalid CVE ID format (expected e.g. CVE-2024-12345)",
+            "cve_id": cve_id,
+            "cvss_score": None,
+            "severity": None,
+            "epss_score": None,
+            "epss_percentile": None,
+            "status": "error",
+            "error": "Invalid CVE ID format (expected e.g. CVE-2024-12345)",
         }
 
     cvss = get_cvss_score(cve_id)
@@ -222,9 +243,13 @@ def enrich_and_save(cve_ids: list, db_path: str = "threat_intel.db") -> list:
         except Exception as exc:  # noqa: BLE001 - batch-level safety net
             logger.error("Unexpected failure enriching %s: %s", cve_id, exc)
             result = {
-                "cve_id": cve_id, "cvss_score": None, "severity": None,
-                "epss_score": None, "epss_percentile": None,
-                "status": "error", "error": str(exc),
+                "cve_id": cve_id,
+                "cvss_score": None,
+                "severity": None,
+                "epss_score": None,
+                "epss_percentile": None,
+                "status": "error",
+                "error": str(exc),
             }
         save_result(result, db_path)
         results.append(result)

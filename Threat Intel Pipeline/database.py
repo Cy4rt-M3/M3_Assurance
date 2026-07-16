@@ -27,7 +27,7 @@ class ThreatIntel(Base):
     epss_score = Column(Float, nullable=True)
     epss_percentile = Column(Float, nullable=True)
 
-    status = Column(String, nullable=False)   # "ok" or "error"
+    status = Column(String, nullable=False)  # "ok" or "error"
     error = Column(String, nullable=True)
 
     fetched_at = Column(DateTime, default=datetime.utcnow, nullable=False)

@@ -26,6 +26,7 @@ from database import ThreatIntel, get_session, init_db
 
 # --- dedupe_cve_ids ---
 
+
 def test_dedupe_removes_case_insensitive_duplicates():
     result = dedupe_cve_ids(["CVE-2024-3400", "cve-2024-3400", "CVE-2021-44228"])
     assert result == ["CVE-2024-3400", "CVE-2021-44228"]
@@ -47,6 +48,7 @@ def test_dedupe_strips_whitespace():
 
 # --- save_result upsert behavior ---
 
+
 @pytest.fixture
 def temp_db(tmp_path):
     """A fresh, throwaway SQLite file per test - doesn't touch your real data."""
@@ -57,8 +59,13 @@ def temp_db(tmp_path):
 
 def test_save_result_creates_one_row_for_new_cve(temp_db):
     result = {
-        "cve_id": "CVE-2024-3400", "cvss_score": 10.0, "severity": "CRITICAL",
-        "epss_score": 0.95, "epss_percentile": 0.99, "status": "ok", "error": None,
+        "cve_id": "CVE-2024-3400",
+        "cvss_score": 10.0,
+        "severity": "CRITICAL",
+        "epss_score": 0.95,
+        "epss_percentile": 0.99,
+        "status": "ok",
+        "error": None,
     }
     save_result(result, temp_db)
 
@@ -72,12 +79,22 @@ def test_save_result_creates_one_row_for_new_cve(temp_db):
 
 def test_save_result_updates_existing_row_instead_of_duplicating(temp_db):
     first = {
-        "cve_id": "CVE-2024-3400", "cvss_score": 10.0, "severity": "CRITICAL",
-        "epss_score": 0.5, "epss_percentile": 0.8, "status": "ok", "error": None,
+        "cve_id": "CVE-2024-3400",
+        "cvss_score": 10.0,
+        "severity": "CRITICAL",
+        "epss_score": 0.5,
+        "epss_percentile": 0.8,
+        "status": "ok",
+        "error": None,
     }
     second = {
-        "cve_id": "CVE-2024-3400", "cvss_score": 10.0, "severity": "CRITICAL",
-        "epss_score": 0.97, "epss_percentile": 0.99, "status": "ok", "error": None,
+        "cve_id": "CVE-2024-3400",
+        "cvss_score": 10.0,
+        "severity": "CRITICAL",
+        "epss_score": 0.97,
+        "epss_percentile": 0.99,
+        "status": "ok",
+        "error": None,
     }
 
     save_result(first, temp_db)
@@ -92,6 +109,7 @@ def test_save_result_updates_existing_row_instead_of_duplicating(temp_db):
 
 
 # --- CVE ID validation ---
+
 
 def test_valid_cve_id_accepted():
     assert is_valid_cve_id("CVE-2024-3400") is True
@@ -111,19 +129,22 @@ def test_empty_string_rejected():
 
 # --- get_cvss_score, with NVD mocked ---
 
+
 @patch("threat_intel_pipeline._get_with_retry")
 def test_get_cvss_score_parses_v31(mock_get):
     mock_response = Mock()
     mock_response.json.return_value = {
-        "vulnerabilities": [{
-            "cve": {
-                "metrics": {
-                    "cvssMetricV31": [{
-                        "cvssData": {"baseScore": 9.8, "baseSeverity": "CRITICAL"}
-                    }]
+        "vulnerabilities": [
+            {
+                "cve": {
+                    "metrics": {
+                        "cvssMetricV31": [
+                            {"cvssData": {"baseScore": 9.8, "baseSeverity": "CRITICAL"}}
+                        ]
+                    }
                 }
             }
-        }]
+        ]
     }
     mock_get.return_value = mock_response
 
@@ -158,6 +179,7 @@ def test_get_cvss_score_handles_network_failure(mock_get):
 
 # --- get_epss_score, with FIRST.org mocked ---
 
+
 @patch("threat_intel_pipeline._get_with_retry")
 def test_get_epss_score_parses_response(mock_get):
     mock_response = Mock()
@@ -174,6 +196,7 @@ def test_get_epss_score_parses_response(mock_get):
 
 
 # --- enrich_cve, end-to-end with both mocked ---
+
 
 @patch("threat_intel_pipeline.get_epss_score")
 @patch("threat_intel_pipeline.get_cvss_score")
@@ -201,7 +224,11 @@ def test_enrich_cve_rejects_invalid_id_without_calling_apis():
 @patch("threat_intel_pipeline.get_cvss_score")
 def test_enrich_cve_reports_partial_failure(mock_cvss, mock_epss):
     mock_cvss.return_value = {"cvss_score": 10.0, "severity": "CRITICAL", "error": None}
-    mock_epss.return_value = {"epss_score": None, "percentile": None, "error": "timeout"}
+    mock_epss.return_value = {
+        "epss_score": None,
+        "percentile": None,
+        "error": "timeout",
+    }
 
     result = enrich_cve("CVE-2024-3400")
 

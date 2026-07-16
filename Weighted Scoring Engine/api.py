@@ -25,6 +25,7 @@ app = FastAPI(title="Weighted Scoring Engine")
 
 class DirectScoreInput(BaseModel):
     """Provide the three scores directly, if you already have them."""
+
     cve_id: str
     asset_id: str
     cvss_score: float = Field(..., ge=0, le=10)
@@ -34,6 +35,7 @@ class DirectScoreInput(BaseModel):
 
 class LookupScoreInput(BaseModel):
     """Look up CVSS/EPSS and Blast Radius automatically from Task 1/2's databases."""
+
     cve_id: str
     asset_id: str
 
@@ -92,7 +94,7 @@ def calculate_risk_score_lookup_endpoint(input_data: LookupScoreInput):
         raise HTTPException(
             status_code=404,
             detail=f"Missing required data: {', '.join(missing)}. "
-                   f"Run Task 1/Task 2 for these first, or use /calculate-risk-score directly.",
+            f"Run Task 1/Task 2 for these first, or use /calculate-risk-score directly.",
         )
 
     result = calculate_risk_score(cvss_score, epss_score, blast_radius_score)
@@ -107,11 +109,16 @@ def get_risk_score(cve_id: str, asset_id: str):
     try:
         row = (
             session.query(RiskScore)
-            .filter(RiskScore.cve_id == cve_id.strip().upper(), RiskScore.asset_id == asset_id.strip())
+            .filter(
+                RiskScore.cve_id == cve_id.strip().upper(),
+                RiskScore.asset_id == asset_id.strip(),
+            )
             .first()
         )
         if not row:
-            raise HTTPException(status_code=404, detail=f"No risk score found for {cve_id}/{asset_id}")
+            raise HTTPException(
+                status_code=404, detail=f"No risk score found for {cve_id}/{asset_id}"
+            )
         return row
     finally:
         session.close()
