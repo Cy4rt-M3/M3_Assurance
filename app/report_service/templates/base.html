@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="{{ organization.name | default('Confidential') }}">
+    <meta name="description" content="{{ cover.title }} — Report generated {{ cover.date }}">
+
+    <title>{{ cover.title }}</title>
+
+    <!-- Dashboard stylesheet -->
+
+
+    <link rel="stylesheet" href="static/css/report.css">
+
+   <link rel="stylesheet" href="static/css/cover.css">
+
+  <link rel="stylesheet" href="static/css/dashboard.css">
+
+  <link rel="stylesheet" href="static/css/executive_summary.css">
+
+   <link rel="stylesheet" href="static/css/findings.css">
+
+  <link rel="stylesheet" href="static/css/recommendations.css">
+
+    <link rel="stylesheet" href="static/css/print.css">
+
+
+
+    {% if cover.favicon %}
+    <link rel="icon" href="{{ cover.favicon }}" type="image/png">
+    {% endif %}
+
+</head>
+
+<body class="report">
+
+    <!-- Classification Banner -->
+    {% if cover.classification %}
+    <div class="classification-banner">
+        {{ cover.classification }}
+    </div>
+    {% endif %}
+
+    <!-- ================================================= -->
+    <!-- 1. COVER PAGE -->
+    <!-- ================================================= -->
+
+    <section class="page cover-page" id="cover">
+        {% include "cover.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- REPORT BODY -->
+    <!-- ================================================= -->
+
+    <main class="report-body">
+
+    <!-- ================================================= -->
+    <!-- 2. DOCUMENT CONTROL -->
+    <!-- ================================================= -->
+
+    <section class="page" id="document-control">
+        <h1 class="section-title">Document Control</h1>
+        {% include "document_control.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 3. TABLE OF CONTENTS -->
+    <!-- ================================================= -->
+
+    <section class="page" id="table-of-contents">
+        <h1 class="section-title">Table of Contents</h1>
+        {% include "table_of_contents.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 4. EXECUTIVE SUMMARY -->
+    <!-- ================================================= -->
+
+    <section class="page" id="executive-summary">
+        <h1 class="section-title">Executive Summary</h1>
+        {% include "executive_summary.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 5. EXECUTIVE SECURITY DASHBOARD -->
+    <!-- ================================================= -->
+
+    <section class="page" id="dashboard">
+        <h1 class="section-title">Executive Security Dashboard</h1>
+        {% include "dashboard.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 6. ORGANIZATION OVERVIEW -->
+    <!-- ================================================= -->
+
+    <section class="page" id="organization">
+        <h1 class="section-title">Organization Overview</h1>
+        {% include "organization.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 7. SCOPE -->
+    <!-- ================================================= -->
+
+    <section class="page" id="scope">
+        <h1 class="section-title">Assessment Scope</h1>
+        {% include "scope.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 8. METHODOLOGY -->
+    <!-- ================================================= -->
+
+    <section class="page" id="methodology">
+        <h1 class="section-title">Assessment Methodology</h1>
+        {% include "methodology.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 9. ASSETS REVIEWED -->
+    <!-- ================================================= -->
+
+    <section class="page" id="assets">
+        <h1 class="section-title">Asset Inventory</h1>
+        {% include "assets.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 10. FINDINGS -->
+    <!-- ================================================= -->
+
+    <section class="page" id="findings">
+        <h1 class="section-title">Security Findings</h1>
+        {% include "findings.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 11. RECOMMENDATIONS -->
+    <!-- ================================================= -->
+
+    <section class="page" id="recommendations">
+        <h1 class="section-title">Recommendations</h1>
+        {% include "recommendations.html" %}
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 12. APPENDIX -->
+    <!-- ================================================= -->
+
+    <section class="page" id="appendix">
+        <h1 class="section-title">Appendix</h1>
+        {% include "appendix.html" %}
+    </section>
+
+</main>
+
+    <!-- ================================================= -->
+    <!-- 13. FOOTER -->
+    <!-- ================================================= -->
+
+    <footer class="report-footer" id="footer">
+        {% include "footer.html" %}
+    </footer>
+
+</body>
+
+</html>

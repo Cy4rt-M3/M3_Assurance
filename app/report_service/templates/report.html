@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{{ cover.title | default('Security Assessment Report') }}</title>
+<style>
+    :root {
+        --ink:        #0f172a;
+        --ink-soft:   #1e293b;
+        --accent:     #0ea5e9;
+        --accent-2:   #38bdf8;
+        --flag:       #fbbf24;
+        --paper:      #ffffff;
+        --muted:      #64748b;
+        --hairline:   #e2e8f0;
+        --row-tint:   #f8fafc;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #1f2937;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background: var(--paper);
+    }
+    .page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    /* ================= COVER PAGE ================= */
+    .cover {
+        position: relative;
+        min-height: 100vh;
+        background: linear-gradient(135deg, var(--ink), var(--ink-soft));
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 90px 40px;
+        overflow: hidden;
+    }
+    .cover::before,
+    .cover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+    .cover::before { top: 0; }
+    .cover::after  { bottom: 0; }
+
+    .cover .badge {
+        letter-spacing: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--accent-2);
+        text-transform: uppercase;
+        margin-bottom: 28px;
+    }
+
+    .cover h1 {
+        font-size: 38px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin: 0 0 14px 0;
+    }
+
+    .cover .subtitle {
+        font-size: 17px;
+        line-height: 1.8;
+        color: #cbd5e1;
+        margin: 0 0 44px;
+        max-width: 460px;
+    }
+
+    .cover-divider {
+        width: 100%;
+        max-width: 420px;
+        height: 2px;
+        background: rgba(255,255,255,0.18);
+        margin-bottom: 44px;
+    }
+
+    .cover-meta {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+        gap: 26px 56px;
+        font-size: 14px;
+        color: #e2e8f0;
+        text-align: left;
+        max-width: 560px;
+    }
+    .cover-meta .meta-item.full { grid-column: 1 / -1; text-align: center; }
+    .cover-meta .meta-label {
+        display: block;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent-2);
+        margin-bottom: 5px;
+    }
+    .cover-meta .meta-value {
+        display: block;
+        font-size: 15px;
+        font-weight: 500;
+        color: #fff;
+    }
+    .cover-meta .meta-value.flag {
+        color: var(--flag);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+    }
+
+    .cover-stats {
+        display: flex;
+        gap: 18px;
+        margin-top: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .cover-stat-card {
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.16);
+        border-radius: 8px;
+        padding: 16px 26px;
+        min-width: 100px;
+        text-align: center;
+    }
+    .cover-stat-card .stat-value {
+        font-size: 26px;
+        font-weight: 700;
+        color: #fff;
+    }
+    .cover-stat-card .stat-label {
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #94a3b8;
+        margin-top: 4px;
+    }
+    .cover-stat-card.risk-critical .stat-value { color: #f87171; }
+    .cover-stat-card.risk-high .stat-value     { color: #fb923c; }
+    .cover-stat-card.risk-medium .stat-value   { color: #fbbf24; }
+    .cover-stat-card.risk-low .stat-value      { color: #4ade80; }
+
+    .page-break { page-break-after: always; }
+
+    /* ================= SECTION HEADERS ================= */
+    h2.section-title {
+        font-size: 24px;
+        color: #0f172a;
+        border-bottom: 3px solid #0ea5e9;
+        padding-bottom: 8px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    h3.sub-title {
+        font-size: 18px;
+        color: #1e293b;
+        margin-top: 25px;
+    }
+
+    /* ================= TABLE OF CONTENTS ================= */
+    .toc { list-style: none; padding: 0; }
+    .toc li {
+        padding: 8px 0;
+        border-bottom: 1px dashed #cbd5e1;
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+    }
+
+    /* ================= INFO BLOCKS ================= */
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 30px;
+        margin: 15px 0;
+    }
+    .info-grid div strong { color: #334155; }
+
+    .summary-cards {
+        display: flex;
+        gap: 20px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+    }
+    .card {
+        flex: 1;
+        min-width: 150px;
+        background: #f1f5f9;
+        border-left: 5px solid #0ea5e9;
+        padding: 15px 20px;
+        border-radius: 6px;
+    }
+    .card .value { font-size: 28px; font-weight: bold; color: #0f172a; }
+    .card .label { font-size: 13px; color: #64748b; text-transform: uppercase; }
+
+    /* ================= TABLES ================= */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0 30px 0;
+        font-size: 14px;
+    }
+    th {
+        background: #0f172a;
+        color: #fff;
+        text-align: left;
+        padding: 10px 12px;
+    }
+    td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    tr:nth-child(even) td { background: #f8fafc; }
+
+    /* ================= SEVERITY BADGES ================= */
+    .sev {
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+    .sev-critical { background: #7f1d1d; }
+    .sev-high     { background: #dc2626; }
+    .sev-medium   { background: #f59e0b; }
+    .sev-low      { background: #16a34a; }
+    .sev-info     { background: #2563eb; }
+
+    /* ================= FINDINGS ================= */
+    .finding {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background: #fdfdfd;
+    }
+    .finding-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .finding-header h4 { margin: 0; font-size: 17px; color: #0f172a; }
+    .finding-meta { font-size: 13px; color: #64748b; margin-bottom: 10px; }
+    .finding p { margin: 6px 0; font-size: 14px; }
+    .finding .label-tag {
+        font-weight: bold;
+        color: #334155;
+        display: block;
+        margin-top: 10px;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* ================= RISK MATRIX ================= */
+    .risk-matrix-table td, .risk-matrix-table th {
+        text-align: center;
+    }
+
+    /* ================= LISTS ================= */
+    ul.styled-list { padding-left: 20px; }
+    ul.styled-list li { margin-bottom: 8px; }
+
+    footer {
+        margin-top: 60px;
+        padding-top: 20px;
+        border-top: 1px solid #e2e8f0;
+        font-size: 12px;
+        color: #94a3b8;
+        text-align: center;
+    }
+
+    .empty-note {
+        color: #94a3b8;
+        font-style: italic;
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+
+<!-- ================= COVER PAGE ================= -->
+<div class="cover">
+    <div class="badge">{{ cover.company_name | default('CYART') }}</div>
+
+    <h1>Security Assessment Report</h1>
+
+    <p class="subtitle">
+        Enterprise Vulnerability Assessment
+        <br>&amp;<br>
+        Penetration Testing Report
+    </p>
+
+    <div class="cover-divider"></div>
+
+    <div class="cover-meta">
+        <div class="meta-item">
+            <span class="meta-label">Client</span>
+            <span class="meta-value">{{ organization.name }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Report ID</span>
+            <span class="meta-value">{{ cover.report_id }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Assessment</span>
+            <span class="meta-value">{{ scope.assessment_name }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Assessment Type</span>
+            <span class="meta-value">{{ scope.assessment_type }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Assessment Period</span>
+            <span class="meta-value">{{ scope.assessment_period | default('N/A') }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Target</span>
+            <span class="meta-value">{{ scope.target }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Framework</span>
+            <span class="meta-value">{{ scope.framework }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Generated</span>
+            <span class="meta-value">{{ cover.generated_at }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Classification</span>
+            <span class="meta-value flag">{{ cover.classification | default('Confidential') }}</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Version</span>
+            <span class="meta-value">{{ cover.version | default('1.0') }}</span>
+        </div>
+        <div class="meta-item full">
+            <span class="meta-label">Prepared By</span>
+            <span class="meta-value">{{ cover.prepared_by | default('CYART Offensive Security Team') }}</span>
+        </div>
+    </div>
+
+    {% if statistics %}
+    <div class="cover-stats">
+        <div class="cover-stat-card risk-critical">
+            <div class="stat-value">{{ statistics.critical | default(0) }}</div>
+            <div class="stat-label">Critical</div>
+        </div>
+        <div class="cover-stat-card risk-high">
+            <div class="stat-value">{{ statistics.high | default(0) }}</div>
+            <div class="stat-label">High</div>
+        </div>
+        <div class="cover-stat-card risk-medium">
+            <div class="stat-value">{{ statistics.medium | default(0) }}</div>
+            <div class="stat-label">Medium</div>
+        </div>
+        <div class="cover-stat-card risk-low">
+            <div class="stat-value">{{ statistics.low | default(0) }}</div>
+            <div class="stat-label">Low</div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+<div class="page-break"></div>
+
+<div class="page">
+
+<!-- ================= TABLE OF CONTENTS ================= -->
+<h2 class="section-title">Table of Contents</h2>
+<ul class="toc">
+    <li><span>1. Organization Details</span></li>
+    <li><span>2. Executive Summary</span></li>
+    <li><span>3. Scope</span></li>
+    <li><span>4. Methodology</span></li>
+    <li><span>5. Asset Inventory</span></li>
+    <li><span>6. Findings</span></li>
+    <li><span>7. Risk Matrix</span></li>
+    <li><span>8. Compliance Mapping</span></li>
+    <li><span>9. Recommendations</span></li>
+    <li><span>10. Appendix</span></li>
+    <li><span>11. References</span></li>
+</ul>
+
+<!-- ================= ORGANIZATION ================= -->
+<h2 class="section-title">1. Organization Details</h2>
+<div class="info-grid">
+    <div><strong>Name:</strong> {{ organization.name | default('N/A') }}</div>
+    <div><strong>Industry:</strong> {{ organization.industry | default('N/A') }}</div>
+    <div><strong>Website:</strong> {{ organization.website | default('N/A') }}</div>
+    <div><strong>Email:</strong> {{ organization.email | default('N/A') }}</div>
+</div>
+
+<!-- ================= EXECUTIVE SUMMARY ================= -->
+<h2 class="section-title">2. Executive Summary</h2>
+
+{% if executive_summary.summary_text %}
+<p>{{ executive_summary.summary_text }}</p>
+{% else %}
+<p class="empty-note">No executive summary narrative provided.</p>
+{% endif %}
+
+<h3 class="sub-title">Statistics</h3>
+<div class="summary-cards">
+    <div class="card">
+        <div class="value">{{ statistics.total_assets | default(0) }}</div>
+        <div class="label">Total Assets</div>
+    </div>
+    <div class="card">
+        <div class="value">{{ statistics.total_findings | default(0) }}</div>
+        <div class="label">Total Findings</div>
+    </div>
+    <div class="card">
+        <div class="value sev sev-critical" style="font-size:20px;">{{ statistics.critical | default(0) }}</div>
+        <div class="label">Critical</div>
+    </div>
+    <div class="card">
+        <div class="value sev sev-high" style="font-size:20px;">{{ statistics.high | default(0) }}</div>
+        <div class="label">High</div>
+    </div>
+    <div class="card">
+        <div class="value sev sev-medium" style="font-size:20px;">{{ statistics.medium | default(0) }}</div>
+        <div class="label">Medium</div>
+    </div>
+    <div class="card">
+        <div class="value sev sev-low" style="font-size:20px;">{{ statistics.low | default(0) }}</div>
+        <div class="label">Low</div>
+    </div>
+</div>
+
+<!-- ================= SCOPE ================= -->
+<h2 class="section-title">3. Scope</h2>
+{% if scope %}
+<ul class="styled-list">
+    {% for item in scope %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="empty-note">No scope items defined.</p>
+{% endif %}
+
+<!-- ================= METHODOLOGY ================= -->
+<h2 class="section-title">4. Methodology</h2>
+{% if methodology %}
+<ul class="styled-list">
+    {% for step in methodology %}
+    <li>{{ step }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="empty-note">No methodology steps defined.</p>
+{% endif %}
+
+<!-- ================= ASSET INVENTORY ================= -->
+<h2 class="section-title">5. Asset Inventory</h2>
+{% if assets %}
+<table>
+    <tr>
+        <th>Hostname</th>
+        <th>IP Address</th>
+        <th>Operating System</th>
+        <th>Status</th>
+    </tr>
+    {% for asset in assets %}
+    <tr>
+        <td>{{ asset.hostname }}</td>
+        <td>{{ asset.ip_address }}</td>
+        <td>{{ asset.operating_system }}</td>
+        <td>{{ asset.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p class="empty-note">No assets recorded.</p>
+{% endif %}
+
+<!-- ================= FINDINGS ================= -->
+<h2 class="section-title">6. Findings</h2>
+{% if findings %}
+    {% for finding in findings %}
+    <div class="finding">
+        <div class="finding-header">
+            <h4>{{ finding.title }}</h4>
+            <span class="sev sev-{{ finding.severity | lower }}">{{ finding.severity }}</span>
+        </div>
+        <div class="finding-meta">
+            CVSS: {{ finding.cvss_score | default('N/A') }}
+        </div>
+
+        {% if finding.description %}
+        <span class="label-tag">Description</span>
+        <p>{{ finding.description }}</p>
+        {% endif %}
+
+        {% if finding.remediation %}
+        <span class="label-tag">Remediation</span>
+        <p>{{ finding.remediation }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% else %}
+<p class="empty-note">No findings recorded.</p>
+{% endif %}
+
+<!-- ================= RISK MATRIX ================= -->
+<h2 class="section-title">7. Risk Matrix</h2>
+{% if risk_matrix %}
+<table class="risk-matrix-table">
+    <tr>
+        <th>Critical</th>
+        <th>High</th>
+        <th>Medium</th>
+        <th>Low</th>
+        <th>Informational</th>
+    </tr>
+    <tr>
+        <td>{{ risk_matrix.critical_count | default(0) }}</td>
+        <td>{{ risk_matrix.high_count | default(0) }}</td>
+        <td>{{ risk_matrix.medium_count | default(0) }}</td>
+        <td>{{ risk_matrix.low_count | default(0) }}</td>
+        <td>{{ risk_matrix.info_count | default(0) }}</td>
+    </tr>
+</table>
+{% else %}
+<p class="empty-note">Risk matrix data not available.</p>
+{% endif %}
+
+<!-- ================= COMPLIANCE MAPPING ================= -->
+<h2 class="section-title">8. Compliance Mapping</h2>
+{% if compliance_mapping %}
+<table>
+    <tr>
+        <th>Framework</th>
+        <th>Control</th>
+        <th>Status</th>
+    </tr>
+    {% for item in compliance_mapping %}
+    <tr>
+        <td>{{ item.framework }}</td>
+        <td>{{ item.control }}</td>
+        <td>{{ item.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p class="empty-note">No compliance mapping provided.</p>
+{% endif %}
+
+<!-- ================= RECOMMENDATIONS ================= -->
+<h2 class="section-title">9. Recommendations</h2>
+{% if recommendations %}
+<ul class="styled-list">
+    {% for rec in recommendations %}
+    <li>{{ rec }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="empty-note">No recommendations provided.</p>
+{% endif %}
+
+<!-- ================= APPENDIX ================= -->
+<h2 class="section-title">10. Appendix</h2>
+{% if appendix %}
+<ul class="styled-list">
+    {% for item in appendix %}
+    <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="empty-note">No appendix content provided.</p>
+{% endif %}
+
+<!-- ================= REFERENCES ================= -->
+<h2 class="section-title">11. References</h2>
+{% if references %}
+<ul class="styled-list">
+    {% for ref in references %}
+    <li>{{ ref }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="empty-note">No references provided.</p>
+{% endif %}
+
+<footer>
+    Generated by CYART Reporting Engine &mdash; Confidential Document
+</footer>
+
+</div>
+</body>
+</html>

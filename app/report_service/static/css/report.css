@@ -1,0 +1,109 @@
+/* =======================================
+   CYART Enterprise Report Theme
+======================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial,Helvetica,sans-serif;
+
+    color:#1F2937;
+
+    background:#FFFFFF;
+
+    line-height:1.6;
+}
+
+/* Every report section starts on a new page */
+
+.page{
+
+    page-break-before:always;
+
+    break-before:page;
+
+    padding:50px;
+
+}
+
+/* Cover page occupies one full page */
+
+.cover-page{
+
+    page-break-after:always;
+
+    break-after:page;
+
+    height:100vh;
+
+}
+
+/* Section title */
+
+.section-title{
+
+    font-size:28px;
+
+    color:#0F172A;
+
+    margin-bottom:30px;
+
+    border-bottom:3px solid #1D4ED8;
+
+    padding-bottom:12px;
+
+}
+
+/* Tables */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#1D4ED8;
+
+    color:white;
+
+}
+
+th,td{
+
+    border:1px solid #d1d5db;
+
+    padding:10px;
+
+}
+
+.page-break{
+
+    page-break-before:always;
+
+    break-before:page;
+
+}
+.page{
+
+    page-break-before: always;
+
+    break-before: page;
+
+}
+.cover-page{
+
+    page-break-before:auto;
+
+    break-before:auto;
+
+}
+

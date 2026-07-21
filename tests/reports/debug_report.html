@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="CYART">
+    <meta name="description" content="CYART Internal Security Assessment Report — Report generated ">
+
+    <title>CYART Internal Security Assessment Report</title>
+
+    <!-- Dashboard stylesheet -->
+
+
+    <link rel="stylesheet" href="static/css/report.css">
+
+   <link rel="stylesheet" href="static/css/cover.css">
+
+  <link rel="stylesheet" href="static/css/dashboard.css">
+
+  <link rel="stylesheet" href="static/css/executive_summary.css">
+
+   <link rel="stylesheet" href="static/css/findings.css">
+
+  <link rel="stylesheet" href="static/css/recommendations.css">
+
+    <link rel="stylesheet" href="static/css/print.css">
+
+
+
+    
+
+</head>
+
+<body class="report">
+
+    <!-- Classification Banner -->
+    
+    <div class="classification-banner">
+        CONFIDENTIAL
+    </div>
+    
+
+    <!-- ================================================= -->
+    <!-- 1. COVER PAGE -->
+    <!-- ================================================= -->
+
+    <section class="page cover-page" id="cover">
+        <section class="dfir-cover">
+  <style>
+    .dfir-cover {
+      --ink:        #090C10;
+      --panel:      #10151C;
+      --paper:      #EDE7DA;
+      --paper-dim:  #B9B3A4;
+      --brass:      #B68A46;
+      --brass-dim:  #8A6A38;
+      --rust:       #8B3A2B;
+      --steel:      #56728A;
+      --hairline:   rgba(237,231,218,0.14);
+      --hairline-strong: rgba(237,231,218,0.26);
+
+      --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+      --font-label:   -apple-system, 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      --font-mono:    ui-monospace, 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--font-label);
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 960px;
+      aspect-ratio: 210 / 297;
+      margin: 0 auto;
+      padding: 50px 108px 44px 60px; /* extra right padding reserves room for the spine */
+      box-shadow: 0 40px 120px rgba(0,0,0,0.55);
+    }
+
+    .dfir-cover * { box-sizing: border-box; }
+
+    /* Faint packet/reticle watermark — quieted down, texture not decoration */
+    .dfir-cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--hairline) 1px, transparent 1px),
+        linear-gradient(90deg, var(--hairline) 1px, transparent 1px);
+      background-size: 38px 38px;
+      opacity: 0.5;
+      mask-image: radial-gradient(ellipse 90% 70% at 30% 20%, black, transparent 75%);
+      pointer-events: none;
+    }
+
+    /* Oversized ghost case number, stamped low behind the title block */
+    .case-stamp {
+      position: absolute;
+      left: 54px;
+      bottom: -38px;
+      font-family: var(--font-mono);
+      font-size: 220px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--paper);
+      opacity: 0.035;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    /* ---------- Top classification strip ---------- */
+    .tlp-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: var(--font-label);
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--hairline-strong);
+      padding-bottom: 13px;
+      margin-bottom: 46px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tlp-bar .tlp-tag {
+      color: var(--brass);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tlp-bar .tlp-tag::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: var(--rust);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .tlp-bar .doc-tag {
+      color: var(--paper-dim);
+      font-weight: 500;
+    }
+
+    /* ---------- Eyebrow ---------- */
+    .eyebrow {
+      font-family: var(--font-label);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin: 0 0 20px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--hairline);
+    }
+
+    /* ---------- Title block ---------- */
+    .dfir-cover h1 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-style: normal;
+      font-size: 50px;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: var(--paper);
+      margin: 0 0 16px;
+      max-width: 92%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dfir-cover h2 {
+      font-family: var(--font-label);
+      font-weight: 500;
+      font-size: 13.5px;
+      letter-spacing: 0.05em;
+      color: var(--paper-dim);
+      margin: 0 0 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dfir-cover h2 .org-prefix {
+      color: var(--steel);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 10.5px;
+      margin-right: 10px;
+    }
+
+    .title-rule {
+      width: 64px;
+      height: 2px;
+      background: var(--brass);
+      margin: 30px 0 56px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- Chain-of-custody spine (signature element) ---------- */
+    .spine {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 68px;
+      border-left: 1px solid var(--hairline-strong);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 0 34px;
+      z-index: 1;
+    }
+
+    .spine .ticks {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 9px;
+    }
+    .spine .ticks span {
+      width: 10px;
+      height: 1px;
+      background: var(--hairline-strong);
+      display: block;
+    }
+    .spine .ticks span:nth-child(5n) {
+      width: 18px;
+      background: var(--steel);
+    }
+
+    .spine .tag-id {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      color: var(--brass);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .spine .tag-label {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: var(--font-label);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-top: 14px;
+    }
+
+    .spine .notch {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--ink);
+      border: 1.5px solid var(--brass-dim);
+      position: relative;
+    }
+    .spine .notch::after {
+      content: "";
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      background: var(--brass);
+      opacity: 0.5;
+    }
+
+    /* ---------- Case metadata table ---------- */
+    .case-table {
+      border-top: 1px solid var(--hairline-strong);
+      padding-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .case-field .label {
+      display: block;
+      font-family: var(--font-label);
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-bottom: 6px;
+    }
+
+    .case-field .value {
+      font-family: var(--font-mono);
+      font-size: 13.5px;
+      color: var(--paper);
+    }
+
+    .case-field .value.status {
+      color: var(--rust);
+      font-weight: 600;
+    }
+    .case-field .value.status::before {
+      content: "● ";
+      font-size: 9px;
+    }
+
+    /* ---------- Integrity ledger (signature element #2) ---------- */
+    .integrity-ledger {
+      margin-top: 26px;
+      padding: 14px 18px;
+      background: var(--panel);
+      border: 1px solid var(--hairline);
+      border-left: 2px solid var(--brass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .integrity-ledger .hash-block {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .integrity-ledger .hash-label {
+      font-family: var(--font-label);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--steel);
+      white-space: nowrap;
+    }
+
+    .integrity-ledger .hash-value {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--paper-dim);
+      letter-spacing: 0.01em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .integrity-ledger .verified {
+      font-family: var(--font-label);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--brass);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .integrity-ledger .verified::before {
+      content: "✓";
+      font-size: 11px;
+    }
+
+    .custody-footer {
+      margin-top: 20px;
+      font-family: var(--font-label);
+      font-size: 9.5px;
+      line-height: 1.6;
+      color: var(--steel);
+      letter-spacing: 0.01em;
+      max-width: 78%;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 720px) {
+      .dfir-cover { padding: 34px 54px 30px 28px; aspect-ratio: auto; }
+      .dfir-cover h1 { font-size: 32px; max-width: 100%; }
+      .case-table { grid-template-columns: 1fr 1fr; row-gap: 18px; }
+      .spine { width: 44px; }
+      .case-stamp { font-size: 120px; }
+      .integrity-ledger { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+
+  <div class="case-stamp">RPT-0001</div>
+
+  <div class="tlp-bar">
+    <span class="tlp-tag">TLP:AMBER</span>
+    <span class="doc-tag">CONFIDENTIAL</span>
+  </div>
+
+  <p class="eyebrow">Digital Forensics &amp; Incident Response — Case File</p>
+
+  <h1>CYART Internal Security Assessment Report</h1>
+  <h2><span class="org-prefix">Prepared for</span></h2>
+  <div class="title-rule"></div>
+
+  <div class="spine">
+    <div class="notch"></div>
+    <div class="ticks">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div>
+      <div class="tag-id">RPT-0001</div>
+      <div class="tag-label">Exhibit Tag</div>
+    </div>
+  </div>
+
+  <div class="case-table">
+    <div class="case-field">
+      <span class="label">Report ID</span>
+      <span class="value">RPT-0001</span>
+    </div>
+    <div class="case-field">
+      <span class="label">Generated</span>
+      <span class="value">2026-07-18 21:57 UTC</span>
+    </div>
+    <div class="case-field">
+      <span class="label">Case Status</span>
+      <span class="value status">Under Investigation</span>
+    </div>
+    <div class="case-field">
+      <span class="label">Prepared By</span>
+      <span class="value">CYART Offensive Security Team</span>
+    </div>
+  </div>
+
+  <div class="integrity-ledger">
+    <div class="hash-block">
+      <span class="hash-label">SHA-256</span>
+      <span class="hash-value">4f2a9e7c1d8b0356e9a4c7f1b2d6e8a03c5f9b7d1e4a6c8f0b2d4e6a8c0f1b3d</span>
+    </div>
+    <span class="verified">Chain of Custody Verified</span>
+  </div>
+
+  <p class="custody-footer">
+    This document and its contents are handled in accordance with established chain-of-custody
+    procedures. Unauthorized disclosure, reproduction, or distribution is prohibited.
+  </p>
+</section>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- REPORT BODY -->
+    <!-- ================================================= -->
+
+    <main class="report-body">
+
+    <!-- ================================================= -->
+    <!-- 2. DOCUMENT CONTROL -->
+    <!-- ================================================= -->
+
+    <section class="page" id="document-control">
+        <h1 class="section-title">Document Control</h1>
+        <h1 style="color:red;">
+THIS IS DOCUMENT CONTROL PAGE
+</h1>
+
+<p>
+If you can read this, the template is loading correctly.
+</p>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 3. TABLE OF CONTENTS -->
+    <!-- ================================================= -->
+
+    <section class="page" id="table-of-contents">
+        <h1 class="section-title">Table of Contents</h1>
+        <h2>Table of Contents</h2>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 4. EXECUTIVE SUMMARY -->
+    <!-- ================================================= -->
+
+    <section class="page" id="executive-summary">
+        <h1 class="section-title">Executive Summary</h1>
+        <section class="executive-summary">
+
+  <!-- Narrative summary -->
+  <div class="summary-narrative">
+    <p>The assessment identified 1 Critical, 1 High, 1 Medium, and 0 Low severity findings across 2 assets. The average CVSS score across all findings is 7.9, and the overall organizational risk is assessed as Critical.</p>
+  </div>
+
+  <!-- Overall risk rating -->
+  <div class="risk-rating-block">
+    <span class="risk-label">Overall Risk Rating:</span>
+    <span class="risk-badge risk-critical">
+      Critical
+    </span>
+  </div>
+
+  <!-- Engagement snapshot / key metrics -->
+  <div class="summary-metrics">
+    <div class="metric-card">
+      <span class="metric-value">3</span>
+      <span class="metric-label">Total Findings</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">2</span>
+      <span class="metric-label">Assets Reviewed</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">14 Days</span>
+      <span class="metric-label">Engagement Duration</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">01 Jul 2026 - 14 Jul 2026</span>
+      <span class="metric-label">Testing Period</span>
+    </div>
+  </div>
+
+  <!-- Findings severity breakdown -->
+  <div class="severity-breakdown">
+    <h3>Findings by Severity</h3>
+    <table class="severity-table">
+      <thead>
+        <tr>
+          <th>Severity</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="severity-critical">
+          <td>Critical</td>
+          <td>1</td>
+        </tr>
+        <tr class="severity-high">
+          <td>High</td>
+          <td>1</td>
+        </tr>
+        <tr class="severity-medium">
+          <td>Medium</td>
+          <td>1</td>
+        </tr>
+        <tr class="severity-low">
+          <td>Low</td>
+          <td>0</td>
+        </tr>
+        <tr class="severity-informational">
+          <td>Informational</td>
+          <td>0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Key risks / top callouts -->
+  
+  <div class="key-risks">
+    <h3>Key Risk Areas</h3>
+    <ul>
+      
+      <li>Critical systems exposed to remote attack.</li>
+      
+      <li>Weak authentication identified on multiple assets.</li>
+      
+      <li>Several outdated services require immediate patching.</li>
+      
+    </ul>
+  </div>
+  
+
+  <!-- Summary of recommendations (teaser, full detail in Recommendations section) -->
+  
+  <div class="top-recommendations">
+    <h3>Priority Recommendations</h3>
+    <ol>
+      
+      <li>Patch all Critical vulnerabilities immediately.</li>
+      
+      <li>Implement MFA across administrative accounts.</li>
+      
+      <li>Perform continuous vulnerability scanning.</li>
+      
+    </ol>
+  </div>
+  
+
+</section>
+<hr>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 5. EXECUTIVE SECURITY DASHBOARD -->
+    <!-- ================================================= -->
+
+    <section class="page" id="dashboard">
+        <h1 class="section-title">Executive Security Dashboard</h1>
+        <section class="dashboard-page">
+
+    <div class="dashboard-header">
+        <h1>Executive Security Dashboard</h1>
+
+        <p>
+            Enterprise Security Assessment Overview
+        </p>
+    </div>
+
+    <section class="score-card">
+
+    <div class="score-header">
+
+        <h2>Overall Security Score</h2>
+
+        <p>
+            Executive Assessment
+        </p>
+
+    </div>
+
+    <div class="score-circle">
+
+        <div class="score-value">
+
+            73
+
+        </div>
+
+        <div class="score-max">
+
+            /100
+
+        </div>
+
+    </div>
+
+    <table class="score-table">
+
+        <tr>
+
+            <td>Security Grade</td>
+
+            <td>C</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Overall Risk</td>
+
+            <td>High</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Average CVSS</td>
+
+            <td>7.9</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Security Maturity</td>
+
+            <td>Defined</td>
+
+        </tr>
+
+    </table>
+
+    <div class="progress-container">
+
+        <div
+            class="progress-fill"
+            style="width: 73%;">
+
+        </div>
+
+    </div>
+
+    <div class="progress-label">
+
+        73%
+
+    </div>
+
+    <div class="executive-note">
+
+        <h3>Executive Interpretation</h3>
+
+        <p>
+
+            The assessment indicates an overall
+
+            <strong>High</strong>
+
+            risk posture.
+
+            The calculated security score is
+
+            <strong>73/100</strong>
+
+            which reflects the current cyber security
+
+            maturity of the assessed environment.
+
+            Immediate remediation should prioritize
+
+            Critical and High severity findings to
+
+            reduce enterprise exposure.
+
+        </p>
+
+    </div>
+
+</section>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+</section>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 6. ORGANIZATION OVERVIEW -->
+    <!-- ================================================= -->
+
+    <section class="page" id="organization">
+        <h1 class="section-title">Organization Overview</h1>
+        <section class="organization-profile">
+
+  <h2>Organization</h2>
+
+  <!-- Organization details -->
+  <table class="info-table organization-table">
+    <tbody>
+      <tr>
+        <th scope="row">Organization Name</th>
+        <td>CYART</td>
+      </tr>
+      <tr>
+        <th scope="row">Industry</th>
+        <td>Cybersecurity</td>
+      </tr>
+      <tr>
+        <th scope="row">Website</th>
+        <td>
+          
+          <a href="https://cyart.io" target="_blank" rel="noopener noreferrer">https://cyart.io</a>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Headquarters</th>
+        <td>Mumbai, Maharashtra</td>
+      </tr>
+      <tr>
+        <th scope="row">Organization Size</th>
+        <td>N/A</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Primary point of contact -->
+  <h3>Primary Point of Contact</h3>
+  <table class="info-table contact-table">
+    <tbody>
+      <tr>
+        <th scope="row">Contact Name</th>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <th scope="row">Title / Role</th>
+        <td>N/A</td>
+      </tr>
+      <tr>
+        <th scope="row">Email</th>
+        <td>
+          
+          <a href="mailto:security@cyart.io">security@cyart.io</a>
+          
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Phone</th>
+        <td>+91-9876543210</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Engagement metadata (common in audit/pentest reports) -->
+  
+
+</section>
+<hr>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 7. SCOPE -->
+    <!-- ================================================= -->
+
+    <section class="page" id="scope">
+        <h1 class="section-title">Assessment Scope</h1>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 8. METHODOLOGY -->
+    <!-- ================================================= -->
+
+    <section class="page" id="methodology">
+        <h1 class="section-title">Assessment Methodology</h1>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 9. ASSETS REVIEWED -->
+    <!-- ================================================= -->
+
+    <section class="page" id="assets">
+        <h1 class="section-title">Asset Inventory</h1>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 10. FINDINGS -->
+    <!-- ================================================= -->
+
+    <section class="page" id="findings">
+        <h1 class="section-title">Security Findings</h1>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 11. RECOMMENDATIONS -->
+    <!-- ================================================= -->
+
+    <section class="page" id="recommendations">
+        <h1 class="section-title">Recommendations</h1>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- 12. APPENDIX -->
+    <!-- ================================================= -->
+
+    <section class="page" id="appendix">
+        <h1 class="section-title">Appendix</h1>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+    </section>
+
+</main>
+
+    <!-- ================================================= -->
+    <!-- 13. FOOTER -->
+    <!-- ================================================= -->
+
+    <footer class="report-footer" id="footer">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+    </footer>
+
+</body>
+
+</html>

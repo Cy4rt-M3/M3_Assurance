@@ -1,0 +1,100 @@
+<section class="organization-profile">
+
+  <h2>Organization</h2>
+
+  <!-- Organization details -->
+  <table class="info-table organization-table">
+    <tbody>
+      <tr>
+        <th scope="row">Organization Name</th>
+        <td>{{ organization.name }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Industry</th>
+        <td>{{ organization.industry }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Website</th>
+        <td>
+          {% if organization.website %}
+          <a href="{{ organization.website }}" target="_blank" rel="noopener noreferrer">{{ organization.website }}</a>
+          {% else %}
+          N/A
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Headquarters</th>
+        <td>{{ organization.address | default('N/A') }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Organization Size</th>
+        <td>{{ organization.size | default('N/A') }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Primary point of contact -->
+  <h3>Primary Point of Contact</h3>
+  <table class="info-table contact-table">
+    <tbody>
+      <tr>
+        <th scope="row">Contact Name</th>
+        <td>{{ organization.contact_name | default('N/A') }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Title / Role</th>
+        <td>{{ organization.contact_title | default('N/A') }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Email</th>
+        <td>
+          {% if organization.email %}
+          <a href="mailto:{{ organization.email }}">{{ organization.email }}</a>
+          {% else %}
+          N/A
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Phone</th>
+        <td>{{ organization.phone | default('N/A') }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Engagement metadata (common in audit/pentest reports) -->
+  {% if organization.engagement_type or organization.report_id %}
+  <h3>Engagement Details</h3>
+  <table class="info-table engagement-table">
+    <tbody>
+      {% if organization.report_id %}
+      <tr>
+        <th scope="row">Report ID</th>
+        <td>{{ organization.report_id }}</td>
+      </tr>
+      {% endif %}
+      {% if organization.engagement_type %}
+      <tr>
+        <th scope="row">Engagement Type</th>
+        <td>{{ organization.engagement_type }}</td>
+      </tr>
+      {% endif %}
+      {% if organization.prepared_by %}
+      <tr>
+        <th scope="row">Prepared By</th>
+        <td>{{ organization.prepared_by }}</td>
+      </tr>
+      {% endif %}
+      {% if organization.report_date %}
+      <tr>
+        <th scope="row">Report Date</th>
+        <td>{{ organization.report_date }}</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+  {% endif %}
+
+</section>
+<hr>

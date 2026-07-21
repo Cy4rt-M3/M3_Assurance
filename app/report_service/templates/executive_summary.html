@@ -1,0 +1,96 @@
+<section class="executive-summary">
+
+  <!-- Narrative summary -->
+  <div class="summary-narrative">
+    <p>{{ executive_summary.summary_text }}</p>
+  </div>
+
+  <!-- Overall risk rating -->
+  <div class="risk-rating-block">
+    <span class="risk-label">Overall Risk Rating:</span>
+    <span class="risk-badge risk-{{ executive_summary.overall_risk | lower }}">
+      {{ executive_summary.overall_risk }}
+    </span>
+  </div>
+
+  <!-- Engagement snapshot / key metrics -->
+  <div class="summary-metrics">
+    <div class="metric-card">
+      <span class="metric-value">{{ executive_summary.total_findings }}</span>
+      <span class="metric-label">Total Findings</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">{{ executive_summary.assets_reviewed_count }}</span>
+      <span class="metric-label">Assets Reviewed</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">{{ executive_summary.engagement_duration }}</span>
+      <span class="metric-label">Engagement Duration</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-value">{{ executive_summary.testing_period }}</span>
+      <span class="metric-label">Testing Period</span>
+    </div>
+  </div>
+
+  <!-- Findings severity breakdown -->
+  <div class="severity-breakdown">
+    <h3>Findings by Severity</h3>
+    <table class="severity-table">
+      <thead>
+        <tr>
+          <th>Severity</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="severity-critical">
+          <td>Critical</td>
+          <td>{{ executive_summary.severity_counts.critical | default(0) }}</td>
+        </tr>
+        <tr class="severity-high">
+          <td>High</td>
+          <td>{{ executive_summary.severity_counts.high | default(0) }}</td>
+        </tr>
+        <tr class="severity-medium">
+          <td>Medium</td>
+          <td>{{ executive_summary.severity_counts.medium | default(0) }}</td>
+        </tr>
+        <tr class="severity-low">
+          <td>Low</td>
+          <td>{{ executive_summary.severity_counts.low | default(0) }}</td>
+        </tr>
+        <tr class="severity-informational">
+          <td>Informational</td>
+          <td>{{ executive_summary.severity_counts.informational | default(0) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Key risks / top callouts -->
+  {% if executive_summary.key_risks %}
+  <div class="key-risks">
+    <h3>Key Risk Areas</h3>
+    <ul>
+      {% for risk in executive_summary.key_risks %}
+      <li>{{ risk }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <!-- Summary of recommendations (teaser, full detail in Recommendations section) -->
+  {% if executive_summary.top_recommendations %}
+  <div class="top-recommendations">
+    <h3>Priority Recommendations</h3>
+    <ol>
+      {% for rec in executive_summary.top_recommendations %}
+      <li>{{ rec }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endif %}
+
+</section>
+<hr>

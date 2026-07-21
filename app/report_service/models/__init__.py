@@ -1,0 +1,2 @@
+def asset():
+    return None

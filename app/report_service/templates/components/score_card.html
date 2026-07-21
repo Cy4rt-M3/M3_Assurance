@@ -1,0 +1,111 @@
+<section class="score-card">
+
+    <div class="score-header">
+
+        <h2>Overall Security Score</h2>
+
+        <p>
+            Executive Assessment
+        </p>
+
+    </div>
+
+    <div class="score-circle">
+
+        <div class="score-value">
+
+            {{ statistics.security_score }}
+
+        </div>
+
+        <div class="score-max">
+
+            /100
+
+        </div>
+
+    </div>
+
+    <table class="score-table">
+
+        <tr>
+
+            <td>Security Grade</td>
+
+            <td>{{ statistics.security_grade }}</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Overall Risk</td>
+
+            <td>{{ statistics.overall_risk }}</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Average CVSS</td>
+
+            <td>{{ statistics.average_cvss }}</td>
+
+        </tr>
+
+        <tr>
+
+            <td>Security Maturity</td>
+
+            <td>{{ statistics.security_maturity }}</td>
+
+        </tr>
+
+    </table>
+
+    <div class="progress-container">
+
+        <div
+            class="progress-fill"
+            style="width: {{ statistics.score_percentage | default(statistics.security_score) }}%;">
+
+        </div>
+
+    </div>
+
+    <div class="progress-label">
+
+        {{ statistics.score_percentage | default(statistics.security_score) }}%
+
+    </div>
+
+    <div class="executive-note">
+
+        <h3>Executive Interpretation</h3>
+
+        <p>
+
+            The assessment indicates an overall
+
+            <strong>{{ statistics.overall_risk }}</strong>
+
+            risk posture.
+
+            The calculated security score is
+
+            <strong>{{ statistics.security_score }}/100</strong>
+
+            which reflects the current cyber security
+
+            maturity of the assessed environment.
+
+            Immediate remediation should prioritize
+
+            Critical and High severity findings to
+
+            reduce enterprise exposure.
+
+        </p>
+
+    </div>
+
+</section>
