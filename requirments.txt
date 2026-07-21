@@ -1,0 +1,3 @@
+pydantic[email]
+jinja2
+reportlab
