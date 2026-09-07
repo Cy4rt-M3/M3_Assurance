@@ -8,14 +8,14 @@ class Settings(BaseSettings):
 
     # Database
     database_url: str = (
-        "postgresql+asyncpg://assurance:assurance@localhost:5432/assurance"
+        "postgresql+asyncpg://assurance:assurance@localhost:5433/assurance"
     )
     database_test_url: str = (
-        "postgresql+asyncpg://assurance:assurance@localhost:5432/assurance_test"
+        "postgresql+asyncpg://assurance:assurance@localhost:5433/assurance_test"
     )
 
     # Redis
-    redis_url: str = "redis://localhost:6379/0"
+    redis_url: str = "redis://localhost:6380/0"
 
     # Service ports
     port_control_mapping: int = 10001
