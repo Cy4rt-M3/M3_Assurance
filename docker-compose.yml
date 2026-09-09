@@ -28,5 +28,41 @@ services:
       retries: 10
       start_period: 5s
 
+  framework_registry:
+    build:
+      context: .
+      dockerfile: Dockerfile.framework_registry
+    environment:
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-assurance}:${POSTGRES_PASSWORD:-assurance}@postgres:5432/${POSTGRES_DB:-assurance}
+      DATABASE_TEST_URL: postgresql+asyncpg://${POSTGRES_USER:-assurance}:${POSTGRES_PASSWORD:-assurance}@postgres:5432/${POSTGRES_DB:-assurance}_test
+      REDIS_URL: redis://redis:6379
+      PORT_FRAMEWORK_REGISTRY: 10006
+    ports:
+      - "10006:10006"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:10006/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      FRAMEWORK_REGISTRY_URL: http://framework_registry:10006
+      DATABASE_URL: postgresql://${POSTGRES_USER:-assurance}:${POSTGRES_PASSWORD:-assurance}@postgres:5432/${POSTGRES_DB:-assurance}
+    ports:
+      - "3000:3000"
+    depends_on:
+      framework_registry:
+        condition: service_healthy
+
 volumes:
   postgres_data:

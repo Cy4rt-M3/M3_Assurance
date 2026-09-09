@@ -1,0 +1,77 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
+model controls {
+  id                      String     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  framework_id            String     @db.Uuid
+  control_id              String
+  control_name            String
+  description             String?
+  function_domain         String?
+  category                String?
+  keywords                Json?      @default("[]")
+  source                  String?
+  status                  String?
+  priority                String?
+  notes                   String?
+  owner                   String?
+  last_reviewed           DateTime?  @db.Date
+  evidence_link           String?
+  comments                String?
+  parent_control_id       String?
+  control_level           String?
+  control_objective       String?
+  control_type            String?
+  evidence_required       Boolean?
+  evidence_type           Json?      @default("[]")
+  evidence_source         Json?      @default("[]")
+  equivalent_controls     Json?      @default("[]")
+  automation_supported    Boolean?
+  automation_method       String?
+  crosswalk_count         Int?
+  mapping_confidence      String?
+  applicable_asset_types  Json?      @default("[]")
+  region_applicability    Json?      @default("[]")
+  industry_applicability  Json?      @default("[]")
+  framework_dependencies  Json?      @default("[]")
+  review_frequency        String?
+  framework_status        String?
+  deprecation_version     String?
+  superseded_by           String?
+  references_url          String?
+  control_family          String?
+  control_domain          String?
+  regulatory_intent       String?
+  implementation_guidance String?
+  validation_method       String?
+  attck_tactics           Json?      @default("[]")
+  attck_data_sources      Json?      @default("[]")
+  crosswalk_available     Boolean?
+  mapping_basis           String?
+  created_at              DateTime   @default(now()) @db.Timestamptz(6)
+  updated_at              DateTime   @default(now()) @db.Timestamptz(6)
+  frameworks              frameworks @relation(fields: [framework_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([framework_id, control_id])
+  @@index([category], map: "idx_controls_category")
+  @@index([framework_id], map: "idx_controls_framework_id")
+  @@index([priority], map: "idx_controls_priority")
+  @@index([status], map: "idx_controls_status")
+}
+
+model frameworks {
+  id         String     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  slug       String     @unique
+  name       String
+  version    String?
+  created_at DateTime   @default(now()) @db.Timestamptz(6)
+  updated_at DateTime   @default(now()) @db.Timestamptz(6)
+  controls   controls[]
+}
