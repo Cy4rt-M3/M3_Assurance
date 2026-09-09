@@ -6,7 +6,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    # Database
+    # PostgreSQL
     database_url: str = (
         "postgresql+asyncpg://assurance:assurance@localhost:5433/assurance"
     )
@@ -15,7 +15,18 @@ class Settings(BaseSettings):
     )
 
     # Redis
-    redis_url: str = "redis://localhost:6380/0"
+    redis_url: str = "redis://127.0.0.1:6380/0"
+
+    # MongoDB
+    mongodb_url: str = "mongodb://localhost:27017"
+    mongodb_database: str = "m3_controls"
+    mongodb_collection: str = "controls"
+
+    # Controls source
+    controls_file: str = (
+        "data/controls/Pod_Nova_Framework_Registry_updated.xlsx"
+    )
+    controls_sheet: str = "Master Controls"
 
     # Service ports
     port_control_mapping: int = 10001

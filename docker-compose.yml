@@ -1,4 +1,4 @@
-services:
+﻿services:
   postgres:
     image: postgres:16-alpine
     environment:
@@ -28,5 +28,38 @@ services:
       retries: 10
       start_period: 5s
 
+  mongodb:
+    image: mongo:8.0
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: ${MONGODB_DATABASE:-m3_controls}
+    ports:
+      - "${MONGODB_PORT:-27017}:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD-SHELL", "mongosh --quiet --eval \"db.adminCommand('ping').ok\""]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  controls-importer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["uv", "run", "python", "-m", "apps.controls_importer.main"]
+    environment:
+      MONGODB_URL: mongodb://mongodb:27017
+      MONGODB_DATABASE: ${MONGODB_DATABASE:-m3_controls}
+      MONGODB_COLLECTION: ${MONGODB_COLLECTION:-controls}
+      CONTROLS_FILE: /app/data/controls/Pod_Nova_Framework_Registry_updated.xlsx
+      CONTROLS_SHEET: ${CONTROLS_SHEET:-Master Controls}
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    restart: "no"
+
 volumes:
   postgres_data:
+  mongo_data:
