@@ -1,3 +1,4 @@
+
 # M3 Assurance
 
 CyArt Tech LLP — Compliance, Evidence & Resilience Scoring Engine.
@@ -246,3 +247,85 @@ git push --force-with-lease   # force push is safe here — use --force-with-lea
 | Push after a rebase | `git push --force-with-lease` |
 | See what's different from main | `git diff main...HEAD` |
 | See all commits on your branch | `git log main..HEAD --oneline` |
+---
+
+# Pod 4 — Framework Templates: Docker Integration
+
+This section documents the Dockerized setup for **Pod 4 — Framework Templates**. Pod 4 provides the **Framework Registry**: a catalog of compliance frameworks (NIST CSF, ISO 27001, ISO 27002, PCI DSS, GDPR, NIS2, HIPAA, SOC 2), their controls, and cross-framework control mappings (crosswalks), surfaced through the shared web dashboard.
+
+After `docker compose build && docker compose up`, a reviewer can open the dashboard, select any of the 8 supported frameworks, and browse its controls and cross-framework equivalent controls — with no manual setup steps beyond bringing the stack up.
+
+## Pod 4 Architecture / Services
+
+| Service | Image / Build | Purpose | Port |
+|---|---|---|---|
+| `postgres` | `postgres:16-alpine` | Relational database (currently unused by Pod 4's data path — see Known Limitations) | `5432` (host-side mapped per `docker-compose.yml`, see below) |
+| `redis` | `redis:7-alpine` | Cache/queue (reserved for future use) | `6379` |
+| `framework_registry` | Built from `Dockerfile.framework_registry` | FastAPI backend serving frameworks, controls, and crosswalk data from bundled JSON definitions | `10006` |
+| `frontend` | Built from `frontend/Dockerfile` | Next.js dashboard (integrated from the separate `Dashboard-frontend` repo), calls `framework_registry` over HTTP | `3000` |
+
+**Data flow:** `framework_registry` reads static JSON definitions (`frameworks.json`, `controls.json`, `crosswalks.json`) at request time and exposes them via REST. The `frontend` calls `framework_registry` through internal Next.js API routes (e.g. `/api/frameworks/[id]/controls`), which proxy and reshape the data for the dashboard UI.
+
+## Pod 4 Environment Variables
+
+In addition to the project-wide vars above:
+
+| Variable | Default | Used by | Notes |
+|---|---|---|---|
+| `FRAMEWORK_REGISTRY_URL` | `http://framework_registry:10006` | frontend | Internal Docker network URL — do not hardcode `localhost` |
+| `PORT_FRAMEWORK_REGISTRY` | `10006` | framework_registry | |
+
+## Accessing the Pod 4 Dashboard
+
+Open **http://localhost:3000** and navigate to **Compliance → Framework Setup**. The Framework Registry API docs (Swagger UI) are available directly at **http://localhost:10006/docs**.
+
+## How to Verify / Test Pod 4
+
+1. **Containers up:** `docker compose ps` — `postgres`, `redis`, `framework_registry`, `frontend` all `Up`/`healthy`.
+2. **API smoke test:**
+   ```bash
+   curl http://localhost:10006/health
+   curl http://localhost:10006/frameworks
+   ```
+   Should return 8 frameworks (NIST CSF 2.0, ISO 27001, ISO 27002, PCI DSS, GDPR, NIS2, HIPAA, SOC 2).
+3. **Dashboard — Frameworks tab:** confirms all 8 frameworks list with correct control counts.
+4. **Dashboard — Controls tab:** select any framework (e.g. ISO 27002) and confirm controls load with Ref/Category/Priority/Status columns populated.
+5. **Dashboard — Control Mapping tab:** select a framework (e.g. NIST CSF 2.0) and confirm equivalent-control mappings render (e.g. `GV.OC-03` → ISO 27001 A.5.31, ISO 27002 5.31).
+6. **Dashboard — Evidence tab:** loads without error, but Evidence Req./Type/Source columns currently show `—` for all controls — see Known Limitations below.
+7. **Clean-environment retest:**
+   ```bash
+   docker compose down -v
+   docker compose build
+   docker compose up -d
+   ```
+   Repeat steps 1–5 above; results should be identical.
+
+## Pod 4 Troubleshooting
+
+- **Port 5432 already in use:** if you run Postgres locally outside Docker, it commonly binds `5432`. Override the host-side port via `.env` if you see a conflict.
+- **Frontend shows stale data after a code change:** the `frontend` service has **no dev bind-mount** — it is a self-contained image build. Any change to frontend source requires:
+  ```bash
+  docker compose build frontend
+  docker compose up -d frontend
+  ```
+  A plain container restart (`docker compose restart frontend`) will **not** pick up source changes.
+- **`psql: FATAL: role "postgres" does not exist`:** you're using the wrong DB credentials — the correct user/db/password for this stack is `assurance` / `assurance` / `assurance`, not the Postgres image's default `postgres` role.
+- **`docker compose exec postgres psql ... \dt` shows no tables:** expected in the current setup — see Known Limitations below.
+- **System Health panel shows "Report Engine: Degraded":** currently unexplained; tracked as a known issue (see GitHub Issues) rather than something to silently ignore.
+
+## Pod 4 Known Limitations / Issues
+
+1. **Evidence tab shows no data (`—` in all rows).** The frontend's Evidence view expects `evidenceRequired` / `evidenceType` / `evidenceSource` fields, but the Next.js API route (`/api/frameworks/[id]/controls/route.ts`) currently hardcodes these to `null`/`[]` for every control. Investigation traced this to a **cross-pod dependency**: the actual evidence data model belongs to Pod 2's `evidence_aggregator` service, which is a separate application in this monorepo and is **not included as a service in Pod 4's `docker-compose.yml`**. Filed as a GitHub Issue rather than fixed here, since building/wiring Pod 2's service is outside Pod 4's scope.
+2. **`postgres` service is provisioned but not populated.** No Alembic migrations have been run (`alembic current` returns empty) and the `public` schema has zero tables. This is currently harmless because `framework_registry`'s actual data (frameworks, controls, crosswalks) is read from bundled JSON files, not the database — but it means the Postgres service and its persistent volume are effectively unused in Pod 4's current implementation.
+3. **No dev bind-mount for the frontend.** The `frontend` service builds a self-contained image; there's no live-reload volume for local development inside Docker. This is intentional for a reproducible, production-style build, but means any source change requires a full `docker compose build frontend` — see Troubleshooting above.
+4. **System Health panel reports "Report Engine: Degraded."** Cause not yet identified; filed as a GitHub Issue for follow-up. Does not currently block core Framework Registry functionality (Frameworks/Controls/Control Mapping all verified working).
+
+### Previously found and fixed during this integration
+- **Control Mapping tab bug (fixed):** originally showed "0 controls with mappings" for every framework, despite `crosswalks.json` containing 2,926 lines of real mapping data and the backend's `/controls/{control_id}/crosswalks` endpoint returning correct data when queried directly. Root cause: the frontend's `route.ts` hardcoded `equivalentControls: []` instead of calling the crosswalks endpoint per control. Fixed by fetching crosswalks per control (in parallel) and populating `equivalentControls` from the response. Verified working post-fix (e.g., NIST CSF 2.0 now shows 31 mapped controls).
+
+## Pod 4 GitHub Issues Filed
+
+- `#<TBD>` — Evidence tab shows no data: Pod 4's Docker Compose stack does not include Pod 2's `evidence_aggregator` service, so evidence fields are unpopulated.
+- `#<TBD>` — System Health panel shows "Report Engine: Degraded" with no clear root cause identified yet.
+
+*(Update issue numbers once created on GitHub.)*
