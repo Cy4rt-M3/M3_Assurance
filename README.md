@@ -246,3 +246,93 @@ git push --force-with-lease   # force push is safe here — use --force-with-lea
 | Push after a rebase | `git push --force-with-lease` |
 | See what's different from main | `git diff main...HEAD` |
 | See all commits on your branch | `git log main..HEAD --oneline` |
+
+
+
+---
+
+## Docker Integration — Pod 2
+
+This repository includes the Dockerized Evidence Aggregator implementation for Pod 2.
+
+### Architecture
+
+The Docker Compose stack contains:
+
+| Service | Purpose | Container Port |
+|---|---|---:|
+| `postgres` | Persistent relational database | 5432 |
+| `redis` | Redis service used by the Evidence Aggregator | 6379 |
+| `db-migrate` | Runs Alembic database migrations | — |
+| `db-seed` | Seeds initial framework/control data | — |
+| `evidence-aggregator` | Evidence Aggregator API | 10002 |
+| `dashboard` | Next.js Dashboard frontend | 3000 |
+
+The Dashboard is maintained in the separate `Dashboard-frontend` repository and is expected to be checked out beside this repository:
+
+```text
+D:\CyBreach\
+├── M3_Assurance\
+└── Dashboard-frontend\
+### Prerequisites
+
+- Docker Desktop with Docker Compose
+- M3_Assurance and Dashboard-frontend checked out as sibling directories
+
+### Build and Start
+
+From the M3_Assurance directory:
+
+docker compose build
+docker compose up -d
+docker compose ps
+
+### Endpoints
+
+- Dashboard: http://localhost:3000
+- Evidence Aggregator API: http://localhost:10002
+- Swagger / OpenAPI: http://localhost:10002/docs
+- Health: http://localhost:10002/health
+
+### Evidence Aggregator API
+
+- GET /evidence-links
+- POST /evidence-links
+- GET /evidence-summary/{engagement_id}
+
+### Dashboard Integration
+
+The Dashboard communicates with the Evidence Aggregator through the Docker Compose service network.
+
+EVIDENCE_AGGREGATOR_URL=http://evidence-aggregator:10002
+
+Dashboard proxy routes:
+
+- /api/evidence/links
+- /api/evidence/summary/{engagement_id}
+
+### Verification
+
+Run docker compose ps to verify service health.
+
+Use docker compose logs evidence-aggregator to inspect aggregator logs.
+
+Use docker compose logs dashboard to inspect dashboard logs.
+
+The Evidence Aggregator health endpoint should report successful database and Redis connectivity.
+
+### Stop the Stack
+
+docker compose down
+
+To remove the persistent PostgreSQL volume as well:
+
+docker compose down -v
+
+### Pod 2 Integration Test
+
+The Dockerized Pod 2 implementation was verified with docker compose build and docker compose up -d.
+
+Verified API workflow: GET /health, POST /evidence-links, GET /evidence-links, and GET /evidence-summary/{engagement_id}.
+
+Dashboard-to-Evidence-Aggregator communication was verified through the Dashboard Next.js API proxy.
