@@ -1,0 +1,55 @@
+"""Database operations for the Report Publisher service."""
+
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from apps.report_publisher.models import DeliveryStatus
+
+
+async def create_delivery(
+    session: AsyncSession,
+    status: DeliveryStatus,
+) -> DeliveryStatus:
+    """Persist one delivery row."""
+    await session.execute(
+        text(
+            """
+            INSERT INTO deliveries
+                (delivery_id, report_id, channel, recipient, status)
+            VALUES
+                (:delivery_id, :report_id, :channel, :recipient, :status)
+            """
+        ),
+        status.model_dump(),
+    )
+    await session.commit()
+    return status
+
+
+async def list_deliveries(
+    session: AsyncSession,
+    report_id: str,
+) -> list[DeliveryStatus]:
+    """Return the delivery rows for one report."""
+    result = await session.execute(
+        text(
+            """
+            SELECT delivery_id, report_id, channel, recipient, status
+            FROM deliveries
+            WHERE report_id = :report_id
+            ORDER BY delivered_at DESC
+            """
+        ),
+        {"report_id": report_id},
+    )
+
+    return [
+        DeliveryStatus(
+            delivery_id=row.delivery_id,
+            report_id=row.report_id,
+            channel=row.channel,
+            recipient=row.recipient,
+            status=row.status,
+        )
+        for row in result
+    ]

@@ -1,0 +1,26 @@
+> """Delivery channel registry. Cyclomatic complexity ≤4."""
+  
+> from collections.abc import Callable
+  
+> from apps.report_publisher.channels import download, email, webhook
+  
+> SUPPORTED_CHANNELS = ("email", "webhook", "download")
+  
+> _PROVIDERS: dict[str, Callable[[str], bool]] = {
+>     "download": download.notify,
+>     "email": email.notify,
+>     "webhook": webhook.notify,
+> }
+  
+  
+> def is_supported(channel: str) -> bool:
+>     """Return True when the channel has a registered provider."""
+!     return channel in _PROVIDERS
+  
+  
+> def dispatch(channel: str, recipient: str) -> bool:
+>     """Deliver the report via the named provider. Returns delivery success."""
+!     provider = _PROVIDERS.get(channel)
+!     if provider is None:
+!         return False
+!     return provider(recipient)

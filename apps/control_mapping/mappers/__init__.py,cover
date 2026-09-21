@@ -1,0 +1,21 @@
+> """Control outcome → control status lookup. Complexity ≤4 guaranteed."""
+  
+> _OUTCOME_TO_STATUS: dict[str, str] = {
+>     "Detected": "Met",
+>     "Missed": "Not Met",
+>     "No Data": "Not Met",
+> }
+  
+  
+> def outcome_to_status(outcome: str) -> str:
+>     """Map a Module 2 verdict outcome to a control status string."""
+!     return _OUTCOME_TO_STATUS.get(outcome, "Partial")
+  
+  
+> def coverage_pct(statuses: dict[str, str]) -> float:
+>     """Calculate percentage of controls with Met status."""
+!     total = len(statuses)
+!     if total == 0:
+!         return 0.0
+!     met = sum(1 for s in statuses.values() if s == "Met")
+!     return round(met / total * 100, 1)

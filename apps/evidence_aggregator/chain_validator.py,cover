@@ -1,0 +1,13 @@
+> """Chain integrity validation helpers. Cyclomatic complexity ≤4."""
+  
+  
+> def is_valid_sha256(value: str) -> bool:
+>     """Return True if value looks like a valid SHA-256 hex digest."""
+!     return len(value) == 64 and all(c in "0123456789abcdef" for c in value.lower())
+  
+  
+> def completeness_pct(linked: int, expected: int) -> float:
+>     """Return evidence completeness as a percentage (0-100)."""
+!     if expected == 0:
+!         return 0.0
+!     return round(linked / expected * 100, 1)

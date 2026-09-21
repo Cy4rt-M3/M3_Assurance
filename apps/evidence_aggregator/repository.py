@@ -1,0 +1,321 @@
+"""Database operations for the Evidence Aggregator service."""
+
+from typing import Any
+
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from apps.evidence_aggregator.models import EvidenceLink
+
+_VERDICT_COLUMNS = (
+    "verdict_id",
+    "engagement_id",
+    "technique_id",
+    "outcome",
+    "severity_id",
+    "evidence_hash",
+)
+
+
+async def create_evidence_link(
+    session: AsyncSession,
+    link: EvidenceLink,
+) -> EvidenceLink:
+    """Persist one evidence link."""
+    await session.execute(
+        text(
+            """
+            INSERT INTO evidence_links
+                (
+                    link_id,
+                    control_id,
+                    verdict_id,
+                    evidence_hash,
+                    chain_position
+                )
+            VALUES
+                (
+                    :link_id,
+                    :control_id,
+                    :verdict_id,
+                    :evidence_hash,
+                    :chain_position
+                )
+            """
+        ),
+        link.model_dump(),
+    )
+    await session.commit()
+
+    return link
+
+
+async def get_evidence_links(
+    session: AsyncSession,
+    verdict_id: str | None = None,
+    control_id: str | None = None,
+) -> list[EvidenceLink]:
+    """Return stored evidence links, optionally filtered."""
+
+    query = """
+        SELECT
+            link_id,
+            control_id,
+            verdict_id,
+            evidence_hash,
+            chain_position
+        FROM evidence_links
+    """
+
+    conditions: list[str] = []
+    params: dict[str, str] = {}
+
+    if verdict_id is not None:
+        conditions.append("verdict_id = :verdict_id")
+        params["verdict_id"] = verdict_id
+
+    if control_id is not None:
+        conditions.append("control_id = :control_id")
+        params["control_id"] = control_id
+
+    if conditions:
+        query += " WHERE " + " AND ".join(conditions)
+
+    query += " ORDER BY chain_position ASC, created_at ASC"
+
+    result = await session.execute(
+        text(query),
+        params,
+    )
+
+    return [
+        EvidenceLink(
+            link_id=row.link_id,
+            control_id=row.control_id,
+            verdict_id=row.verdict_id,
+            evidence_hash=row.evidence_hash,
+            chain_position=row.chain_position,
+        )
+        for row in result
+    ]
+
+
+async def get_evidence_link(
+    session: AsyncSession,
+    link_id: str,
+) -> EvidenceLink | None:
+    """Return one evidence link by id, or None when missing."""
+    result = await session.execute(
+        text(
+            """
+            SELECT link_id, control_id, verdict_id, evidence_hash, chain_position
+            FROM evidence_links
+            WHERE link_id = :link_id
+            """
+        ),
+        {"link_id": link_id},
+    )
+    row = result.one_or_none()
+    if row is None:
+        return None
+    return EvidenceLink(
+        link_id=row.link_id,
+        control_id=row.control_id,
+        verdict_id=row.verdict_id,
+        evidence_hash=row.evidence_hash,
+        chain_position=row.chain_position,
+    )
+
+
+async def get_evidence_summary(
+    session: AsyncSession,
+    engagement_id: str,
+) -> tuple[int, int]:
+    """Return total links and unique hashes for an engagement.
+
+    Links are scoped to verdicts belonging to the engagement so leftover
+    links from other engagements never leak into the counts.
+    """
+    result = await session.execute(
+        text(
+            """
+            SELECT
+                COUNT(*) AS total_links,
+                COUNT(DISTINCT el.evidence_hash) AS unique_hashes
+            FROM evidence_links el
+            JOIN verdicts v ON v.verdict_id = el.verdict_id
+            WHERE v.engagement_id = :engagement_id
+            """
+        ),
+        {"engagement_id": engagement_id},
+    )
+
+    row = result.one()
+
+    return int(row.total_links), int(row.unique_hashes)
+
+
+async def ensure_engagement(
+    session: AsyncSession,
+    engagement_id: str,
+    name: str,
+    organization: str,
+    frameworks: list[str],
+) -> None:
+    """Insert an engagement row when it does not already exist."""
+    await session.execute(
+        text(
+            """
+            INSERT INTO engagements (engagement_id, name, organization, frameworks)
+            VALUES (:engagement_id, :name, :organization, :frameworks)
+            ON CONFLICT (engagement_id) DO NOTHING
+            """
+        ),
+        {
+            "engagement_id": engagement_id,
+            "name": name,
+            "organization": organization,
+            "frameworks": frameworks,
+        },
+    )
+    await session.commit()
+
+
+async def get_engagement(
+    session: AsyncSession,
+    engagement_id: str,
+) -> dict[str, Any] | None:
+    """Return one engagement row, or None when missing."""
+    result = await session.execute(
+        text(
+            """
+            SELECT engagement_id, name, organization, frameworks
+            FROM engagements
+            WHERE engagement_id = :engagement_id
+            """
+        ),
+        {"engagement_id": engagement_id},
+    )
+    row = result.one_or_none()
+    if row is None:
+        return None
+    return {
+        "engagement_id": row.engagement_id,
+        "name": row.name,
+        "organization": row.organization,
+        "frameworks": row.frameworks,
+    }
+
+
+async def list_engagements(session: AsyncSession) -> list[dict[str, Any]]:
+    """Return all engagements, ordered by id."""
+    result = await session.execute(
+        text(
+            """
+            SELECT engagement_id, name, organization, frameworks
+            FROM engagements
+            ORDER BY engagement_id
+            """
+        ),
+    )
+
+    return [
+        {
+            "engagement_id": row.engagement_id,
+            "name": row.name,
+            "organization": row.organization,
+            "frameworks": row.frameworks,
+        }
+        for row in result
+    ]
+
+
+async def create_verdict(
+    session: AsyncSession,
+    verdict: dict[str, Any],
+) -> dict[str, Any]:
+    """Persist one verdict row."""
+    await session.execute(
+        text(
+            f"""
+            INSERT INTO verdicts ({", ".join(_VERDICT_COLUMNS)})
+            VALUES ({", ".join(f":{c}" for c in _VERDICT_COLUMNS)})
+            """
+        ),
+        verdict,
+    )
+    await session.commit()
+    return verdict
+
+
+async def get_verdict(
+    session: AsyncSession,
+    verdict_id: str,
+) -> dict[str, Any] | None:
+    """Return one verdict row, or None when missing."""
+    result = await session.execute(
+        text(
+            f"""
+            SELECT {", ".join(_VERDICT_COLUMNS)}
+            FROM verdicts
+            WHERE verdict_id = :verdict_id
+            """
+        ),
+        {"verdict_id": verdict_id},
+    )
+    row = result.one_or_none()
+    if row is None:
+        return None
+    return {
+        "verdict_id": row.verdict_id,
+        "engagement_id": row.engagement_id,
+        "technique_id": row.technique_id,
+        "outcome": row.outcome,
+        "severity_id": row.severity_id,
+        "evidence_hash": row.evidence_hash,
+    }
+
+
+async def list_verdicts(
+    session: AsyncSession,
+    engagement_id: str,
+) -> list[dict[str, Any]]:
+    """Return all verdicts for an engagement, oldest first."""
+    result = await session.execute(
+        text(
+            f"""
+            SELECT {", ".join(_VERDICT_COLUMNS)}
+            FROM verdicts
+            WHERE engagement_id = :engagement_id
+            ORDER BY created_at ASC
+            """
+        ),
+        {"engagement_id": engagement_id},
+    )
+
+    return [
+        {
+            "verdict_id": row.verdict_id,
+            "engagement_id": row.engagement_id,
+            "technique_id": row.technique_id,
+            "outcome": row.outcome,
+            "severity_id": row.severity_id,
+            "evidence_hash": row.evidence_hash,
+        }
+        for row in result
+    ]
+
+
+async def count_verdicts(session: AsyncSession, engagement_id: str) -> int:
+    """Count the verdicts recorded for an engagement (expected evidence events)."""
+    result = await session.execute(
+        text(
+            """
+            SELECT COUNT(*) AS total
+            FROM verdicts
+            WHERE engagement_id = :engagement_id
+            """
+        ),
+        {"engagement_id": engagement_id},
+    )
+    return int(result.scalar_one())

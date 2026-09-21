@@ -1,0 +1,26 @@
+> """Pydantic models for the Framework Registry service."""
+  
+> from pydantic import BaseModel
+  
+  
+> class Framework(BaseModel):
+>     framework_id: str
+>     name: str
+>     version: str
+>     description: str
+>     regions: list[str]
+  
+  
+> class Control(BaseModel):
+>     control_id: str
+>     framework_id: str
+>     category: str
+>     name: str
+>     description: str
+>     attack_mapping: list[str]
+  
+  
+> class CrossWalk(BaseModel):
+>     source_control_id: str
+>     target_control_id: str
+>     equivalence_level: str

@@ -18,3 +18,28 @@ class ResilienceScore(BaseModel):
     band: str = Field(
         ..., description="Critical | At Risk | Moderate | Strong | Resilient"
     )
+
+
+class BlastRadiusRequest(BaseModel):
+    asset_id: str
+    exposure: str = Field(..., pattern="^(internal|external)$")
+    criticality: str = Field(..., pattern="^(low|medium|high)$")
+    internet_facing: bool = False
+
+
+class BlastRadiusResponse(BaseModel):
+    asset_id: str
+    blast_radius_score: float = Field(..., ge=0.0, le=100.0)
+
+
+class WeightedRiskRequest(BaseModel):
+    cve_id: str = "TBD"
+    cvss: float = Field(..., ge=0.0, le=10.0)
+    epss: float = Field(..., ge=0.0, le=1.0)
+    blast_radius: float = Field(..., ge=0.0, le=100.0)
+
+
+class WeightedRiskResponse(BaseModel):
+    cve_id: str
+    final_score: float = Field(..., ge=0.0, le=100.0)
+    band: str

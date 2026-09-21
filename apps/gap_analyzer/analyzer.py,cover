@@ -1,0 +1,127 @@
+> """Gap analysis logic. Cyclomatic complexity ≤4 guaranteed."""
+  
+> from typing import Any
+  
+> from apps.framework_registry.models import Control
+> from apps.gap_analyzer.models import GapAnalysis
+> from apps.shared.attack_tactics import effective_mapping
+  
+> _UNCOVERED_NOT_MET_PRIORITY = 1
+> _UNCOVERED_PARTIAL_PRIORITY = 3
+> _EVIDENCE_GAP_PRIORITY = 3
+  
+  
+> def priority_for_verdict(verdict: dict[str, Any]) -> int:
+>     """Map a verdict severity id to a 1-5 gap priority."""
+!     severity_id = int(verdict.get("severity_id", 0))
+!     if severity_id >= 4:
+!         return 1
+!     if severity_id == 3:
+!         return 2
+!     return 3
+  
+  
+> def remediation_techniques(
+>     control: Control,
+>     tested: set[str],
+> ) -> str:
+>     """Join the effective techniques into a remediation hint."""
+!     return ", ".join(effective_mapping(control.attack_mapping, tested))
+  
+  
+> def _uncovered_gap(
+>     engagement_id: str,
+>     control_id: str,
+>     status: str,
+>     remediation: str,
+>     index: int,
+> ) -> GapAnalysis:
+!     priority = (
+!         _UNCOVERED_NOT_MET_PRIORITY
+!         if status == "Not Met"
+!         else _UNCOVERED_PARTIAL_PRIORITY
+!     )
+!     return GapAnalysis(
+!         analysis_id=f"{engagement_id}-gap-{index:04d}",
+!         engagement_id=engagement_id,
+!         control_id=control_id,
+!         gap_type="uncovered_control",
+!         priority=priority,
+!         remediation=remediation,
+!     )
+  
+  
+> def _verdict_gap(
+>     engagement_id: str,
+>     control_id: str,
+>     verdict: dict[str, Any],
+>     index: int,
+> ) -> GapAnalysis:
+!     missed = verdict["outcome"] == "Missed"
+!     return GapAnalysis(
+!         analysis_id=f"{engagement_id}-gap-{index:04d}",
+!         engagement_id=engagement_id,
+!         control_id=control_id,
+!         gap_type="missed_detection" if missed else "evidence_gap",
+!         priority=priority_for_verdict(verdict) if missed else _EVIDENCE_GAP_PRIORITY,
+!         remediation=(
+!             f"Deploy detection rule for {verdict['technique_id']}"
+!             if missed
+!             else f"Capture evidence for {verdict['technique_id']}"
+!         ),
+!     )
+  
+  
+> def analyze(
+>     engagement_id: str,
+>     statuses: dict[str, str],
+>     verdicts: list[dict[str, Any]],
+>     controls: list[Control],
+> ) -> list[GapAnalysis]:
+>     """Produce the prioritized gap list for an engagement."""
+!     gaps: list[GapAnalysis] = []
+!     seen: set[tuple[str, str]] = set()
+!     tested = {v["technique_id"] for v in verdicts}
+  
+!     for control_id, status in statuses.items():
+!         if status not in ("Not Met", "Partial"):
+!             continue
+!         control = next((c for c in controls if c.control_id == control_id), None)
+!         if control is None:
+!             continue
+!         technique_hint = remediation_techniques(control, tested)
+!         remediation = (
+!             f"Deploy detection or compensating control for {technique_hint}"
+!             if status == "Not Met"
+!             else f"Complete validation and strengthen detection for {technique_hint}"
+!         )
+!         gaps.append(
+!             _uncovered_gap(
+!                 engagement_id, control_id, status, remediation, len(gaps)
+!             )
+!         )
+!         seen.add(("uncovered_control", control_id))
+  
+!     for verdict in verdicts:
+!         if verdict["outcome"] not in ("Missed", "No Data"):
+!             continue
+!         technique_id = verdict["technique_id"]
+!         for control in controls:
+!             if technique_id not in effective_mapping(control.attack_mapping, tested):
+!                 continue
+!             gap_type = (
+!                 "missed_detection"
+!                 if verdict["outcome"] == "Missed"
+!                 else "evidence_gap"
+!             )
+!             key = (gap_type, control.control_id)
+!             if key in seen:
+!                 continue
+!             seen.add(key)
+!             gaps.append(
+!                 _verdict_gap(
+!                     engagement_id, control.control_id, verdict, len(gaps)
+!                 )
+!             )
+  
+!     return gaps

@@ -1,0 +1,135 @@
+> """End-to-end assurance pipeline orchestration."""
+  
+> from typing import Any
+  
+> from apps.control_mapping import mapper, repository as mapping_repository
+> from apps.evidence_aggregator import repository as evidence_repository
+> from apps.gap_analyzer import analyzer as gap_analyzer
+> from apps.gap_analyzer.repository import list_gaps, save_gaps
+> from apps.report_generator import generator
+> from apps.report_generator.models import Report
+> from apps.report_generator.repository import list_reports, save_report
+> from apps.resilience_scorer.compute import assemble_score
+> from apps.resilience_scorer.repository import list_scores, save_score
+> from apps.shared.db import build_engine, build_session_factory
+> from apps.shared.ocsf import verdict_data
+> from apps.shared.settings import Settings
+  
+> _settings = Settings()
+> _engine = build_engine(_settings.database_url)
+> _session_factory = build_session_factory(_engine)
+  
+  
+> async def run_pipeline(
+>     engagement_id: str,
+>     name: str,
+>     organization: str,
+>     events: list[dict[str, Any]],
+>     frameworks: list[str],
+> ) -> dict[str, Any]:
+>     """Run the complete assurance pipeline for a set of OCSF events."""
+!     async with _session_factory() as session:
+!         await evidence_repository.ensure_engagement(
+!             session, engagement_id, name, organization, frameworks
+!         )
+  
+!         existing = {
+!             v["verdict_id"]
+!             for v in await evidence_repository.list_verdicts(session, engagement_id)
+!         }
+!         for index, event in enumerate(events, start=1):
+!             verdict_id = f"{engagement_id}-vrd-{index:04d}"
+!             if verdict_id in existing:
+!                 continue
+!             await evidence_repository.create_verdict(
+!                 session, verdict_data(event, verdict_id, engagement_id)
+!             )
+  
+!         verdicts = await evidence_repository.list_verdicts(session, engagement_id)
+!         techniques = [v["technique_id"] for v in verdicts]
+!         controls = await mapping_repository.list_controls_for_techniques(
+!             session, techniques, frameworks
+!         )
+  
+!         statuses, links = mapper.build_mapping(controls, verdicts)
+!         hashes = mapping_repository.evidence_hash_map(
+!             statuses, verdicts, controls
+!         )
+!         await mapping_repository.upsert_control_statuses(
+!             session, engagement_id, statuses, hashes
+!         )
+!         existing_link_ids = {
+!             link.link_id
+!             for link in await evidence_repository.get_evidence_links(session)
+!         }
+!         for link in links:
+!             if link.link_id in existing_link_ids:
+!                 continue
+!             await evidence_repository.create_evidence_link(session, link)
+  
+!         stored_statuses = await mapping_repository.get_control_statuses(
+!             session, engagement_id
+!         )
+  
+!         total = len(verdicts)
+!         detected = sum(1 for v in verdicts if v["outcome"] == "Detected")
+!         _, unique_hashes = await evidence_repository.get_evidence_summary(
+!             session, engagement_id
+!         )
+  
+!         history = await list_scores(session, engagement_id)
+!         score = assemble_score(
+!             score_id=f"{engagement_id}-scr-{len(history) + 1:04d}",
+!             engagement_id=engagement_id,
+!             statuses=stored_statuses,
+!             total_verdicts=total,
+!             detected_verdicts=detected,
+!             linked_events=unique_hashes,
+!             expected_events=total,
+!         )
+!         await save_score(session, score)
+  
+!         control_rows = [
+!             control
+!             for control in controls
+!             if control.control_id in stored_statuses
+!         ]
+!         gaps = gap_analyzer.analyze(
+!             engagement_id, stored_statuses, verdicts, control_rows
+!         )
+!         await save_gaps(session, gaps)
+!         stored_gaps = await list_gaps(session, engagement_id)
+  
+!         report_content = generator.render_report(
+!             {
+!                 "engagement_id": engagement_id,
+!                 "name": name,
+!                 "organization": organization,
+!                 "frameworks": frameworks,
+!             },
+!             stored_statuses,
+!             control_rows,
+!             verdicts,
+!             score,
+!             stored_gaps,
+!         )
+  
+!         report_history = await list_reports(session, engagement_id)
+!         report = Report(
+!             report_id=f"{engagement_id}-rpt-{len(report_history) + 1:04d}",
+!             engagement_id=engagement_id,
+!             framework_ids=frameworks,
+!             composite_score=score.composite_score,
+!             format="html",
+!             content_hash=generator.content_hash(report_content),
+!         )
+!         await save_report(session, report)
+  
+!         return {
+!             "engagement_id": engagement_id,
+!             "verdict_ids": [v["verdict_id"] for v in verdicts],
+!             "control_statuses": stored_statuses,
+!             "score": score.model_dump(),
+!             "gaps": [gap.model_dump() for gap in stored_gaps],
+!             "report": report.model_dump(),
+!         }

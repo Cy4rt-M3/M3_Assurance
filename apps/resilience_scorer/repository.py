@@ -1,0 +1,88 @@
+"""Database operations for the Resilience Scorer service."""
+
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from apps.resilience_scorer.models import ResilienceScore
+
+
+async def save_score(
+    session: AsyncSession,
+    score: ResilienceScore,
+) -> ResilienceScore:
+    """Persist one resilience score row."""
+    await session.execute(
+        text(
+            """
+            INSERT INTO resilience_scores
+                (
+                    score_id,
+                    engagement_id,
+                    composite,
+                    coverage,
+                    detection,
+                    evidence,
+                    band
+                )
+            VALUES
+                (
+                    :score_id,
+                    :engagement_id,
+                    :composite,
+                    :coverage,
+                    :detection,
+                    :evidence,
+                    :band
+                )
+            """
+        ),
+        {
+            "score_id": score.score_id,
+            "engagement_id": score.engagement_id,
+            "composite": score.composite_score,
+            "coverage": score.coverage_score,
+            "detection": score.detection_score,
+            "evidence": score.evidence_score,
+            "band": score.band,
+        },
+    )
+    await session.commit()
+    return score
+
+
+async def list_scores(
+    session: AsyncSession,
+    engagement_id: str,
+) -> list[ResilienceScore]:
+    """Return all resilience scores for an engagement, newest first."""
+    result = await session.execute(
+        text(
+            """
+            SELECT
+                score_id,
+                engagement_id,
+                composite,
+                coverage,
+                detection,
+                evidence,
+                band
+            FROM resilience_scores
+            WHERE engagement_id = :engagement_id
+            ORDER BY calculated_at DESC
+            """
+        ),
+        {"engagement_id": engagement_id},
+    )
+
+    return [
+        ResilienceScore(
+            score_id=row.score_id,
+            engagement_id=row.engagement_id,
+            composite_score=float(row.composite),
+            coverage_score=float(row.coverage),
+            detection_score=float(row.detection),
+            evidence_score=float(row.evidence),
+            band=row.band,
+        )
+        for row in result
+    ]

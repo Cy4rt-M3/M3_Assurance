@@ -1,0 +1,21 @@
+> """Gap prioritisation helpers. Cyclomatic complexity ≤4."""
+  
+> from apps.gap_analyzer.models import GapAnalysis
+  
+> _PRIORITY_LABELS: dict[int, str] = {
+>     1: "Critical",
+>     2: "High",
+>     3: "Medium",
+>     4: "Low",
+>     5: "Informational",
+> }
+  
+  
+> def priority_label(priority: int) -> str:
+>     """Map a numeric priority (1-5) to its human-readable label."""
+!     return _PRIORITY_LABELS.get(priority, "Unknown")
+  
+  
+> def sort_by_priority(gaps: list[GapAnalysis]) -> list[GapAnalysis]:
+>     """Return gaps sorted by priority ascending (1=most critical first)."""
+!     return sorted(gaps, key=lambda g: g.priority)

@@ -1,0 +1,103 @@
+"""Run the full assurance pipeline on an OCSF events file.
+
+Usage:
+    python -m apps.pipeline path/to/ocsf_events.json \\
+        [--engagement-id ENG-2026-001] \\
+        [--name "SOC Pen Test 2026"] \\
+        [--organization "CyberLab Corp"] \\
+        [--framework nist_csf_2.0 iso_27001_2022] \\
+        [--no-seed]
+
+Prints the pipeline outcome as JSON on stdout.
+"""
+
+import argparse
+import asyncio
+import json
+import sys
+from pathlib import Path
+from typing import Any, cast
+
+from apps.pipeline.engine import run_pipeline
+
+DEFAULT_FRAMEWORKS = ["nist_csf_2_0_2", "iso_27001_2022", "pci_dss_v4_0_1"]
+
+
+def parse_args(argv: list[str]) -> argparse.Namespace:
+    """Parse the command line arguments."""
+    parser = argparse.ArgumentParser(
+        description="End-to-end M3 Assurance pipeline on OCSF events."
+    )
+    parser.add_argument(
+        "events_file",
+        type=Path,
+        help="Path to a JSON file containing a list of OCSF events.",
+    )
+    parser.add_argument("--engagement-id", default="ENG-2026-001")
+    parser.add_argument("--name", default="SOC Pen Test 2026")
+    parser.add_argument("--organization", default="CyberLab Corp")
+    parser.add_argument(
+        "--framework",
+        action="append",
+        default=None,
+        dest="frameworks",
+        help="Framework id to assess against (repeatable).",
+    )
+    parser.add_argument(
+        "--no-seed",
+        action="store_true",
+        help="Skip seeding the framework registry before running.",
+    )
+    return parser.parse_args(argv)
+
+
+def load_events(path: Path) -> list[dict[str, Any]]:
+    """Load and validate the OCSF events list from a JSON file."""
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, list) or not payload:
+        raise ValueError("events_file must contain a non-empty JSON list")
+    return cast("list[dict[str, Any]]", payload)
+
+
+async def main(argv: list[str]) -> int:
+    """Entry point for the pipeline CLI."""
+    args = parse_args(argv)
+    frameworks = args.frameworks or DEFAULT_FRAMEWORKS
+
+    try:
+        events = load_events(args.events_file)
+    except (OSError, ValueError, json.JSONDecodeError) as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        return 2
+
+    if not args.no_seed:
+        from apps.framework_registry.seed import (
+            build_session_factory_from_settings,
+            seed,
+        )
+
+        factory = build_session_factory_from_settings()
+        seeded_frameworks, seeded_controls = await seed(factory)
+        print(
+            f"[pipeline] registry seeded: {seeded_frameworks} frameworks, "
+            f"{seeded_controls} controls"
+        )
+
+    result = await run_pipeline(
+        engagement_id=args.engagement_id,
+        name=args.name,
+        organization=args.organization,
+        events=events,
+        frameworks=frameworks,
+    )
+    print(json.dumps(result, indent=2))
+    return 0
+
+
+def run() -> None:
+    """Async runner for module execution."""
+    sys.exit(asyncio.run(main(sys.argv[1:])))
+
+
+if __name__ == "__main__":
+    run()

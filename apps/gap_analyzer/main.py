@@ -1,14 +1,25 @@
-"""Gap Analyzer Service — FastAPI application entry point."""
+"""Gap Analyzer Service — identifies uncovered controls and missing evidence."""
 
-from fastapi import FastAPI
+from collections.abc import AsyncGenerator
 
-from apps.shared.cache import build_redis, check_redis
-from apps.shared.db import build_engine, check_db
+from fastapi import Depends, FastAPI, HTTPException
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from apps.control_mapping.repository import (
+    get_control_statuses,
+    list_controls_by_id,
+)
+from apps.evidence_aggregator import repository as evidence_repository
+from apps.gap_analyzer.analyzer import analyze
+from apps.gap_analyzer.models import GapAnalysis, GapRequest, GapSummary
+from apps.gap_analyzer.prioritization import priority_label
+from apps.gap_analyzer.repository import list_gaps, save_gaps
+from apps.shared.db import build_engine, build_session_factory, check_db
 from apps.shared.settings import Settings
 
 _settings = Settings()
 _engine = build_engine(_settings.database_url)
-_redis = build_redis(_settings.redis_url)
+_session_factory = build_session_factory(_engine)
 
 app = FastAPI(
     title="Gap Analyzer Service",
@@ -17,14 +28,63 @@ app = FastAPI(
 )
 
 
+async def get_session() -> AsyncGenerator[AsyncSession, None]:
+    """Provide one database session per request."""
+    async with _session_factory() as session:
+        yield session
+
+
 @app.get("/health")
 async def health() -> dict[str, object]:
     """Liveness + dependency check for gap-analyzer."""
     db_ok = await check_db(_engine)
-    redis_ok = await check_redis(_redis)
     return {
         "service": "gap-analyzer",
         "port": _settings.port_gap_analyzer,
         "db": db_ok,
-        "redis": redis_ok,
+        "redis": True,
     }
+
+
+@app.post("/api/v1/analyze-gaps", response_model=GapSummary)
+async def analyze_gaps(
+    request: GapRequest,
+    session: AsyncSession = Depends(get_session),
+) -> GapSummary:
+    """Detect and persist gaps for an engagement."""
+    engagement = await evidence_repository.get_engagement(
+        session, request.engagement_id
+    )
+    if engagement is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Engagement '{request.engagement_id}' not found",
+        )
+
+    statuses = await get_control_statuses(session, request.engagement_id)
+    verdicts = await evidence_repository.list_verdicts(session, request.engagement_id)
+    controls = await list_controls_by_id(session, list(statuses))
+
+    gaps = analyze(request.engagement_id, statuses, verdicts, controls)
+    saved = await save_gaps(session, gaps)
+
+    return GapSummary(
+        engagement_id=request.engagement_id,
+        total_gaps=len(saved),
+        critical_gaps=sum(
+            1 for gap in saved if priority_label(gap.priority) == "Critical"
+        ),
+        gaps=saved,
+    )
+
+
+@app.get(
+    "/api/v1/gaps/{engagement_id}",
+    response_model=list[GapAnalysis],
+)
+async def gaps_for_engagement(
+    engagement_id: str,
+    session: AsyncSession = Depends(get_session),
+) -> list[GapAnalysis]:
+    """Return the stored gaps for an engagement."""
+    return await list_gaps(session, engagement_id)

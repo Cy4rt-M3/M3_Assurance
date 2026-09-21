@@ -1,14 +1,23 @@
-"""Control Mapping Service — FastAPI application entry point."""
+"""Control Mapping Service — maps verdicts to regulatory control statuses."""
 
-from fastapi import FastAPI
+from collections.abc import AsyncGenerator
 
-from apps.shared.cache import build_redis, check_redis
-from apps.shared.db import build_engine, check_db
+from fastapi import Depends, FastAPI, HTTPException
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from apps.control_mapping import mapper, repository
+from apps.control_mapping.mappers import coverage_pct
+from apps.control_mapping.models import (
+    ControlMappingRequest,
+    ControlMappingResponse,
+)
+from apps.evidence_aggregator import repository as evidence_repository
+from apps.shared.db import build_engine, build_session_factory, check_db
 from apps.shared.settings import Settings
 
 _settings = Settings()
 _engine = build_engine(_settings.database_url)
-_redis = build_redis(_settings.redis_url)
+_session_factory = build_session_factory(_engine)
 
 app = FastAPI(
     title="Control Mapping Service",
@@ -17,14 +26,83 @@ app = FastAPI(
 )
 
 
+async def get_session() -> AsyncGenerator[AsyncSession, None]:
+    """Provide one database session per request."""
+    async with _session_factory() as session:
+        yield session
+
+
 @app.get("/health")
 async def health() -> dict[str, object]:
     """Liveness + dependency check for control-mapping."""
     db_ok = await check_db(_engine)
-    redis_ok = await check_redis(_redis)
     return {
         "service": "control-mapping",
         "port": _settings.port_control_mapping,
         "db": db_ok,
-        "redis": redis_ok,
+        "redis": True,
     }
+
+
+@app.post("/api/v1/map-controls", response_model=ControlMappingResponse)
+async def map_controls(
+    request: ControlMappingRequest,
+    session: AsyncSession = Depends(get_session),
+) -> ControlMappingResponse:
+    """Map one valid verdict to control statuses and evidence links."""
+    verdict = await evidence_repository.get_verdict(session, request.verdict_id)
+    if verdict is None:
+        raise HTTPException(
+            status_code=404, detail=f"Verdict '{request.verdict_id}' not found"
+        )
+
+    engagement = await evidence_repository.get_engagement(
+        session, request.engagement_id
+    )
+    if engagement is None:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Engagement '{request.engagement_id}' not found",
+        )
+
+    frameworks = mapper.request_frameworks(request, engagement["frameworks"])
+    verdicts = await evidence_repository.list_verdicts(session, request.engagement_id)
+    techniques = [v["technique_id"] for v in verdicts]
+    controls = await repository.list_controls_for_techniques(
+        session, techniques, frameworks
+    )
+
+    statuses, links = mapper.build_mapping(controls, verdicts)
+    hashes = repository.evidence_hash_map(statuses, verdicts, controls)
+
+    await repository.upsert_control_statuses(
+        session, request.engagement_id, statuses, hashes
+    )
+    for link in links:
+        await evidence_repository.create_evidence_link(session, link)
+
+    return ControlMappingResponse(
+        engagement_id=request.engagement_id,
+        control_statuses=statuses,
+        coverage_pct=coverage_pct(statuses),
+        framework_ids=frameworks,
+    )
+
+
+@app.get(
+    "/api/v1/control-statuses/{engagement_id}",
+    response_model=ControlMappingResponse,
+)
+async def control_statuses(
+    engagement_id: str,
+    session: AsyncSession = Depends(get_session),
+) -> ControlMappingResponse:
+    """Return the stored control statuses and coverage for an engagement."""
+    statuses = await repository.get_control_statuses(session, engagement_id)
+    engagement = await evidence_repository.get_engagement(session, engagement_id)
+    return ControlMappingResponse(
+        engagement_id=engagement_id,
+        control_statuses=statuses,
+        coverage_pct=coverage_pct(statuses),
+        framework_ids=engagement["frameworks"] if engagement else [],
+    )

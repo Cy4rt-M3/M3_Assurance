@@ -12,7 +12,7 @@ dependencies = [
     "redis>=5.0.0",
     "sqlalchemy[asyncio]>=2.0.0",
     "alembic>=1.13.0",
-    "weasyprint>=60.0",
+    "reportlab>=4.0.0",
     "httpx>=0.27.0",
 ]
 
@@ -46,6 +46,9 @@ show_missing = true
 exclude_lines = [
     "pragma: no cover",
     "if TYPE_CHECKING:",
+    "if __name__ == .__main__.:",
+    "asyncio.run\\(main\\(\\)\\)",
+    "^\\s*run\\(\\)\\s*$",
 ]
 
 [tool.pyright]
@@ -73,6 +76,12 @@ select = [
     "UP",  # pyupgrade
     "C90", # mccabe (cyclomatic complexity)
 ]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E501"]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 4

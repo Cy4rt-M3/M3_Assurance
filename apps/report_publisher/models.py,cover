@@ -1,0 +1,17 @@
+> """Pydantic models for the Report Publisher service."""
+  
+> from pydantic import BaseModel, Field
+  
+  
+> class DeliveryRequest(BaseModel):
+>     report_id: str
+>     channel: str = Field(..., description="email | webhook | download")
+>     recipient: str
+  
+  
+> class DeliveryStatus(BaseModel):
+>     delivery_id: str
+>     report_id: str
+>     channel: str
+>     recipient: str
+>     status: str = Field(..., description="pending | delivered | failed")

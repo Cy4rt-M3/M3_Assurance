@@ -1,0 +1,5182 @@
+[
+  {
+    "control_id": "GV.OC-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "organization context",
+    "name": "Organizational Mission",
+    "description": "The organizational mission is understood and informs cybersecurity risk management",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.OC-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "organization context",
+    "name": "Stakeholders",
+    "description": "Internal and external stakeholders are understood, and their needs and expectations regarding cybersecurity risk management are understood and considered",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.OC-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "organization context",
+    "name": "Legal Requirements",
+    "description": "Legal, regulatory, and contractual requirements regarding cybersecurity \u2014 including privacy and civil liberties obligations \u2014 are understood and managed",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.OC-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "organization context",
+    "name": "Critical Services",
+    "description": "Critical objectives, capabilities, and services that external stakeholders depend on or expect from the organization are understood and communicated",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.RM-07",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Management Strategy",
+    "name": "Strategic Opportunities",
+    "description": "Strategic opportunities (i.e., positive risks) are characterized and are included in organizational cybersecurity risk discussions",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.RR-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Roles, Responsibilities, and Authorities",
+    "name": "Organizational leadership",
+    "description": "Organizational leadership is responsible and accountable for cybersecurity risk and fosters a culture that is risk-aware, ethical, and continually improving",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.RR-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Roles, Responsibilities, and Authorities",
+    "name": "Cyber security Roles, responsibilities, and authorities",
+    "description": "Roles, responsibilities, and authorities related to cybersecurity risk management are established, communicated, understood, and enforced",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.RR-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Roles, Responsibilities, and Authorities",
+    "name": "resource Allocation",
+    "description": "Adequate resources are allocated commensurate with the cybersecurity risk strategy, roles, responsibilities, and policies",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.RR-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Roles, Responsibilities, and Authorities",
+    "name": "Human Resources Practices",
+    "description": "Cybersecurity is included in human resources practices",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.PO-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Policy",
+    "name": "Cybersecurity Risk Management Policy",
+    "description": "Policy for managing cybersecurity risks is established based on organizational context, cybersecurity strategy, and priorities and is communicated and enforced",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.PO-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Policy",
+    "name": "Cybersecurity Policy Review and Update",
+    "description": "Policy for managing cybersecurity risks is reviewed, updated, communicated, \nand enforced to reflect changes in requirements, threats, technology, and \norganizational mission",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.OV-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Oversight",
+    "name": "Cybersecurity Risk Strategy Review",
+    "description": "Cybersecurity risk management strategy outcomes are reviewed to inform and adjust strategy and direction",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.OV-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Oversight",
+    "name": "Cybersecurity Risk Strategy Adjustment",
+    "description": "The cybersecurity risk management strategy is reviewed and adjusted to ensure coverage of organizational requirements and risks",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.OV-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Oversight",
+    "name": "Cybersecurity Performance Evaluation",
+    "description": "Organizational cybersecurity risk management performance is evaluated and reviewed for adjustments needed",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Supply Chain Risk Management Program",
+    "description": "A cybersecurity supply chain risk management program, strategy, objectives, policies, and processes are established and agreed to by organizational stakeholders",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Supply Chain Roles and Responsibilities",
+    "description": "Cybersecurity roles and responsibilities for suppliers, customers, and partners are established, communicated, and coordinated internally and externally",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Supply Chain Risk Integration",
+    "description": "Cybersecurity supply chain risk management is integrated into cybersecurity and enterprise risk management, risk assessment, and improvement processes",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Supplier Criticality",
+    "description": "Suppliers are known and prioritized by criticality",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-05",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Supply Chain Security Requirements",
+    "description": "Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and other relevant third parties",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-06",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Supplier Due Diligence",
+    "description": "Planning and due diligence are performed to reduce risks before entering into formal supplier or other third-party relationships",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-07",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Supplier Risk Monitoring",
+    "description": "The risks posed by a supplier, their products and services, and other third parties are understood, recorded, prioritized, assessed, responded to, and monitored over the course of the relationship",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-08",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Incident Planning with Suppliers",
+    "description": "Relevant suppliers and other third parties are included in incident planning, response, and recovery activities",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-09",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Supply Chain Security Lifecycle",
+    "description": "Supply chain security practices are integrated into cybersecurity and enterprise risk management programs, and their performance is monitored throughout the technology product and service life cycle",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "GV.SC-10",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Cybersecurity Supply Chain Risk Management",
+    "name": "Partnership Exit Planning",
+    "description": "Cybersecurity supply chain risk management plans include provisions for activities that occur after the conclusion of a partnership or service agreement",
+    "attack_mapping": [
+      "N/A \u2013 governance/process control",
+      "not directly represented in ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.AM-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Asset Management",
+    "name": "Hardware Inventory",
+    "description": "Inventories of hardware managed by the organization are maintained",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.AM-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Asset Management",
+    "name": "Software, Services, and Systems Inventory",
+    "description": "Inventories of software, services, and systems managed by the organization are maintained",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.AM-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Asset Management",
+    "name": "Network Communication and Data Flow Mapping",
+    "description": "Representations of the organization\u2019s authorized network communication and internal and external network data flows are maintained",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "ID.AM-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Asset Management",
+    "name": "Supplier Services Inventory",
+    "description": "Inventories of services provided by suppliers are maintained",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "ID.AM-05",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Asset Management",
+    "name": "Asset Prioritization",
+    "description": "Assets are prioritized based on classification, criticality, resources, and impact on the mission",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.AM-07",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Asset Management",
+    "name": "Data and Metadata Inventory",
+    "description": "Inventories of data and corresponding metadata for designated data types are maintained",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "ID.AM-08",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Asset Management",
+    "name": "Asset Lifecycle Management",
+    "description": "Systems, hardware, software, services, and data are managed throughout their life cycles",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "ID.RA-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Vulnerability Identification",
+    "description": "Vulnerabilities in assets are identified, validated, and recorded",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "ID.RA-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Cyber Threat Intelligence",
+    "description": "Cyber threat intelligence is received from information sharing forums and sources",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.RA-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Threat Identification",
+    "description": "Internal and external threats to the organization are identified and recorded",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.RA-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Risk Impact and Likelihood",
+    "description": "Potential impacts and likelihoods of threats exploiting vulnerabilities are identified and recorded",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "ID.RA-05",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Inherent Risk Assessment",
+    "description": "Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk and inform risk response prioritization",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "ID.RA-06",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Risk Response Management",
+    "description": "Risk responses are chosen, prioritized, planned, tracked, and communicated",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.RA-07",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Change and Exception Management",
+    "description": "Changes and exceptions are managed, assessed for risk impact, recorded, and tracked",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.RA-08",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Vulnerability Disclosure Management",
+    "description": "Processes for receiving, analyzing, and responding to vulnerability disclosures are established",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "ID.RA-09",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Hardware and Software Integrity",
+    "description": "The authenticity and integrity of hardware and software are assessed prior to acquisition and use",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "ID.RA-10",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Risk Assesssment",
+    "name": "Critical Supplier Assessment",
+    "description": "Critical suppliers are assessed prior to acquisition",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "ID.IM-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Improvement",
+    "name": "Improvement from Evaluations",
+    "description": "Improvements are identified from evaluations.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.IM-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Improvement",
+    "name": "Improvement from Security Testing",
+    "description": "Improvements are identified from security tests and exercises, including those done in coordination with suppliers and relevant third parties",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "ID.IM-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Improvement",
+    "name": "Operational Process Improvement",
+    "description": "Improvements are identified from execution of operational processes, procedures, and activities",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "ID.IM-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Improvement",
+    "name": "Cybersecurity Plan Improvement",
+    "description": "Incident response plans and other cybersecurity plans that affect operations are established, communicated, maintained, and improved",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "PR.AA-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Identity Management, Authentication, and Access Control",
+    "name": "Identity and Credential Management",
+    "description": "Identities and credentials for authorized users, services, and hardware are managed by the organization",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "PR.AA-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Identity Management, Authentication, and Access Control",
+    "name": "Identity Proofing and Credential Binding",
+    "description": "Identities are proofed and bound to credentials based on the context of interactions",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "PR.AA-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Identity Management, Authentication, and Access Control",
+    "name": "User, Service, and Hardware Authentication",
+    "description": "Users, services, and hardware are authenticated",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "PR.AA-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Identity Management, Authentication, and Access Control",
+    "name": "Identity Assertion Protection",
+    "description": "Identity assertions are protected, conveyed, and verified",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "PR.AA-05",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Identity Management, Authentication, and Access Control",
+    "name": "Access Permissions and Authorization",
+    "description": "Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "PR.AA-06",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Identity Management, Authentication, and Access Control",
+    "name": "Physical Access Management",
+    "description": "Physical access to assets is managed, monitored, and enforced commensurate with risk",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "PR.AT-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Awareness and Training",
+    "name": "Cybersecurity Awareness and Training",
+    "description": "Personnel are provided with awareness and training so that they possess the knowledge and skills to perform general tasks with cybersecurity risks in mind",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "PR.AT-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Awareness and Training",
+    "name": "Specialized Role Training",
+    "description": "Individuals in specialized roles are provided with awareness and training so that they possess the knowledge and skills to perform relevant tasks with cybersecurity risks in mind",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "PR.DS-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Data Security",
+    "name": "Data-at-Rest Protection",
+    "description": "The confidentiality, integrity, and availability of data-at-rest are protected",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "PR.DS-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Data Security",
+    "name": "Dataa-in-transit protction",
+    "description": "The confidentiality, integrity, and availability of data-in-transit are protected",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "PR.DS-10",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Data Security",
+    "name": "Data-in-Use Protection",
+    "description": "The confidentiality, integrity, and availability of data-in-use are protected",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "PR.DS-11",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Data Security",
+    "name": "Data Backup and Recovery",
+    "description": "Backups of data are created, protected, maintained, and tested",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "PR.PS-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Platform Security",
+    "name": "Configuration Management",
+    "description": "Configuration management practices are established and applied",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "PR.PS-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Platform Security",
+    "name": "Software Lifecycle Management",
+    "description": "Software is maintained, replaced, and removed commensurate with risk",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "PR.PS-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Platform Security",
+    "name": "Hardware Lifecycle Management",
+    "description": "Hardware is maintained, replaced, and removed commensurate with risk",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "PR.PS-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Platform Security",
+    "name": "Log Management",
+    "description": "Log records are generated and made available for continuous monitoring",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "PR.PS-05",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Platform Security",
+    "name": "Unauthorized Software Prevention",
+    "description": "Installation and execution of unauthorized software are prevented",
+    "attack_mapping": [
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "PR.PS-06",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Platform Security",
+    "name": "Secure Software Development",
+    "description": "Secure software development practices are integrated, and their performance is monitored throughout the software development life cycle",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "PR.IR-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Technology Infrastructure Resilience (",
+    "name": "Network and Environment Protection",
+    "description": "Networks and environments are protected from unauthorized logical access and usage",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "PR.IR-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Technology Infrastructure Resilience (",
+    "name": "Environmental Protection",
+    "description": "The organization\u2019s technology assets are protected from environmental threats",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "PR.IR-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Technology Infrastructure Resilience (",
+    "name": "Resilience Mechanisms",
+    "description": "Mechanisms are implemented to achieve resilience requirements in normal and adverse situations",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "PR.IR-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Technology Infrastructure Resilience (",
+    "name": "Resource Capacity Management",
+    "description": "Adequate resource capacity to ensure availability is maintained",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "DE.CM-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Continuous Monitoring",
+    "name": "Network and Network Service Monitoring",
+    "description": "Networks and network services are monitored to find potentially adverse events",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "DE.CM-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Continuous Monitoring",
+    "name": "Physical Environment Monitoring",
+    "description": "The physical environment is monitored to find potentially adverse events",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "DE.CM-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Continuous Monitoring",
+    "name": "Personnel and Technology Monitoring",
+    "description": "Personnel activity and technology usage are monitored to find potentially adverse events",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "DE.CM-06",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Continuous Monitoring",
+    "name": "External Service Provider Monitoring",
+    "description": "External service provider activities and services are monitored to find potentially adverse events",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion",
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "DE.CM-09",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Continuous Monitoring",
+    "name": "Platform and Data Monitoring",
+    "description": "Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events",
+    "attack_mapping": [
+      "Execution",
+      "Persistence",
+      "Defense Evasion",
+      "Discovery",
+      "Exfiltration",
+      "Collection"
+    ]
+  },
+  {
+    "control_id": "DE.AE-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Adverse Event Analysis",
+    "name": "Adverse Event Analysis",
+    "description": "Potentially adverse events are analyzed to better understand associated activities",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "DE.AE-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Adverse Event Analysis",
+    "name": "Information Correlation",
+    "description": "Information is correlated from multiple sources",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "DE.AE-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Adverse Event Analysis",
+    "name": "Impact and Scope Assessment",
+    "description": "The estimated impact and scope of adverse events are understood",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "DE.AE-06",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Adverse Event Analysis",
+    "name": "Adverse Event Reporting",
+    "description": "Information on adverse events is provided to authorized staff and tools",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "DE.AE-07",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Adverse Event Analysis",
+    "name": "Threat Intelligence Integration",
+    "description": "Cyber threat intelligence and other contextual information are integrated into the analysis",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "DE.AE-08",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Adverse Event Analysis",
+    "name": "Incident Declaration",
+    "description": "Incidents are declared when adverse events meet the defined incident criteria",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.IM-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Management",
+    "name": "Incident Response Plan Execution",
+    "description": "The incident response plan is executed in coordination with relevant third parties once an incident is declared",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.IM-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Management",
+    "name": "Incident Triage and Validation",
+    "description": "Incident reports are triaged and validated",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.IM-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Management",
+    "name": "Incident Categorization and Prioritization",
+    "description": "Incidents are categorized and prioritized",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.IM-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Management",
+    "name": "Incident Escalation",
+    "description": "Incidents are escalated or elevated as needed",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.IM-05",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Management",
+    "name": "Incident Recovery Initiation",
+    "description": "The criteria for initiating incident recovery are applied",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.AN-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Analysis",
+    "name": "Root Cause Analysis",
+    "description": "Analysis is performed to establish what has taken place during an incident and the root cause of the incident",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.AN-06",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Analysis",
+    "name": "Investigation Record Integrity",
+    "description": "Actions performed during an investigation are recorded, and the records\u2019 integrity and provenance are preserved",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.AN-07",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Analysis",
+    "name": "Incident Data Collection",
+    "description": "Incident data and metadata are collected, and their integrity and provenance are preserved",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "RS.AN-08",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Analysis",
+    "name": "Incident Impact Assessment",
+    "description": "An incident's magnitude is estimated and validated.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.CO-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Response Reporting and Communication",
+    "name": "Incident Notification",
+    "description": "Internal and external stakeholders are notified of incidents",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.CO-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Response Reporting and Communication",
+    "name": "Incident Information Sharing",
+    "description": "Information is shared with designated internal and external stakeholders",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.MI-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Mitigation",
+    "name": "Incident Containment",
+    "description": "Incidents are contained",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RS.MI-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Mitigation",
+    "name": "Incident Eradication",
+    "description": "Incidents are eradicated",
+    "attack_mapping": [
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "RC.RP-01",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Recovery Plan Execution",
+    "name": "Recovery Plan Execution",
+    "description": "The recovery portion of the incident response plan is executed once initiated from the incident response process",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RC.RP-02",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Recovery Plan Execution",
+    "name": "Recovery Action Management",
+    "description": "Recovery actions are selected, scoped, prioritized, and performed",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RC.RP-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Recovery Plan Execution",
+    "name": "Backup Integrity Verification",
+    "description": "The integrity of backups and other restoration assets is verified before using them for restoration",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "RC.RP-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Recovery Plan Execution",
+    "name": "Post-Incident Operational Planning",
+    "description": "Critical mission functions and cybersecurity risk management are considered to establish post-incident operational norms",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RC.RP-05",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Recovery Plan Execution",
+    "name": "Asset Restoration Verification",
+    "description": "The integrity of restored assets is verified, systems and services are restored, and normal operating status is confirmed",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RC.RP-06",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Recovery Plan Execution",
+    "name": "Recovery Closure",
+    "description": "The end of incident recovery is declared based on criteria, and incident related documentation is completed",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RC.CO-03",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Recovery Communication",
+    "name": "Recovery Status Communication",
+    "description": "Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "RC.CO-04",
+    "framework_id": "nist_csf_2_0_2",
+    "category": "Incident Recovery Communication",
+    "name": "Public Recovery Communication",
+    "description": "Public updates on incident recovery are shared using approved methods and messaging",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.1",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Policies for Information Security",
+    "description": "",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.2",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Information Security Roles and Responsibilities",
+    "description": "Information security roles and responsibilities are defined and allocated according to organizational needs.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.3",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Segregation of Duties",
+    "description": "Conflicting duties and areas of responsibility are segregated to reduce opportunities for unauthorized or unintentional modification or misuse of assets.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.5.4",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Management Responsibilities",
+    "description": "Management requires all personnel to apply information security in accordance with the established policy, topic-specific policies, and procedures.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.5",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Contact with Authorities",
+    "description": "The organization establishes and maintains contact with relevant authorities.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.6",
+    "framework_id": "iso_27001_2022",
+    "category": "Threat and vulnerability management",
+    "name": "Contact with Special Interest Groups",
+    "description": "The organization establishes and maintains contact with special interest groups, security forums, and professional associations.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.7",
+    "framework_id": "iso_27001_2022",
+    "category": "Threat and vulnerability management",
+    "name": "Threat Intelligence",
+    "description": "Information relating to information security threats is collected and analyzed to produce threat intelligence.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.8",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Information Security in Project Management",
+    "description": "Information security is integrated into project management, regardless of the type of project.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.9",
+    "framework_id": "iso_27001_2022",
+    "category": "Asset management",
+    "name": "Inventory of Information and Other Associated Assets",
+    "description": "An inventory of information and other associated assets, including owners, is developed and maintained.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.10",
+    "framework_id": "iso_27001_2022",
+    "category": "Asset management",
+    "name": "Acceptable Use of Information and Other Associated Assets",
+    "description": "Rules for the acceptable use and procedures for handling information and other associated assets are identified, documented, and implemented.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.11",
+    "framework_id": "iso_27001_2022",
+    "category": "Asset management",
+    "name": "Return of Assets",
+    "description": "Personnel and other interested parties return all organizational assets in their possession upon change or termination of employment, contract, or agreement.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.12",
+    "framework_id": "iso_27001_2022",
+    "category": "Asset management",
+    "name": "Classification of Information",
+    "description": "Information is classified according to the information security needs of the organization based on confidentiality, integrity, availability, and relevant stakeholder requirements.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.5.13",
+    "framework_id": "iso_27001_2022",
+    "category": "Asset management",
+    "name": "Labelling of Information",
+    "description": "An appropriate set of procedures for information labelling is developed and implemented in accordance with the classification scheme adopted.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.5.14",
+    "framework_id": "iso_27001_2022",
+    "category": "Information protection",
+    "name": "Information Transfer",
+    "description": "Rules, procedures, or agreements are in place for information transfer for all types of transfer facilities within the organization and between the organization and external parties.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.5.15",
+    "framework_id": "iso_27001_2022",
+    "category": "Identity and access management",
+    "name": "Access Control",
+    "description": "Rules to control physical and logical access to information and other associated assets are established and implemented based on business and information security requirements.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.5.16",
+    "framework_id": "iso_27001_2022",
+    "category": "Identity and access management",
+    "name": "Identity Management",
+    "description": "The full life cycle of identities is managed to enable the unique identification of individuals and systems accessing the organization's information and other associated assets, and to enable appropriate assignment of access rights.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.5.17",
+    "framework_id": "iso_27001_2022",
+    "category": "Identity and access management",
+    "name": "Authentication Information",
+    "description": "Allocation and management of authentication information is controlled by a management process, including advising personnel on the appropriate handling of authentication information.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.5.18",
+    "framework_id": "iso_27001_2022",
+    "category": "Identity and access management",
+    "name": "Access Rights",
+    "description": "Access rights to information and other associated assets are provisioned, reviewed, modified, and removed in accordance with the organization's topic-specific policy on and rules for access control.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.5.19",
+    "framework_id": "iso_27001_2022",
+    "category": "Supplier relationships security",
+    "name": "Information Security in Supplier Relationships",
+    "description": "Processes and procedures are defined and implemented to manage the information security risks associated with the use of supplier's products or services.",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "A.5.20",
+    "framework_id": "iso_27001_2022",
+    "category": "Supplier relationships security",
+    "name": "Addressing Information Security within Supplier Agreements",
+    "description": "Relevant information security requirements are established and agreed with each supplier based on the type of supplier relationship.",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "A.5.21",
+    "framework_id": "iso_27001_2022",
+    "category": "Supplier relationships security",
+    "name": "Managing Information Security in the ICT Supply Chain",
+    "description": "Processes and procedures are defined and implemented to manage the information security risks associated with the ICT products and services supply chain.",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "A.5.22",
+    "framework_id": "iso_27001_2022",
+    "category": "Secure configuration",
+    "name": "Monitoring, Review and Change Management of Supplier Services",
+    "description": "The organization regularly monitors, reviews, evaluates, and manages change in supplier information security practices and service delivery.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion",
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "A.5.23",
+    "framework_id": "iso_27001_2022",
+    "category": "Supplier relationships security",
+    "name": "Information Security for Use of Cloud Services",
+    "description": "Processes for acquisition, use, management, and exit from cloud services are established in accordance with the organization's information security requirements.",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "A.5.24",
+    "framework_id": "iso_27001_2022",
+    "category": "Information security event management",
+    "name": "Information Security Incident Management Planning and Preparation",
+    "description": "The organization plans and prepares for managing information security incidents by defining, establishing, and communicating information security incident management processes, roles, and responsibilities.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.25",
+    "framework_id": "iso_27001_2022",
+    "category": "Information security event management",
+    "name": "Assessment and Decision on Information Security Events",
+    "description": "The organization assesses information security events and decides if they are to be categorized as information security incidents.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.26",
+    "framework_id": "iso_27001_2022",
+    "category": "Information security event management",
+    "name": "Response to Information Security Incidents",
+    "description": "Information security incidents are responded to in accordance with the documented procedures.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.27",
+    "framework_id": "iso_27001_2022",
+    "category": "Information security event management",
+    "name": "Learning from Information Security Incidents",
+    "description": "Knowledge gained from information security incidents is used to strengthen and improve the information security controls.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.28",
+    "framework_id": "iso_27001_2022",
+    "category": "Information security event management",
+    "name": "Collection of Evidence",
+    "description": "The organization establishes and implements procedures for the identification, collection, acquisition, and preservation of evidence related to information security events.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.29",
+    "framework_id": "iso_27001_2022",
+    "category": "Continuity",
+    "name": "Information Security During Disruption",
+    "description": "The organization plans how to maintain information security at an appropriate level during disruption.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.30",
+    "framework_id": "iso_27001_2022",
+    "category": "Continuity",
+    "name": "ICT Readiness for Business Continuity",
+    "description": "ICT readiness is planned, implemented, maintained, and tested based on business continuity objectives and ICT continuity requirements.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.31",
+    "framework_id": "iso_27001_2022",
+    "category": "Legal and compliance",
+    "name": "Legal, Statutory, Regulatory and Contractual Requirements",
+    "description": "Legal, statutory, regulatory, and contractual requirements relevant to information security and the organization's approach to meet these requirements are identified, documented, and kept up to date.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.32",
+    "framework_id": "iso_27001_2022",
+    "category": "Legal and compliance",
+    "name": "Intellectual Property Rights",
+    "description": "The organization implements appropriate procedures to protect intellectual property rights.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.33",
+    "framework_id": "iso_27001_2022",
+    "category": "Legal and compliance",
+    "name": "Protection of Records",
+    "description": "Records are protected from loss, destruction, falsification, unauthorized access, and unauthorized release.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.5.34",
+    "framework_id": "iso_27001_2022",
+    "category": "Legal and compliance",
+    "name": "Privacy and Protection of PII",
+    "description": "The organization identifies and meets the requirements regarding the preservation of privacy and protection of personally identifiable information (PII) according to applicable laws, regulations, and contractual requirements.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.5.35",
+    "framework_id": "iso_27001_2022",
+    "category": "Information security assurance",
+    "name": "Independent Review of Information Security",
+    "description": "The organization's approach to managing information security and its implementation, including people, processes, and technologies, is reviewed independently at planned intervals or when significant changes occur.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.5.36",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Compliance with Policies, Rules and Standards for Information Security",
+    "description": "Compliance with the organization's information security policy, topic-specific policies, rules, and standards is regularly reviewed.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.5.37",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Documented Operating Procedures",
+    "description": "Operating procedures for information processing facilities are documented and made available to personnel who need them.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.6.1",
+    "framework_id": "iso_27001_2022",
+    "category": "Human resource security",
+    "name": "Screening",
+    "description": "Background verification checks on all candidates to become personnel are carried out prior to joining the organization and on an ongoing basis, taking into consideration applicable laws, regulations, and ethics, and are proportional to business requirements, the classification of the information to be accessed, and the perceived risks.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.6.2",
+    "framework_id": "iso_27001_2022",
+    "category": "Legal and compliance",
+    "name": "Terms and Conditions of Employment",
+    "description": "The employment contractual agreements state the personnel's and the organization's responsibilities for information security.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.6.3",
+    "framework_id": "iso_27001_2022",
+    "category": "Human resource security",
+    "name": "Information Security Awareness, Education and Training",
+    "description": "Personnel of the organization and relevant interested parties receive appropriate information security awareness, education, and training, and regular updates of the organization's information security policy, topic-specific policies, and procedures, as relevant for their job function.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.6.4",
+    "framework_id": "iso_27001_2022",
+    "category": "Human resource security",
+    "name": "Disciplinary Process",
+    "description": "A disciplinary process is formalized and communicated to take actions against personnel and other relevant interested parties who have committed an information security policy violation.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.6.5",
+    "framework_id": "iso_27001_2022",
+    "category": "Human resource security",
+    "name": "Responsibilities After Termination or Change of Employment",
+    "description": "Information security responsibilities and duties that remain valid after termination or change of employment are defined, enforced, and communicated to relevant personnel and other interested parties.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.6.6",
+    "framework_id": "iso_27001_2022",
+    "category": "Human resource security",
+    "name": "Confidentiality or Non-Disclosure Agreements",
+    "description": "Confidentiality or non-disclosure agreements reflecting the organization's needs for the protection of information are identified, documented, regularly reviewed, and signed by personnel and other relevant interested parties.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.6.7",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Remote Working",
+    "description": "Security measures are implemented when personnel are working remotely to protect information accessed, processed, or stored outside the organization's premises.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.6.8",
+    "framework_id": "iso_27001_2022",
+    "category": "Information security event management",
+    "name": "Information Security Event Reporting",
+    "description": "The organization provides a mechanism for personnel to report observed or suspected information security events through appropriate channels in a timely manner.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.7.1",
+    "framework_id": "iso_27001_2022",
+    "category": "Physical security",
+    "name": "Physical Security Perimeters",
+    "description": "Security perimeters are defined and used to protect areas that contain information and other associated assets.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "A.7.2",
+    "framework_id": "iso_27001_2022",
+    "category": "Physical security",
+    "name": "Physical Entry",
+    "description": "Secure areas are protected by appropriate entry controls and access points.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.7.3",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Securing Offices, Rooms and Facilities",
+    "description": "Physical security for offices, rooms, and facilities is designed and implemented.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.7.4",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Physical Security Monitoring",
+    "description": "Premises are continuously monitored for unauthorized physical access.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.7.5",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Protecting Against Physical and Environmental Threats",
+    "description": "Protection against physical and environmental threats, such as natural disasters and other intentional or unintentional physical threats to infrastructure, is designed and implemented.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.7.6",
+    "framework_id": "iso_27001_2022",
+    "category": "Physical security",
+    "name": "Working in Secure Areas",
+    "description": "Security measures for working in secure areas are designed and implemented.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.7.7",
+    "framework_id": "iso_27001_2022",
+    "category": "Physical security",
+    "name": "Clear Desk and Clear Screen",
+    "description": "Clear desk rules for papers and removable storage media and clear screen rules for information processing facilities are defined and appropriately enforced.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.7.8",
+    "framework_id": "iso_27001_2022",
+    "category": "Physical security",
+    "name": "Equipment Siting and Protection",
+    "description": "Equipment is sited securely and protected.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.7.9",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Security of Assets Off-Premises",
+    "description": "Off-site assets are protected.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.7.10",
+    "framework_id": "iso_27001_2022",
+    "category": "Asset management",
+    "name": "Storage Media",
+    "description": "Storage media are managed through their life cycle of acquisition, use, transportation, and disposal in accordance with the classification scheme and handling requirements.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.7.11",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Supporting Utilities",
+    "description": "Information processing facilities are protected from power failures and other disruptions caused by failures in supporting utilities.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.7.12",
+    "framework_id": "iso_27001_2022",
+    "category": "Physical security",
+    "name": "Cabling Security",
+    "description": "Cables carrying power, data, or supporting information services are protected from interception, interference, or damage.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.7.13",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Equipment Maintenance",
+    "description": "Equipment is maintained correctly to ensure the availability, integrity, and confidentiality of information.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.7.14",
+    "framework_id": "iso_27001_2022",
+    "category": "Asset management",
+    "name": "Secure Disposal or Re-Use of Equipment",
+    "description": "Items of equipment containing storage media are verified to ensure that any sensitive data and licensed software have been removed or securely overwritten prior to disposal or re-use.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.8.1",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "User Endpoint Devices",
+    "description": "Information stored on, processed by, or accessible via user endpoint devices is protected.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.8.2",
+    "framework_id": "iso_27001_2022",
+    "category": "Identity and access management",
+    "name": "Privileged Access Rights",
+    "description": "The allocation and use of privileged access rights are restricted and managed.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.8.3",
+    "framework_id": "iso_27001_2022",
+    "category": "Identity and access management",
+    "name": "Information Access Restriction",
+    "description": "Access to information and other associated assets is restricted in accordance with the established topic-specific policy on access control.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.8.4",
+    "framework_id": "iso_27001_2022",
+    "category": "Identity and access management",
+    "name": "Access to Source Code",
+    "description": "Read and write access to source code, development tools, and software libraries is appropriately managed.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.8.5",
+    "framework_id": "iso_27001_2022",
+    "category": "Identity and access management",
+    "name": "Secure Authentication",
+    "description": "Secure authentication technologies and procedures are implemented based on information access restrictions and the topic-specific policy on access control.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.8.6",
+    "framework_id": "iso_27001_2022",
+    "category": "Secure configuration",
+    "name": "Capacity Management",
+    "description": "The use of resources is monitored and adjusted in line with current and expected capacity requirements.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.8.7",
+    "framework_id": "iso_27001_2022",
+    "category": "Human resource security",
+    "name": "Protection Against Malware",
+    "description": "Protection against malware is implemented and supported by appropriate user awareness.",
+    "attack_mapping": [
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.8.8",
+    "framework_id": "iso_27001_2022",
+    "category": "Threat and vulnerability management",
+    "name": "Management of Technical Vulnerabilities",
+    "description": "Information about technical vulnerabilities of information systems in use is obtained, the organization's exposure to such vulnerabilities is evaluated, and appropriate measures are taken.",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.8.9",
+    "framework_id": "iso_27001_2022",
+    "category": "Secure configuration",
+    "name": "Configuration Management",
+    "description": "Configurations, including security configurations, of hardware, software, services, and networks are established, documented, implemented, monitored, and reviewed.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Discovery",
+      "Defense Evasion",
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "A.8.10",
+    "framework_id": "iso_27001_2022",
+    "category": "Asset management",
+    "name": "Information Deletion",
+    "description": "Information stored in information systems, devices, or in any other storage media is deleted when no longer required.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.8.11",
+    "framework_id": "iso_27001_2022",
+    "category": "Information protection",
+    "name": "Data Masking",
+    "description": "Data masking is used in accordance with the organization's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.8.12",
+    "framework_id": "iso_27001_2022",
+    "category": "Information protection",
+    "name": "Data Leakage Prevention",
+    "description": "Data leakage prevention measures are applied to systems, networks, and any other devices that process, store, or transmit sensitive information.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.8.13",
+    "framework_id": "iso_27001_2022",
+    "category": "Continuity",
+    "name": "Information Backup",
+    "description": "Backup copies of information, software, and systems are maintained and regularly tested in accordance with the agreed topic-specific policy on backup.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.8.14",
+    "framework_id": "iso_27001_2022",
+    "category": "Continuity",
+    "name": "Redundancy of Information Processing Facilities",
+    "description": "Information processing facilities are implemented with redundancy sufficient to meet availability requirements.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.8.15",
+    "framework_id": "iso_27001_2022",
+    "category": "Legal and compliance",
+    "name": "Logging",
+    "description": "Logs that record activities, exceptions, faults, and other relevant events are produced, stored, protected, and analyzed.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.8.16",
+    "framework_id": "iso_27001_2022",
+    "category": "System and network security",
+    "name": "Monitoring Activities",
+    "description": "Networks, systems, and applications are monitored for anomalous behavior and appropriate actions are taken to evaluate potential information security incidents.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.8.17",
+    "framework_id": "iso_27001_2022",
+    "category": "Secure configuration",
+    "name": "Clock Synchronization",
+    "description": "The clocks of information processing systems used by the organization are synchronized to approved time sources.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.8.18",
+    "framework_id": "iso_27001_2022",
+    "category": "Identity and access management",
+    "name": "Use of Privileged Utility Programs",
+    "description": "The use of utility programs that can be capable of overriding system and application controls is restricted and tightly controlled.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.8.19",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Installation of Software on Operational Systems",
+    "description": "Procedures and measures are implemented to securely manage software installation on operational systems.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.8.20",
+    "framework_id": "iso_27001_2022",
+    "category": "System and network security",
+    "name": "Networks Security",
+    "description": "Networks and network devices are secured, managed, and controlled to protect information in systems and applications.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "A.8.21",
+    "framework_id": "iso_27001_2022",
+    "category": "System and network security",
+    "name": "Security of Network Services",
+    "description": "Security mechanisms, service levels, and service requirements of network services are identified, implemented, and monitored.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "A.8.22",
+    "framework_id": "iso_27001_2022",
+    "category": "System and network security",
+    "name": "Segregation of Networks",
+    "description": "Groups of information services, users, and information systems are segregated in the organization's networks.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "A.8.23",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Web Filtering",
+    "description": "Access to external websites is managed to reduce exposure to malicious content.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "A.8.24",
+    "framework_id": "iso_27001_2022",
+    "category": "Information protection",
+    "name": "Use of Cryptography",
+    "description": "Rules for the effective use of cryptography, including cryptographic key management, are defined and implemented.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.8.25",
+    "framework_id": "iso_27001_2022",
+    "category": "Application security",
+    "name": "Secure Development Life Cycle",
+    "description": "Rules for the secure development of software and systems are established and applied.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.8.26",
+    "framework_id": "iso_27001_2022",
+    "category": "Application security",
+    "name": "Application Security Requirements",
+    "description": "Information security requirements are identified, specified, and approved when developing or acquiring applications.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.8.27",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Secure System Architecture and Engineering Principles",
+    "description": "Principles for engineering secure systems are established, documented, maintained, and applied to any information system development activities.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.8.28",
+    "framework_id": "iso_27001_2022",
+    "category": "Application security",
+    "name": "Secure Coding",
+    "description": "Secure coding principles are applied to software development.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.8.29",
+    "framework_id": "iso_27001_2022",
+    "category": "Threat and vulnerability management",
+    "name": "Security Testing in Development and Acceptance",
+    "description": "Security testing processes are defined and implemented in the development life cycle.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.8.30",
+    "framework_id": "iso_27001_2022",
+    "category": "Supplier relationships security",
+    "name": "Outsourced Development",
+    "description": "The organization directs, monitors, and reviews the activities related to outsourced system development.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion",
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "A.8.31",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Separation of Development, Test and Production Environments",
+    "description": "Development, testing, and production environments are separated and secured.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.8.32",
+    "framework_id": "iso_27001_2022",
+    "category": "Secure configuration",
+    "name": "Change Management",
+    "description": "Changes to information processing facilities and information systems are subject to change management procedures.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "A.8.33",
+    "framework_id": "iso_27001_2022",
+    "category": "Governance",
+    "name": "Test Information",
+    "description": "Test information is appropriately selected, protected, and managed.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "A.8.34",
+    "framework_id": "iso_27001_2022",
+    "category": "Information security assurance",
+    "name": "Protection of Information Systems During Audit Testing",
+    "description": "Audit tests and other assurance activities involving assessment of operational systems are planned and agreed between the tester and appropriate management.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.1",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Policies for Information Security",
+    "description": "Information security policy and topic-specific policies are defined, approved by management, published, and communicated to relevant personnel and interested parties, and reviewed at planned intervals.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.2",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Information Security Roles and Responsibilities",
+    "description": "Information security roles and responsibilities are defined and allocated according to organizational needs.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.3",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Segregation of Duties",
+    "description": "Conflicting duties and areas of responsibility are segregated to reduce opportunities for unauthorized or unintentional modification or misuse of assets.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "5.4",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Management Responsibilities",
+    "description": "Management requires all personnel to apply information security in accordance with the established policy, topic-specific policies, and procedures.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.5",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Contact with Authorities",
+    "description": "The organization establishes and maintains contact with relevant authorities.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.6",
+    "framework_id": "iso_27002_2022",
+    "category": "Threat and vulnerability management",
+    "name": "Contact with Special Interest Groups",
+    "description": "The organization establishes and maintains contact with special interest groups, security forums, and professional associations.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.7",
+    "framework_id": "iso_27002_2022",
+    "category": "Threat and vulnerability management",
+    "name": "Threat Intelligence",
+    "description": "Information relating to information security threats is collected and analyzed to produce threat intelligence.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.8",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Information Security in Project Management",
+    "description": "Information security is integrated into project management, regardless of the type of project.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.9",
+    "framework_id": "iso_27002_2022",
+    "category": "Asset management",
+    "name": "Inventory of Information and Other Associated Assets",
+    "description": "An inventory of information and other associated assets, including owners, is developed and maintained.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.10",
+    "framework_id": "iso_27002_2022",
+    "category": "Asset management",
+    "name": "Acceptable Use of Information and Other Associated Assets",
+    "description": "Rules for the acceptable use and procedures for handling information and other associated assets are identified, documented, and implemented.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.11",
+    "framework_id": "iso_27002_2022",
+    "category": "Asset management",
+    "name": "Return of Assets",
+    "description": "Personnel and other interested parties return all organizational assets in their possession upon change or termination of employment, contract, or agreement.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.12",
+    "framework_id": "iso_27002_2022",
+    "category": "Asset management",
+    "name": "Classification of Information",
+    "description": "Information is classified according to the information security needs of the organization based on confidentiality, integrity, availability, and relevant stakeholder requirements.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "5.13",
+    "framework_id": "iso_27002_2022",
+    "category": "Asset management",
+    "name": "Labelling of Information",
+    "description": "An appropriate set of procedures for information labelling is developed and implemented in accordance with the classification scheme adopted.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "5.14",
+    "framework_id": "iso_27002_2022",
+    "category": "Information protection",
+    "name": "Information Transfer",
+    "description": "Rules, procedures, or agreements are in place for information transfer for all types of transfer facilities within the organization and between the organization and external parties.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "5.15",
+    "framework_id": "iso_27002_2022",
+    "category": "Identity and access management",
+    "name": "Access Control",
+    "description": "Rules to control physical and logical access to information and other associated assets are established and implemented based on business and information security requirements.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "5.16",
+    "framework_id": "iso_27002_2022",
+    "category": "Identity and access management",
+    "name": "Identity Management",
+    "description": "The full life cycle of identities is managed to enable the unique identification of individuals and systems accessing the organization's information and other associated assets, and to enable appropriate assignment of access rights.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "5.17",
+    "framework_id": "iso_27002_2022",
+    "category": "Identity and access management",
+    "name": "Authentication Information",
+    "description": "Allocation and management of authentication information is controlled by a management process, including advising personnel on the appropriate handling of authentication information.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "5.18",
+    "framework_id": "iso_27002_2022",
+    "category": "Identity and access management",
+    "name": "Access Rights",
+    "description": "Access rights to information and other associated assets are provisioned, reviewed, modified, and removed in accordance with the organization's topic-specific policy on and rules for access control.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "5.19",
+    "framework_id": "iso_27002_2022",
+    "category": "Supplier relationships security",
+    "name": "Information Security in Supplier Relationships",
+    "description": "Processes and procedures are defined and implemented to manage the information security risks associated with the use of supplier's products or services.",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "5.20",
+    "framework_id": "iso_27002_2022",
+    "category": "Supplier relationships security",
+    "name": "Addressing Information Security within Supplier Agreements",
+    "description": "Relevant information security requirements are established and agreed with each supplier based on the type of supplier relationship.",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "5.21",
+    "framework_id": "iso_27002_2022",
+    "category": "Supplier relationships security",
+    "name": "Managing Information Security in the ICT Supply Chain",
+    "description": "Processes and procedures are defined and implemented to manage the information security risks associated with the ICT products and services supply chain.",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "5.22",
+    "framework_id": "iso_27002_2022",
+    "category": "Secure configuration",
+    "name": "Monitoring, Review and Change Management of Supplier Services",
+    "description": "The organization regularly monitors, reviews, evaluates, and manages change in supplier information security practices and service delivery.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion",
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "5.23",
+    "framework_id": "iso_27002_2022",
+    "category": "Supplier relationships security",
+    "name": "Information Security for Use of Cloud Services",
+    "description": "Processes for acquisition, use, management, and exit from cloud services are established in accordance with the organization's information security requirements.",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "5.24",
+    "framework_id": "iso_27002_2022",
+    "category": "Information security event management",
+    "name": "Information Security Incident Management Planning and Preparation",
+    "description": "The organization plans and prepares for managing information security incidents by defining, establishing, and communicating information security incident management processes, roles, and responsibilities.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.25",
+    "framework_id": "iso_27002_2022",
+    "category": "Information security event management",
+    "name": "Assessment and Decision on Information Security Events",
+    "description": "The organization assesses information security events and decides if they are to be categorized as information security incidents.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.26",
+    "framework_id": "iso_27002_2022",
+    "category": "Information security event management",
+    "name": "Response to Information Security Incidents",
+    "description": "Information security incidents are responded to in accordance with the documented procedures.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.27",
+    "framework_id": "iso_27002_2022",
+    "category": "Information security event management",
+    "name": "Learning from Information Security Incidents",
+    "description": "Knowledge gained from information security incidents is used to strengthen and improve the information security controls.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.28",
+    "framework_id": "iso_27002_2022",
+    "category": "Information security event management",
+    "name": "Collection of Evidence",
+    "description": "The organization establishes and implements procedures for the identification, collection, acquisition, and preservation of evidence related to information security events.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.29",
+    "framework_id": "iso_27002_2022",
+    "category": "Continuity",
+    "name": "Information Security During Disruption",
+    "description": "The organization plans how to maintain information security at an appropriate level during disruption.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.30",
+    "framework_id": "iso_27002_2022",
+    "category": "Continuity",
+    "name": "ICT Readiness for Business Continuity",
+    "description": "ICT readiness is planned, implemented, maintained, and tested based on business continuity objectives and ICT continuity requirements.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.31",
+    "framework_id": "iso_27002_2022",
+    "category": "Legal and compliance",
+    "name": "Legal, Statutory, Regulatory and Contractual Requirements",
+    "description": "Legal, statutory, regulatory, and contractual requirements relevant to information security and the organization's approach to meet these requirements are identified, documented, and kept up to date.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.32",
+    "framework_id": "iso_27002_2022",
+    "category": "Legal and compliance",
+    "name": "Intellectual Property Rights",
+    "description": "The organization implements appropriate procedures to protect intellectual property rights.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.33",
+    "framework_id": "iso_27002_2022",
+    "category": "Legal and compliance",
+    "name": "Protection of Records",
+    "description": "Records are protected from loss, destruction, falsification, unauthorized access, and unauthorized release.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "5.34",
+    "framework_id": "iso_27002_2022",
+    "category": "Legal and compliance",
+    "name": "Privacy and Protection of PII",
+    "description": "The organization identifies and meets the requirements regarding the preservation of privacy and protection of personally identifiable information (PII) according to applicable laws, regulations, and contractual requirements.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "5.35",
+    "framework_id": "iso_27002_2022",
+    "category": "Information security assurance",
+    "name": "Independent Review of Information Security",
+    "description": "The organization's approach to managing information security and its implementation, including people, processes, and technologies, is reviewed independently at planned intervals or when significant changes occur.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "5.36",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Compliance with Policies, Rules and Standards for Information Security",
+    "description": "Compliance with the organization's information security policy, topic-specific policies, rules, and standards is regularly reviewed.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "5.37",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Documented Operating Procedures",
+    "description": "Operating procedures for information processing facilities are documented and made available to personnel who need them.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "6.1",
+    "framework_id": "iso_27002_2022",
+    "category": "Human resource security",
+    "name": "Screening",
+    "description": "Background verification checks on all candidates to become personnel are carried out prior to joining the organization and on an ongoing basis, taking into consideration applicable laws, regulations, and ethics, and are proportional to business requirements, the classification of the information to be accessed, and the perceived risks.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "6.2",
+    "framework_id": "iso_27002_2022",
+    "category": "Legal and compliance",
+    "name": "Terms and Conditions of Employment",
+    "description": "The employment contractual agreements state the personnel's and the organization's responsibilities for information security.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "6.3",
+    "framework_id": "iso_27002_2022",
+    "category": "Human resource security",
+    "name": "Information Security Awareness, Education and Training",
+    "description": "Personnel of the organization and relevant interested parties receive appropriate information security awareness, education, and training, and regular updates of the organization's information security policy, topic-specific policies, and procedures, as relevant for their job function.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "6.4",
+    "framework_id": "iso_27002_2022",
+    "category": "Human resource security",
+    "name": "Disciplinary Process",
+    "description": "A disciplinary process is formalized and communicated to take actions against personnel and other relevant interested parties who have committed an information security policy violation.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "6.5",
+    "framework_id": "iso_27002_2022",
+    "category": "Human resource security",
+    "name": "Responsibilities After Termination or Change of Employment",
+    "description": "Information security responsibilities and duties that remain valid after termination or change of employment are defined, enforced, and communicated to relevant personnel and other interested parties.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "6.6",
+    "framework_id": "iso_27002_2022",
+    "category": "Human resource security",
+    "name": "Confidentiality or Non-Disclosure Agreements",
+    "description": "Confidentiality or non-disclosure agreements reflecting the organization's needs for the protection of information are identified, documented, regularly reviewed, and signed by personnel and other relevant interested parties.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "6.7",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Remote Working",
+    "description": "Security measures are implemented when personnel are working remotely to protect information accessed, processed, or stored outside the organization's premises.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "6.8",
+    "framework_id": "iso_27002_2022",
+    "category": "Information security event management",
+    "name": "Information Security Event Reporting",
+    "description": "The organization provides a mechanism for personnel to report observed or suspected information security events through appropriate channels in a timely manner.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "7.1",
+    "framework_id": "iso_27002_2022",
+    "category": "Physical security",
+    "name": "Physical Security Perimeters",
+    "description": "Security perimeters are defined and used to protect areas that contain information and other associated assets.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "7.2",
+    "framework_id": "iso_27002_2022",
+    "category": "Physical security",
+    "name": "Physical Entry",
+    "description": "Secure areas are protected by appropriate entry controls and access points.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "7.3",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Securing Offices, Rooms and Facilities",
+    "description": "Physical security for offices, rooms, and facilities is designed and implemented.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "7.4",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Physical Security Monitoring",
+    "description": "Premises are continuously monitored for unauthorized physical access.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "7.5",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Protecting Against Physical and Environmental Threats",
+    "description": "Protection against physical and environmental threats, such as natural disasters and other intentional or unintentional physical threats to infrastructure, is designed and implemented.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "7.6",
+    "framework_id": "iso_27002_2022",
+    "category": "Physical security",
+    "name": "Working in Secure Areas",
+    "description": "Security measures for working in secure areas are designed and implemented.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "7.7",
+    "framework_id": "iso_27002_2022",
+    "category": "Physical security",
+    "name": "Clear Desk and Clear Screen",
+    "description": "Clear desk rules for papers and removable storage media and clear screen rules for information processing facilities are defined and appropriately enforced.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "7.8",
+    "framework_id": "iso_27002_2022",
+    "category": "Physical security",
+    "name": "Equipment Siting and Protection",
+    "description": "Equipment is sited securely and protected.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "7.9",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Security of Assets Off-Premises",
+    "description": "Off-site assets are protected.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "7.10",
+    "framework_id": "iso_27002_2022",
+    "category": "Asset management",
+    "name": "Storage Media",
+    "description": "Storage media are managed through their life cycle of acquisition, use, transportation, and disposal in accordance with the classification scheme and handling requirements.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "7.11",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Supporting Utilities",
+    "description": "Information processing facilities are protected from power failures and other disruptions caused by failures in supporting utilities.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "7.12",
+    "framework_id": "iso_27002_2022",
+    "category": "Physical security",
+    "name": "Cabling Security",
+    "description": "Cables carrying power, data, or supporting information services are protected from interception, interference, or damage.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "7.13",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Equipment Maintenance",
+    "description": "Equipment is maintained correctly to ensure the availability, integrity, and confidentiality of information.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "7.14",
+    "framework_id": "iso_27002_2022",
+    "category": "Asset management",
+    "name": "Secure Disposal or Re-Use of Equipment",
+    "description": "Items of equipment containing storage media are verified to ensure that any sensitive data and licensed software have been removed or securely overwritten prior to disposal or re-use.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "8.1",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "User Endpoint Devices",
+    "description": "Information stored on, processed by, or accessible via user endpoint devices is protected.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "8.2",
+    "framework_id": "iso_27002_2022",
+    "category": "Identity and access management",
+    "name": "Privileged Access Rights",
+    "description": "The allocation and use of privileged access rights are restricted and managed.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "8.3",
+    "framework_id": "iso_27002_2022",
+    "category": "Identity and access management",
+    "name": "Information Access Restriction",
+    "description": "Access to information and other associated assets is restricted in accordance with the established topic-specific policy on access control.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "8.4",
+    "framework_id": "iso_27002_2022",
+    "category": "Identity and access management",
+    "name": "Access to Source Code",
+    "description": "Read and write access to source code, development tools, and software libraries is appropriately managed.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "8.5",
+    "framework_id": "iso_27002_2022",
+    "category": "Identity and access management",
+    "name": "Secure Authentication",
+    "description": "Secure authentication technologies and procedures are implemented based on information access restrictions and the topic-specific policy on access control.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "8.6",
+    "framework_id": "iso_27002_2022",
+    "category": "Secure configuration",
+    "name": "Capacity Management",
+    "description": "The use of resources is monitored and adjusted in line with current and expected capacity requirements.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "8.7",
+    "framework_id": "iso_27002_2022",
+    "category": "Human resource security",
+    "name": "Protection Against Malware",
+    "description": "Protection against malware is implemented and supported by appropriate user awareness.",
+    "attack_mapping": [
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "8.8",
+    "framework_id": "iso_27002_2022",
+    "category": "Threat and vulnerability management",
+    "name": "Management of Technical Vulnerabilities",
+    "description": "Information about technical vulnerabilities of information systems in use is obtained, the organization's exposure to such vulnerabilities is evaluated, and appropriate measures are taken.",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "8.9",
+    "framework_id": "iso_27002_2022",
+    "category": "Secure configuration",
+    "name": "Configuration Management",
+    "description": "Configurations, including security configurations, of hardware, software, services, and networks are established, documented, implemented, monitored, and reviewed.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Discovery",
+      "Defense Evasion",
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "8.10",
+    "framework_id": "iso_27002_2022",
+    "category": "Asset management",
+    "name": "Information Deletion",
+    "description": "Information stored in information systems, devices, or in any other storage media is deleted when no longer required.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "8.11",
+    "framework_id": "iso_27002_2022",
+    "category": "Information protection",
+    "name": "Data Masking",
+    "description": "Data masking is used in accordance with the organization's topic-specific policy on access control and other related topic-specific policies, and business requirements, taking applicable legislation into consideration.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "8.12",
+    "framework_id": "iso_27002_2022",
+    "category": "Information protection",
+    "name": "Data Leakage Prevention",
+    "description": "Data leakage prevention measures are applied to systems, networks, and any other devices that process, store, or transmit sensitive information.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "8.13",
+    "framework_id": "iso_27002_2022",
+    "category": "Continuity",
+    "name": "Information Backup",
+    "description": "Backup copies of information, software, and systems are maintained and regularly tested in accordance with the agreed topic-specific policy on backup.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "8.14",
+    "framework_id": "iso_27002_2022",
+    "category": "Continuity",
+    "name": "Redundancy of Information Processing Facilities",
+    "description": "Information processing facilities are implemented with redundancy sufficient to meet availability requirements.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "8.15",
+    "framework_id": "iso_27002_2022",
+    "category": "Legal and compliance",
+    "name": "Logging",
+    "description": "Logs that record activities, exceptions, faults, and other relevant events are produced, stored, protected, and analyzed.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "8.16",
+    "framework_id": "iso_27002_2022",
+    "category": "System and network security",
+    "name": "Monitoring Activities",
+    "description": "Networks, systems, and applications are monitored for anomalous behavior and appropriate actions are taken to evaluate potential information security incidents.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "8.17",
+    "framework_id": "iso_27002_2022",
+    "category": "Secure configuration",
+    "name": "Clock Synchronization",
+    "description": "The clocks of information processing systems used by the organization are synchronized to approved time sources.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "8.18",
+    "framework_id": "iso_27002_2022",
+    "category": "Identity and access management",
+    "name": "Use of Privileged Utility Programs",
+    "description": "The use of utility programs that can be capable of overriding system and application controls is restricted and tightly controlled.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Execution",
+      "Persistence",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "8.19",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Installation of Software on Operational Systems",
+    "description": "Procedures and measures are implemented to securely manage software installation on operational systems.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "8.20",
+    "framework_id": "iso_27002_2022",
+    "category": "System and network security",
+    "name": "Networks Security",
+    "description": "Networks and network devices are secured, managed, and controlled to protect information in systems and applications.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "8.21",
+    "framework_id": "iso_27002_2022",
+    "category": "System and network security",
+    "name": "Security of Network Services",
+    "description": "Security mechanisms, service levels, and service requirements of network services are identified, implemented, and monitored.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "8.22",
+    "framework_id": "iso_27002_2022",
+    "category": "System and network security",
+    "name": "Segregation of Networks",
+    "description": "Groups of information services, users, and information systems are segregated in the organization's networks.",
+    "attack_mapping": [
+      "Command and Control",
+      "Lateral Movement",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "8.23",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Web Filtering",
+    "description": "Access to external websites is managed to reduce exposure to malicious content.",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "8.24",
+    "framework_id": "iso_27002_2022",
+    "category": "Information protection",
+    "name": "Use of Cryptography",
+    "description": "Rules for the effective use of cryptography, including cryptographic key management, are defined and implemented.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "8.25",
+    "framework_id": "iso_27002_2022",
+    "category": "Application security",
+    "name": "Secure Development Life Cycle",
+    "description": "Rules for the secure development of software and systems are established and applied.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "8.26",
+    "framework_id": "iso_27002_2022",
+    "category": "Application security",
+    "name": "Application Security Requirements",
+    "description": "Information security requirements are identified, specified, and approved when developing or acquiring applications.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "8.27",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Secure System Architecture and Engineering Principles",
+    "description": "Principles for engineering secure systems are established, documented, maintained, and applied to any information system development activities.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "8.28",
+    "framework_id": "iso_27002_2022",
+    "category": "Application security",
+    "name": "Secure Coding",
+    "description": "Secure coding principles are applied to software development.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "8.29",
+    "framework_id": "iso_27002_2022",
+    "category": "Threat and vulnerability management",
+    "name": "Security Testing in Development and Acceptance",
+    "description": "Security testing processes are defined and implemented in the development life cycle.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "8.30",
+    "framework_id": "iso_27002_2022",
+    "category": "Supplier relationships security",
+    "name": "Outsourced Development",
+    "description": "The organization directs, monitors, and reviews the activities related to outsourced system development.",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion",
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "8.31",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Separation of Development, Test and Production Environments",
+    "description": "Development, testing, and production environments are separated and secured.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "8.32",
+    "framework_id": "iso_27002_2022",
+    "category": "Secure configuration",
+    "name": "Change Management",
+    "description": "Changes to information processing facilities and information systems are subject to change management procedures.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "8.33",
+    "framework_id": "iso_27002_2022",
+    "category": "Governance",
+    "name": "Test Information",
+    "description": "Test information is appropriately selected, protected, and managed.",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "8.34",
+    "framework_id": "iso_27002_2022",
+    "category": "Information security assurance",
+    "name": "Protection of Information Systems During Audit Testing",
+    "description": "Audit tests and other assurance activities involving assessment of operational systems are planned and agreed between the tester and appropriate management.",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Network Security",
+    "name": "Install and Maintain Network Security Controls",
+    "description": "Install and Maintain Network Security Controls",
+    "attack_mapping": [
+      "Initial Access",
+      "Lateral Movement"
+    ]
+  },
+  {
+    "control_id": "1.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes and mechanisms for installing and maintaining NSCs are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "1.1.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "All security policies/procedures identified in Requirement 1 are documented, up to date, in use, and known.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "1.1.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Roles and responsibilities for Requirement 1 are documented, assigned, and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "1.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Configuration",
+    "name": "N/A",
+    "description": "Network security controls (NSCs) are configured and maintained.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Configuration",
+    "name": "N/A",
+    "description": "Configuration standards for NSC rulesets are defined, implemented, and maintained.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.2.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Change Mgmt",
+    "name": "N/A",
+    "description": "Changes to network connections/configurations are approved and managed per change control.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "1.2.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Visibility",
+    "name": "N/A",
+    "description": "An accurate network diagram is maintained showing all connections to the CDE.",
+    "attack_mapping": [
+      "Discovery"
+    ]
+  },
+  {
+    "control_id": "1.2.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Visibility",
+    "name": "N/A",
+    "description": "An accurate data-flow diagram is maintained showing all account data flows.",
+    "attack_mapping": [
+      "Discovery"
+    ]
+  },
+  {
+    "control_id": "1.2.5",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "All allowed services/protocols/ports are identified, approved, and have a business need.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.2.6",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Risk Mgmt",
+    "name": "N/A",
+    "description": "Security features are defined/implemented for insecure services/protocols/ports to mitigate risk.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "1.2.7",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Audit",
+    "name": "N/A",
+    "description": "Configurations of NSCs are reviewed at least every six months to confirm effectiveness.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "1.2.8",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Integrity",
+    "name": "N/A",
+    "description": "Configuration files for NSCs are secured from unauthorized access and kept consistent.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "1.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Network access to and from the CDE is restricted.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Inbound traffic to the CDE is restricted to necessary traffic; all else denied.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.3.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Outbound traffic from the CDE is restricted to necessary traffic; all else denied.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "1.3.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Wireless Security",
+    "name": "N/A",
+    "description": "NSCs are installed between wireless networks and CDE; default deny, only authorized allowed.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Network connections between trusted and untrusted networks are controlled.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.4.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Architecture",
+    "name": "N/A",
+    "description": "NSCs are implemented between trusted and untrusted networks.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.4.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Inbound traffic from untrusted to trusted is restricted to authorized services and stateful responses.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.4.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Network Defense",
+    "name": "N/A",
+    "description": "Anti-spoofing measures are implemented to detect/block forged source IPs.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "1.4.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Architecture",
+    "name": "N/A",
+    "description": "System components storing cardholder data are not directly accessible from untrusted networks.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.4.5",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Privacy",
+    "name": "N/A",
+    "description": "Disclosure of internal IP addresses and routing info is limited to authorized parties.",
+    "attack_mapping": [
+      "Discovery"
+    ]
+  },
+  {
+    "control_id": "1.5",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Endpoint Security",
+    "name": "N/A",
+    "description": "Risks to the CDE from computing devices connecting to both untrusted networks and CDE are mitigated.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "1.5.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Endpoint Security",
+    "name": "N/A",
+    "description": "Security controls implemented on computing devices connecting to untrusted networks and CDE (active, unalterable).",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Configuration Management",
+    "name": "Apply Secure Configurations to All System Components",
+    "description": "Apply Secure Configurations to All System Components",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes for developing and maintaining secure configuration standards are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "2.1.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "All security policies/procedures identified in Requirement 2 are documented, up to date, in use, and known.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "2.1.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Roles and responsibilities for activities in Requirement 2 are documented, assigned, and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "2.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Configuration",
+    "name": "N/A",
+    "description": "System components are configured and managed securely.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "2.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Configuration",
+    "name": "N/A",
+    "description": "Configuration standards are developed for all system components.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "2.2.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Configuration",
+    "name": "N/A",
+    "description": "System components are configured according to hardening standards (e.g., removing unnecessary services).",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "2.2.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Patch Mgmt",
+    "name": "N/A",
+    "description": "All system components are protected from known vulnerabilities by installing security patches.",
+    "attack_mapping": [
+      "Exploit Public-Facing"
+    ]
+  },
+  {
+    "control_id": "2.2.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Maintenance",
+    "name": "N/A",
+    "description": "Configuration standards are updated as needed to address new security threats.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "2.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "All vendor-supplied defaults are secured.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "2.3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "All vendor-supplied defaults are changed before installation on the network.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "2.3.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "All unnecessary default accounts are removed or disabled before installation on the network.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "Protect Stored Account Data",
+    "description": "Protect Stored Account Data",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes for protecting stored account data are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "3.1.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Security policies and operational procedures for Requirement 3 are documented, up to date, in use, and known.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "3.1.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Roles and responsibilities for activities in Requirement 3 are documented, assigned, and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "3.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Mgmt",
+    "name": "N/A",
+    "description": "Storage of cardholder data is kept to a minimum.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "3.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Mgmt",
+    "name": "N/A",
+    "description": "Data retention and disposal policies are defined.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "3.2.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Mgmt",
+    "name": "N/A",
+    "description": "Sensitive authentication data (SAD) is not stored after authorization.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "3.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "N/A",
+    "description": "SAD that is stored prior to authorization is protected.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "3.3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "N/A",
+    "description": "SAD that is stored is encrypted or otherwise protected.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "3.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "N/A",
+    "description": "Primary Account Number (PAN) is rendered unreadable wherever it is stored.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "3.4.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "N/A",
+    "description": "PAN is rendered unreadable everywhere it is stored (e.g., encryption, truncation).",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "3.5",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Key Mgmt",
+    "name": "N/A",
+    "description": "Keys used to protect stored account data are protected against disclosure and misuse.",
+    "attack_mapping": [
+      "Unauthorized Access"
+    ]
+  },
+  {
+    "control_id": "4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "Protect Cardholder Data with Strong Cryptography During Transmission Over Open, Public Networks",
+    "description": "Protect Cardholder Data with Strong Cryptography During Transmission Over Open, Public Networks",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "4.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes and mechanisms for protecting stored account data are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "4.1.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Security policies and operational procedures for Requirement 4 are documented, up to date, in use, and known.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "4.1.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Roles and responsibilities for activities in Requirement 4 are documented, assigned, and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "4.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "N/A",
+    "description": "Cardholder data is protected with strong cryptography during transmission over open, public networks.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "4.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "N/A",
+    "description": "Strong cryptography is implemented during transmission over open, public networks.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "4.2.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "N/A",
+    "description": "PAN is rendered unreadable during transmission via strong cryptography.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "4.2.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Key Mgmt",
+    "name": "N/A",
+    "description": "Procedures are in place to ensure trusted keys/certificates are used.",
+    "attack_mapping": [
+      "Man-in-the-Middle"
+    ]
+  },
+  {
+    "control_id": "5",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Malware Defense",
+    "name": "Protect All Systems and Networks from Malicious Software",
+    "description": "Protect All Systems and Networks from Malicious Software",
+    "attack_mapping": [
+      "Initial Access",
+      "Persistence"
+    ]
+  },
+  {
+    "control_id": "5.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes and mechanisms for protecting systems from malware are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "5.1.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Security policies and operational procedures for Requirement 5 are documented, up to date, in use, and known.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "5.1.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Roles and responsibilities for activities in Requirement 5 are documented, assigned, and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "5.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Threat Intel",
+    "name": "N/A",
+    "description": "Malware threats to the CDE are identified and addressed on an ongoing basis.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "5.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Threat Intel",
+    "name": "N/A",
+    "description": "Evaluation of evolving malware threats.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "5.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Malware Defense",
+    "name": "N/A",
+    "description": "Anti-malware mechanisms are implemented and maintained.",
+    "attack_mapping": [
+      "Persistence"
+    ]
+  },
+  {
+    "control_id": "5.3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Malware Defense",
+    "name": "N/A",
+    "description": "Anti-malware solutions are capable of blocking, detecting, and alerting.",
+    "attack_mapping": [
+      "Persistence"
+    ]
+  },
+  {
+    "control_id": "5.3.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Malware Defense",
+    "name": "N/A",
+    "description": "Anti-malware solutions are kept active and up to date.",
+    "attack_mapping": [
+      "Persistence"
+    ]
+  },
+  {
+    "control_id": "5.3.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Malware Defense",
+    "name": "N/A",
+    "description": "Anti-malware solutions cannot be disabled or altered by users.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "6",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "App Security",
+    "name": "Develop and Maintain Secure Systems and Software",
+    "description": "Develop and Maintain Secure Systems and Software",
+    "attack_mapping": [
+      "Exploit Public-Facing"
+    ]
+  },
+  {
+    "control_id": "6.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes and mechanisms for developing and maintaining secure systems/software are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "6.1.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Security policies and operational procedures for Requirement 6 are documented, up to date, in use, and known.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "6.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "App Security",
+    "name": "N/A",
+    "description": "Custom software is developed securely.",
+    "attack_mapping": [
+      "Exploit Public-Facing"
+    ]
+  },
+  {
+    "control_id": "6.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "App Security",
+    "name": "N/A",
+    "description": "Software is developed based on industry standards/best practices (e.g., OWASP).",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "6.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Vuln Mgmt",
+    "name": "N/A",
+    "description": "Security vulnerabilities are identified and addressed.",
+    "attack_mapping": [
+      "Exploit Public-Facing"
+    ]
+  },
+  {
+    "control_id": "6.3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Vuln Mgmt",
+    "name": "N/A",
+    "description": "Security patches are identified and managed based on risk ranking.",
+    "attack_mapping": [
+      "Exploit Public-Facing"
+    ]
+  },
+  {
+    "control_id": "6.3.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Vuln Mgmt",
+    "name": "N/A",
+    "description": "Security patches are installed within an appropriate timeframe (e.g., 1 month for critical).",
+    "attack_mapping": [
+      "Exploit Public-Facing"
+    ]
+  },
+  {
+    "control_id": "6.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "App Security",
+    "name": "N/A",
+    "description": "Public-facing web applications are protected.",
+    "attack_mapping": [
+      "Exploit Public-Facing"
+    ]
+  },
+  {
+    "control_id": "6.4.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "App Security",
+    "name": "N/A",
+    "description": "Automated technical solution (WAF) is in place for public-facing web applications.",
+    "attack_mapping": [
+      "Exploit Public-Facing"
+    ]
+  },
+  {
+    "control_id": "7",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "Restrict Access to System Components and Cardholder Data by Business Need to Know",
+    "description": "Restrict Access to System Components and Cardholder Data by Business Need to Know",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "7.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes and mechanisms for restricting access are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "7.1.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Security policies and operational procedures for Requirement 7 are documented, up to date, in use, and known.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "7.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Access to system components and cardholder data is restricted to the least privileges necessary.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "7.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Access is granted based on individual personnel's job classification and function.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "7.2.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Access is granted based on the principle of least privilege.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "7.2.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Default \"deny-all\" setting is used for access control.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "7.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Access to cardholder data is restricted to those with a business need.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "7.3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Access to cardholder data is approved based on documented business need.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "8",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Identity Mgmt",
+    "name": "Identify Users and Authenticate Access to System Components",
+    "description": "Identify Users and Authenticate Access to System Components",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "8.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes and mechanisms for identifying and authenticating users are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "8.1.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Security policies and operational procedures for Requirement 8 are documented, up to date, in use, and known.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "8.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Identity Mgmt",
+    "name": "N/A",
+    "description": "Unique identification and authentication is managed for all users.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "8.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Identity Mgmt",
+    "name": "N/A",
+    "description": "Unique ID is assigned to each person with computer access.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "8.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Authentication",
+    "name": "N/A",
+    "description": "Access to system components is secured with MFA.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "8.3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Authentication",
+    "name": "N/A",
+    "description": "MFA is implemented for all access into the CDE.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "8.3.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Authentication",
+    "name": "N/A",
+    "description": "MFA is implemented for all remote access into the CDE.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "8.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Authentication",
+    "name": "N/A",
+    "description": "Passwords/passphrases are managed securely.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "8.4.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Authentication",
+    "name": "N/A",
+    "description": "Passwords/passphrases meet complexity and length requirements.",
+    "attack_mapping": [
+      "Valid Accounts"
+    ]
+  },
+  {
+    "control_id": "9",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Physical Security",
+    "name": "Restrict Physical Access to Cardholder Data",
+    "description": "Restrict Physical Access to Cardholder Data",
+    "attack_mapping": [
+      "Physical Access"
+    ]
+  },
+  {
+    "control_id": "9.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes and mechanisms for restricting physical access are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "9.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Physical access controls are implemented to restrict access to the CDE.",
+    "attack_mapping": [
+      "Physical Access"
+    ]
+  },
+  {
+    "control_id": "9.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Facility entry points are monitored and controlled.",
+    "attack_mapping": [
+      "Physical Access"
+    ]
+  },
+  {
+    "control_id": "9.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Physical access for personnel is managed.",
+    "attack_mapping": [
+      "Physical Access"
+    ]
+  },
+  {
+    "control_id": "9.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Physical access for visitors is managed.",
+    "attack_mapping": [
+      "Physical Access"
+    ]
+  },
+  {
+    "control_id": "9.4.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Access Control",
+    "name": "N/A",
+    "description": "Visitors are identified, authorized, and escorted.",
+    "attack_mapping": [
+      "Physical Access"
+    ]
+  },
+  {
+    "control_id": "9.5",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "N/A",
+    "description": "Physical media containing CHD is protected.",
+    "attack_mapping": [
+      "Physical Access"
+    ]
+  },
+  {
+    "control_id": "9.5.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Data Protection",
+    "name": "N/A",
+    "description": "Media is classified and handled securely.",
+    "attack_mapping": [
+      "Physical Access"
+    ]
+  },
+  {
+    "control_id": "10",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Logging/Monitoring",
+    "name": "Log and Monitor Access to System Components and Cardholder Data",
+    "description": "Log and Monitor Access to System Components and Cardholder Data",
+    "attack_mapping": [
+      "Collection"
+    ]
+  },
+  {
+    "control_id": "10.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes and mechanisms for logging/monitoring are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "10.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Logging/Monitoring",
+    "name": "N/A",
+    "description": "Audit logs are implemented to reconstruct events.",
+    "attack_mapping": [
+      "Collection"
+    ]
+  },
+  {
+    "control_id": "10.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Logging/Monitoring",
+    "name": "N/A",
+    "description": "All individual access to cardholder data is logged.",
+    "attack_mapping": [
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "10.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Integrity",
+    "name": "N/A",
+    "description": "Audit logs are secured so they cannot be altered.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "10.3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Integrity",
+    "name": "N/A",
+    "description": "Audit log files are protected from unauthorized modifications.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "10.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Monitoring",
+    "name": "N/A",
+    "description": "Audit logs are reviewed.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "10.4.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Monitoring",
+    "name": "N/A",
+    "description": "Logs are reviewed for all system components.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "10.5",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Logging/Monitoring",
+    "name": "N/A",
+    "description": "Audit log history is retained.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "11",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Testing/Vulnerability",
+    "name": "Test Security of Systems and Networks",
+    "description": "Test Security of Systems and Networks",
+    "attack_mapping": [
+      "Discovery"
+    ]
+  },
+  {
+    "control_id": "11.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Processes for testing security systems/processes are defined and understood.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "11.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Testing",
+    "name": "N/A",
+    "description": "Internal and external network vulnerability scans are performed.",
+    "attack_mapping": [
+      "Discovery"
+    ]
+  },
+  {
+    "control_id": "11.2.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Testing",
+    "name": "N/A",
+    "description": "Internal vulnerability scans are performed at least quarterly.",
+    "attack_mapping": [
+      "Discovery"
+    ]
+  },
+  {
+    "control_id": "11.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Testing",
+    "name": "N/A",
+    "description": "External and internal penetration testing is performed.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "11.3.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Testing",
+    "name": "N/A",
+    "description": "Internal penetration testing is performed at least annually.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "11.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Monitoring",
+    "name": "N/A",
+    "description": "Use of intrusion-detection and/or intrusion-prevention techniques.",
+    "attack_mapping": [
+      "Network Traffic"
+    ]
+  },
+  {
+    "control_id": "11.5",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Integrity",
+    "name": "N/A",
+    "description": "Change-detection mechanisms (FIM) are deployed.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "12",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "Support Information Security with Organizational Policies and Programs",
+    "description": "Support Information Security with Organizational Policies and Programs",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "12.1",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "The security policy is documented, published, and maintained.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "12.2",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Risk Mgmt",
+    "name": "N/A",
+    "description": "Risk assessment process is performed.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "12.3",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "Security program, including scope, is developed and maintained.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "12.4",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Governance",
+    "name": "N/A",
+    "description": "PCI DSS compliance is managed.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "12.5",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Vendor Mgmt",
+    "name": "N/A",
+    "description": "Third-party service providers (TPSPs) are managed.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "12.6",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Awareness",
+    "name": "N/A",
+    "description": "Security awareness training program is implemented.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "12.7",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "HR Security",
+    "name": "N/A",
+    "description": "Screening is performed on personnel.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "12.8",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Incident Mgmt",
+    "name": "N/A",
+    "description": "Incident response plan is maintained.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "12.9",
+    "framework_id": "pci_dss_v4_0_1",
+    "category": "Vendor Mgmt",
+    "name": "N/A",
+    "description": "Responsibility for PCI DSS compliance is acknowledged by TPSPs.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "Article 5",
+    "framework_id": "gdpr_regulation_eu_2016_679",
+    "category": "Data Protection",
+    "name": "Principles Relating to Processing of Personal Data",
+    "description": "Personal data shall be processed lawfully, fairly, transparently, accurately, securely, and only for specified purposes.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "Article 24",
+    "framework_id": "gdpr_regulation_eu_2016_679",
+    "category": "Governance",
+    "name": "Responsibility of the Controller",
+    "description": "Controllers shall implement appropriate technical and organisational measures to ensure GDPR compliance.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "Article 25",
+    "framework_id": "gdpr_regulation_eu_2016_679",
+    "category": "Privacy Engineering",
+    "name": "Data Protection by Design and by Default",
+    "description": "Data protection measures shall be integrated into systems and processes by design and by default.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "Article 30",
+    "framework_id": "gdpr_regulation_eu_2016_679",
+    "category": "Records Management",
+    "name": "Records of Processing Activities",
+    "description": "Controllers and processors shall maintain records of processing activities under their responsibility.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "Article 32",
+    "framework_id": "gdpr_regulation_eu_2016_679",
+    "category": "Information Security",
+    "name": "Security of Processing",
+    "description": "Controllers and processors shall implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk.",
+    "attack_mapping": [
+      "Credential Access",
+      "Collection",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "Article 33",
+    "framework_id": "gdpr_regulation_eu_2016_679",
+    "category": "Incident Management",
+    "name": "Notification of a Personal Data Breach to the Supervisory Authority",
+    "description": "In the event of a personal data breach, the controller shall notify the competent supervisory authority without undue delay and, where feasible, within 72 hours after becoming aware of it, unless the breach is unlikely to result in a risk to the rights and freedoms of natural persons.",
+    "attack_mapping": [
+      "Impact",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "Article 34",
+    "framework_id": "gdpr_regulation_eu_2016_679",
+    "category": "Incident Management",
+    "name": "Communication of a Personal Data Breach to the Data Subject",
+    "description": "When a personal data breach is likely to result in a high risk to the rights and freedoms of natural persons, the controller shall communicate the breach to the affected data subjects without undue delay.",
+    "attack_mapping": [
+      "Impact",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "Article 20",
+    "framework_id": "nis2_directive_eu_2022_2555",
+    "category": "Governance",
+    "name": "Governance",
+    "description": "Management bodies shall approve, oversee and be accountable for cybersecurity risk-management measures.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "Article 21",
+    "framework_id": "nis2_directive_eu_2022_2555",
+    "category": "Risk Management",
+    "name": "Cybersecurity Risk-Management Measures",
+    "description": "Implement appropriate and proportionate technical, operational, and organisational measures to manage cybersecurity risks and minimise the impact of incidents.",
+    "attack_mapping": [
+      "Initial Access",
+      "Persistence",
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "Article 23",
+    "framework_id": "nis2_directive_eu_2022_2555",
+    "category": "Incident Reporting",
+    "name": "Reporting Obligations",
+    "description": "Essential and important entities shall notify significant cybersecurity incidents within the required timelines.",
+    "attack_mapping": [
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "Article 24",
+    "framework_id": "nis2_directive_eu_2022_2555",
+    "category": "Compliance",
+    "name": "Use of European Cybersecurity Certification Schemes",
+    "description": "Member States shall encourage the use of European cybersecurity certification schemes where appropriate.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "Article 25",
+    "framework_id": "nis2_directive_eu_2022_2555",
+    "category": "Standardisation",
+    "name": "Standardisation",
+    "description": "Member States shall encourage the use of European and international cybersecurity standards to improve security and interoperability.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "Article 29",
+    "framework_id": "nis2_directive_eu_2022_2555",
+    "category": "Compliance Monitoring",
+    "name": "Supervisory and Enforcement Measures",
+    "description": "Competent authorities shall supervise compliance and enforce the requirements of the Directive.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "Article 32",
+    "framework_id": "nis2_directive_eu_2022_2555",
+    "category": "Enforcement",
+    "name": "Administrative Fines",
+    "description": "Member States shall establish effective, proportionate and dissuasive administrative fines for non-compliance with the Directive.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "164.308(a)(1)(ii)(A)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Risk Management",
+    "name": "Risk Analysis",
+    "description": "Conduct a risk analysis to identify risks to ePHI.",
+    "attack_mapping": [
+      "Initial Access",
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(1)(ii)(B)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Risk Management",
+    "name": "Risk Management",
+    "description": "Implement measures to reduce risks to ePHI.",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(1)(ii)(C)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Policy Enforcement",
+    "name": "Sanction Policy",
+    "description": "Apply sanctions for workforce members who violate security policies.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "164.308(a)(1)(ii)(D)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Monitoring",
+    "name": "Information System Activity Review",
+    "description": "Regularly review system activity and audit logs.",
+    "attack_mapping": [
+      "Discovery",
+      "Collection"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(2)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Governance",
+    "name": "Assigned Security Responsibility",
+    "description": "Assign a security official responsible for HIPAA compliance.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "164.308(a)(3)(ii)(A)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Workforce Security",
+    "name": "Authorization and/or Supervision",
+    "description": "Ensure workforce members have appropriate authorization and supervision when accessing ePHI.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(3)(ii)(B)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Workforce Security",
+    "name": "Workforce Clearance Procedure",
+    "description": "Verify workforce members are authorized before granting access to ePHI.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(3)(ii)(C)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Workforce Security",
+    "name": "Termination Procedures",
+    "description": "Remove access to ePHI when workforce members leave or change roles.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(4)(ii)(A)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Access Management",
+    "name": "Isolating Health Care Clearinghouse Functions",
+    "description": "Isolate healthcare clearinghouse functions from other organizational activities.",
+    "attack_mapping": [
+      "Lateral Movement"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(4)(ii)(B)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Access Control",
+    "name": "Access Authorization",
+    "description": "Authorize workforce access to ePHI based on job responsibilities.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(4)(ii)(C)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Access Control",
+    "name": "Access Establishment and Modification",
+    "description": "Establish, modify, and remove access to ePHI as job roles change.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(5)(ii)(A)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Security Awareness",
+    "name": "Security Reminders",
+    "description": "Provide regular security reminders to workforce members.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "164.308(a)(5)(ii)(B)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Malware Protection",
+    "name": "Protection from Malicious Software",
+    "description": "Train users to detect and prevent malware threats.",
+    "attack_mapping": [
+      "Execution",
+      "Persistence"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(5)(ii)(C)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Monitoring",
+    "name": "Log-in Monitoring",
+    "description": "Monitor and review login attempts for unauthorized access.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(5)(ii)(D)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Identity Management",
+    "name": "Password Management",
+    "description": "Establish procedures for creating and managing secure passwords.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(6)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Incident Response",
+    "name": "Security Incident Procedures",
+    "description": "Identify, respond to, and document security incidents.",
+    "attack_mapping": [
+      "Impact",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(7)(ii)(A)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Business Continuity",
+    "name": "Data Backup Plan",
+    "description": "Create and maintain backups of ePHI.",
+    "attack_mapping": [
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(7)(ii)(B)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Disaster Recovery",
+    "name": "Disaster Recovery Plan",
+    "description": "Restore systems and ePHI after a disaster.",
+    "attack_mapping": [
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(7)(ii)(C)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Business Continuity",
+    "name": "Emergency Mode Operation Plan",
+    "description": "Maintain critical operations during emergencies.",
+    "attack_mapping": [
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(7)(ii)(D)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Business Continuity",
+    "name": "Testing and Revision Procedures",
+    "description": "Test and update contingency plans regularly.",
+    "attack_mapping": [
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(7)(ii)(E)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Risk Management",
+    "name": "Applications and Data Criticality Analysis",
+    "description": "Identify critical applications and data supporting ePHI.",
+    "attack_mapping": [
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "164.308(a)(8)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Compliance Assessment",
+    "name": "Evaluation",
+    "description": "Conduct periodic evaluations of security measures and compliance.",
+    "attack_mapping": [
+      "Discovery"
+    ]
+  },
+  {
+    "control_id": "164.308(b)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Third-Party Risk",
+    "name": "Business Associate Contracts and Other Arrangements",
+    "description": "Ensure business associates protect ePHI through contractual agreements.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "164.310(a)(1)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Physical Security",
+    "name": "Facility Access Controls",
+    "description": "Limit physical access to facilities while ensuring authorized access.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "164.310(a)(2)(i)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Business Continuity",
+    "name": "Contingency Operations",
+    "description": "Allow facility access during emergencies to restore lost data and continue operations.",
+    "attack_mapping": [
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "164.310(a)(2)(ii)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Physical Security",
+    "name": "Facility Security Plan",
+    "description": "Develop and maintain a facility security plan.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "164.310(a)(2)(iii)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Physical Access Control",
+    "name": "Access Control and Validation Procedures",
+    "description": "Validate and control physical access to facilities.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "164.310(a)(2)(iv)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Physical Security",
+    "name": "Maintenance Records",
+    "description": "Maintain records of repairs and modifications to physical security components.",
+    "attack_mapping": []
+  },
+  {
+    "control_id": "164.310(b)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Physical Security",
+    "name": "Workstation Use",
+    "description": "Define proper workstation use to protect ePHI.",
+    "attack_mapping": [
+      "Execution"
+    ]
+  },
+  {
+    "control_id": "164.310(c)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Physical Security",
+    "name": "Workstation Security",
+    "description": "Secure workstations from unauthorized physical access.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "164.310(d)(1)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Media Protection",
+    "name": "Device and Media Controls",
+    "description": "Control the movement and disposal of devices and media containing ePHI.",
+    "attack_mapping": [
+      "Collection"
+    ]
+  },
+  {
+    "control_id": "164.310(d)(2)(i)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Media Protection",
+    "name": "Disposal",
+    "description": "Securely dispose of ePHI on electronic media before disposal.",
+    "attack_mapping": [
+      "Collection"
+    ]
+  },
+  {
+    "control_id": "164.310(d)(2)(ii)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Media Protection",
+    "name": "Media Re-use",
+    "description": "Remove ePHI from media before it is reused.",
+    "attack_mapping": [
+      "Collection"
+    ]
+  },
+  {
+    "control_id": "164.310(d)(2)(iii)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Asset Management",
+    "name": "Accountability",
+    "description": "Maintain records of the movement of hardware and electronic media.",
+    "attack_mapping": [
+      "Collection"
+    ]
+  },
+  {
+    "control_id": "164.310(d)(2)(iv)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Backup Management",
+    "name": "Data Backup and Storage",
+    "description": "Create backup copies of ePHI before moving equipment.",
+    "attack_mapping": [
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "164.312(a)(1)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Access Control",
+    "name": "Access Control",
+    "description": "Implement technical controls to allow only authorized access to ePHI.",
+    "attack_mapping": [
+      "Initial Access",
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.312(a)(2)(i)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Identity Management",
+    "name": "Unique User Identification",
+    "description": "Assign a unique identifier to each authorized user.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.312(a)(2)(ii)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Access Control",
+    "name": "Emergency Access Procedure",
+    "description": "Establish procedures for obtaining ePHI during emergencies.",
+    "attack_mapping": [
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "164.312(a)(2)(iii)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Session Management",
+    "name": "Automatic Logoff",
+    "description": "Automatically terminate inactive user sessions.",
+    "attack_mapping": [
+      "Initial Access"
+    ]
+  },
+  {
+    "control_id": "164.312(a)(2)(iv)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Cryptography",
+    "name": "Encryption and Decryption",
+    "description": "Encrypt and decrypt ePHI to protect confidentiality.",
+    "attack_mapping": [
+      "Collection",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "164.312(b)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Logging & Monitoring",
+    "name": "Audit Controls",
+    "description": "Record and review system activity involving ePHI.",
+    "attack_mapping": [
+      "Discovery",
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.312(c)(1)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Data Integrity",
+    "name": "Integrity",
+    "description": "Protect ePHI from unauthorized alteration or destruction.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "164.312(c)(2)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Data Integrity",
+    "name": "Mechanism to Authenticate ePHI",
+    "description": "Verify that ePHI has not been altered or destroyed.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "164.312(d)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Identity Management",
+    "name": "Person or Entity Authentication",
+    "description": "Verify the identity of users accessing ePHI.",
+    "attack_mapping": [
+      "Credential Access"
+    ]
+  },
+  {
+    "control_id": "164.312(e)(1)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Network Security",
+    "name": "Transmission Security",
+    "description": "Protect ePHI transmitted over electronic networks.",
+    "attack_mapping": [
+      "Collection",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "164.312(e)(2)(i)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Data Integrity",
+    "name": "Integrity Controls",
+    "description": "Protect transmitted ePHI from unauthorized modification.",
+    "attack_mapping": [
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "164.312(e)(2)(ii)",
+    "framework_id": "hipaa_security_rule_45_cfr_part_164_subpart_c",
+    "category": "Cryptography",
+    "name": "Encryption",
+    "description": "Encrypt ePHI whenever transmitted electronically.",
+    "attack_mapping": [
+      "Collection",
+      "Exfiltration"
+    ]
+  },
+  {
+    "control_id": "CC1",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Security (Common Criteria)",
+    "name": "Control Environment",
+    "description": "Establish governance and ethical oversight",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "CC2",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Security (Common Criteria)",
+    "name": "Communication and Information",
+    "description": "Support communication",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "CC3",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Security (Common Criteria)",
+    "name": "Risk Assessment",
+    "description": "Assess risks",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "CC4",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Security (Common Criteria)",
+    "name": "Monitoring Activities",
+    "description": "Monitor controls",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "CC5",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Security (Common Criteria)",
+    "name": "Control Activities",
+    "description": "Implement controls",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "CC6",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Security (Common Criteria)",
+    "name": "Logical and Physical Access",
+    "description": "Restrict access",
+    "attack_mapping": [
+      "Credential Access",
+      "Initial Access",
+      "Privilege Escalation",
+      "Discovery",
+      "Defense Evasion"
+    ]
+  },
+  {
+    "control_id": "CC7",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Security (Common Criteria)",
+    "name": "System Operations",
+    "description": "Monitor operations",
+    "attack_mapping": [
+      "Discovery",
+      "Defense Evasion",
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "CC8",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Security (Common Criteria)",
+    "name": "Change Management",
+    "description": "Control changes",
+    "attack_mapping": [
+      "Initial Access",
+      "Privilege Escalation"
+    ]
+  },
+  {
+    "control_id": "CC9",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Security (Common Criteria)",
+    "name": "Risk Mitigation",
+    "description": "Manage risks",
+    "attack_mapping": [
+      "Initial Access (Supply Chain Compromise)"
+    ]
+  },
+  {
+    "control_id": "A1",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Availability",
+    "name": "Availability",
+    "description": "Ensure availability",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "C1",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Confidentiality",
+    "name": "Confidentiality",
+    "description": "Protect confidential data",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  },
+  {
+    "control_id": "PI1",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Processing Integrity",
+    "name": "Processing Integrity",
+    "description": "Ensure processing integrity",
+    "attack_mapping": [
+      "N/A \u2013 not directly mapped to ATT&CK Enterprise"
+    ]
+  },
+  {
+    "control_id": "P1",
+    "framework_id": "soc_2_2022_tsc",
+    "category": "Privacy",
+    "name": "Privacy",
+    "description": "Protect personal information",
+    "attack_mapping": [
+      "Exfiltration",
+      "Collection",
+      "Impact"
+    ]
+  }
+]

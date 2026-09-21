@@ -1,0 +1,84 @@
+> """OCSF event conversion helpers. Cyclomatic complexity ≤4."""
+  
+> import hashlib
+> import json
+> from typing import Any
+  
+> DEFAULT_TECHNIQUE_ID = "T1078"
+  
+> _SEVERITY_NAMES: dict[int, str] = {
+>     0: "Unknown",
+>     1: "Informational",
+>     2: "Low",
+>     3: "Medium",
+>     4: "High",
+>     5: "Critical",
+> }
+  
+> _DISPOSITION_OUTCOMES: dict[str, str] = {
+>     "Blocked": "Detected",
+>     "Detected": "Detected",
+>     "Allowed": "Detected",
+>     "Missed": "Missed",
+>     "No Data": "No Data",
+>     "None": "No Data",
+> }
+  
+  
+> def outcome_from_disposition(disposition: str) -> str:
+>     """Map an OCSF disposition to a Module 2 verdict outcome."""
+!     return _DISPOSITION_OUTCOMES.get(disposition, "Partial")
+  
+  
+> def technique_id_from_event(event: dict[str, Any]) -> str:
+>     """Extract the ATT&CK technique id from an OCSF event."""
+!     attack = event.get("attack")
+!     if isinstance(attack, dict):
+!         raw = attack.get("technique_uid")
+!         if isinstance(raw, str) and raw:
+!             return raw
+!     for key in ("technique_uid", "technique_id", "technique"):
+!         raw = event.get(key)
+!         if isinstance(raw, str) and raw:
+!             return raw
+!     return DEFAULT_TECHNIQUE_ID
+  
+  
+> def severity_name(severity_id: int) -> str:
+>     """Return the OCSF severity label for a numeric severity id."""
+!     return _SEVERITY_NAMES.get(severity_id, "Unknown")
+  
+  
+> def severity_id_from_event(event: dict[str, Any]) -> int:
+>     """Return a safe numeric severity id from an OCSF event."""
+!     raw = event.get("severity_id", 0)
+!     for candidate in (raw,) if isinstance(raw, (int, str)) else ():
+!         if isinstance(candidate, int):
+!             return candidate
+!         if isinstance(candidate, str) and candidate.isdigit():
+!             return int(candidate)
+!     return 0
+  
+  
+> def evidence_hash(event: dict[str, Any]) -> str:
+>     """Return the SHA-256 digest of the canonical event JSON."""
+!     payload = json.dumps(event, sort_keys=True, separators=(",", ":"))
+!     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+  
+  
+> def verdict_data(
+>     event: dict[str, Any],
+>     verdict_id: str,
+>     engagement_id: str,
+> ) -> dict[str, Any]:
+>     """Build the row payload for the verdicts table from an OCSF event."""
+!     return {
+!         "verdict_id": verdict_id,
+!         "engagement_id": engagement_id,
+!         "technique_id": technique_id_from_event(event),
+!         "outcome": outcome_from_disposition(
+!             str(event.get("disposition") or "")
+!         ),
+!         "severity_id": severity_id_from_event(event),
+!         "evidence_hash": evidence_hash(event),
+!     }

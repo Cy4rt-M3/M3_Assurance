@@ -1,0 +1,24 @@
+> """Pydantic models for the Control Mapping service."""
+  
+> from pydantic import BaseModel, Field
+  
+  
+> class ControlMappingRequest(BaseModel):
+>     verdict_id: str = Field(..., description="UUID of the Module 2 verdict")
+>     framework_ids: list[str] = Field(
+>         ..., description="List of applicable framework IDs"
+>     )
+>     engagement_id: str = Field(..., description="Parent engagement identifier")
+  
+  
+> class ControlStatus(BaseModel):
+>     control_id: str
+>     status: str = Field(..., description="Met | Not Met | Partial")
+>     evidence_hash: str | None = None
+  
+  
+> class ControlMappingResponse(BaseModel):
+>     engagement_id: str
+>     control_statuses: dict[str, str]
+>     coverage_pct: float
+>     framework_ids: list[str]

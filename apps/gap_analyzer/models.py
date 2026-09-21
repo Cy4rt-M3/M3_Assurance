@@ -19,3 +19,8 @@ class GapSummary(BaseModel):
     total_gaps: int
     critical_gaps: int
     gaps: list[GapAnalysis]
+
+
+class GapRequest(BaseModel):
+    engagement_id: str
+    framework_ids: list[str] = Field(default_factory=list)

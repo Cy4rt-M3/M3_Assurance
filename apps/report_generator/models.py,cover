@@ -1,0 +1,18 @@
+> """Pydantic models for the Report Generator service."""
+  
+> from pydantic import BaseModel, Field
+  
+  
+> class ReportRequest(BaseModel):
+>     engagement_id: str
+>     framework_ids: list[str]
+>     format: str = Field(default="pdf", description="pdf | html")
+  
+  
+> class Report(BaseModel):
+>     report_id: str
+>     engagement_id: str
+>     framework_ids: list[str]
+>     composite_score: float
+>     format: str
+>     content_hash: str

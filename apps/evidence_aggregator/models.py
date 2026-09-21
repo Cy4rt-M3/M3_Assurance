@@ -16,3 +16,17 @@ class EvidenceSummary(BaseModel):
     total_links: int
     unique_hashes: int
     completeness_pct: float
+
+
+class IngestRequest(BaseModel):
+    engagement_id: str
+    name: str = "OCSF Engagement"
+    organization: str = "CyArt Tech"
+    frameworks: list[str] = Field(default_factory=list)
+    events: list[dict[str, object]]
+
+
+class IngestResponse(BaseModel):
+    engagement_id: str
+    ingested: int
+    verdict_ids: list[str]

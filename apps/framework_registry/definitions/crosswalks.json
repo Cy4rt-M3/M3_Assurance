@@ -1,0 +1,2927 @@
+[
+  {
+    "source_control_id": "GV.OC-03",
+    "target_control_id": "ISO 27001 A.5.31 (Legal, Statutory, Regulatory and Contractual Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "GV.OC-03",
+    "target_control_id": "ISO 27002 5.31 (Legal, Statutory, Regulatory and Contractual Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "GV.RR-01",
+    "target_control_id": "NIS2 Article 20 (Governance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "GV.RR-02",
+    "target_control_id": "ISO 27001 A.5.2 (Information Security Roles and Responsibilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "GV.RR-02",
+    "target_control_id": "ISO 27002 5.2 (Information Security Roles and Responsibilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "GV.PO-01",
+    "target_control_id": "NIS2 Article 20 (Governance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "GV.SC-09",
+    "target_control_id": "ISO 27001 A.5.21 (Managing Information Security in the ICT Supply Chain)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "GV.SC-09",
+    "target_control_id": "ISO 27002 5.21 (Managing Information Security in the ICT Supply Chain)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.AM-04",
+    "target_control_id": "ISO 27001 A.5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.AM-04",
+    "target_control_id": "ISO 27002 5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.AM-04",
+    "target_control_id": "ISO 27001 A.8.30 (Outsourced Development)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.AM-07",
+    "target_control_id": "ISO 27001 A.5.12 (Classification of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.AM-07",
+    "target_control_id": "ISO 27001 A.5.13 (Labelling of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.AM-07",
+    "target_control_id": "ISO 27002 5.12 (Classification of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.RA-01",
+    "target_control_id": "ISO 27001 A.8.8 (Management of Technical Vulnerabilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.RA-01",
+    "target_control_id": "ISO 27002 8.8 (Management of Technical Vulnerabilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.RA-02",
+    "target_control_id": "ISO 27001 A.5.7 (Threat Intelligence)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.RA-02",
+    "target_control_id": "ISO 27002 5.7 (Threat Intelligence)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.RA-06",
+    "target_control_id": "HIPAA 164.308(a)(1)(ii)(B) (Risk Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.RA-10",
+    "target_control_id": "ISO 27001 A.5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "ID.RA-10",
+    "target_control_id": "ISO 27002 5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.AA-05",
+    "target_control_id": "ISO 27001 A.8.3 (Information Access Restriction)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.AA-05",
+    "target_control_id": "ISO 27002 8.3 (Information Access Restriction)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.AA-06",
+    "target_control_id": "ISO 27001 A.7.8 (Equipment Siting and Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.AA-06",
+    "target_control_id": "ISO 27002 7.8 (Equipment Siting and Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.AT-01",
+    "target_control_id": "HIPAA 164.308(a)(5)(ii)(A) (Security Reminders)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.DS-01",
+    "target_control_id": "SOC 2 C1 (Confidentiality)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.DS-01",
+    "target_control_id": "HIPAA 164.312(c)(1) (Integrity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.DS-01",
+    "target_control_id": "GDPR Article 32 (Security of Processing)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.DS-10",
+    "target_control_id": "HIPAA 164.312(c)(1) (Integrity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.DS-11",
+    "target_control_id": "ISO 27001 A.8.13 (Information Backup)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.DS-11",
+    "target_control_id": "ISO 27002 8.13 (Information Backup)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-01",
+    "target_control_id": "ISO 27001 A.8.9 (Configuration Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-01",
+    "target_control_id": "ISO 27002 8.9 (Configuration Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-01",
+    "target_control_id": "SOC 2 CC8 (Change Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-03",
+    "target_control_id": "ISO 27001 A.7.13 (Equipment Maintenance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-03",
+    "target_control_id": "ISO 27002 7.13 (Equipment Maintenance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-04",
+    "target_control_id": "ISO 27001 A.8.15 (Logging)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-04",
+    "target_control_id": "ISO 27002 8.15 (Logging)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-04",
+    "target_control_id": "HIPAA 164.312(b) (Audit Controls)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-06",
+    "target_control_id": "ISO 27001 A.8.26 (Application Security Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-06",
+    "target_control_id": "ISO 27002 8.26 (Application Security Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.PS-06",
+    "target_control_id": "ISO 27001 A.8.25 (Secure Development Life Cycle)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.IR-02",
+    "target_control_id": "ISO 27001 A.7.8 (Equipment Siting and Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.IR-02",
+    "target_control_id": "ISO 27002 7.8 (Equipment Siting and Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.IR-02",
+    "target_control_id": "ISO 27001 A.7.5 (Protecting Against Physical and Environmental Threats)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.IR-03",
+    "target_control_id": "HIPAA 164.308(a)(7)(ii)(B) (Disaster Recovery Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.IR-04",
+    "target_control_id": "ISO 27001 A.8.6 (Capacity Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "PR.IR-04",
+    "target_control_id": "ISO 27002 8.6 (Capacity Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "DE.CM-02",
+    "target_control_id": "ISO 27001 A.7.4 (Physical Security Monitoring)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "DE.CM-02",
+    "target_control_id": "ISO 27002 7.4 (Physical Security Monitoring)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "DE.AE-04",
+    "target_control_id": "HIPAA 164.308(a)(1)(ii)(A) (Risk Analysis)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "DE.AE-04",
+    "target_control_id": "SOC 2 CC3 (Risk Assessment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "DE.AE-06",
+    "target_control_id": "ISO 27001 A.6.8 (Information Security Event Reporting)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "DE.AE-06",
+    "target_control_id": "ISO 27002 6.8 (Information Security Event Reporting)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "RS.IM-05",
+    "target_control_id": "HIPAA 164.308(a)(7)(ii)(B) (Disaster Recovery Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "RS.AN-08",
+    "target_control_id": "HIPAA 164.308(a)(1)(ii)(A) (Risk Analysis)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "RS.AN-08",
+    "target_control_id": "SOC 2 CC3 (Risk Assessment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "RS.CO-02",
+    "target_control_id": "NIS2 Article 23 (Reporting Obligations)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "RC.RP-01",
+    "target_control_id": "HIPAA 164.308(a)(7)(ii)(B) (Disaster Recovery Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "RC.RP-01",
+    "target_control_id": "ISO 27001 A.5.30 (ICT Readiness for Business Continuity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "RC.RP-01",
+    "target_control_id": "ISO 27002 5.30 (ICT Readiness for Business Continuity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.2",
+    "target_control_id": "ISO 27002 5.2 (Information Security Roles and Responsibilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.2",
+    "target_control_id": "NIST CSF 2.0 GV.RR-02 (Cyber security Roles, responsibilities, and authorities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.3",
+    "target_control_id": "ISO 27002 5.3 (Segregation of Duties)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.4",
+    "target_control_id": "ISO 27002 5.4 (Management Responsibilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.4",
+    "target_control_id": "NIS2 Article 20 (Governance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.5",
+    "target_control_id": "ISO 27002 5.5 (Contact with Authorities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.6",
+    "target_control_id": "ISO 27002 5.6 (Contact with Special Interest Groups)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.7",
+    "target_control_id": "ISO 27002 5.7 (Threat Intelligence)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.7",
+    "target_control_id": "NIST CSF 2.0 ID.RA-02 (Cyber Threat Intelligence)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.8",
+    "target_control_id": "ISO 27002 5.8 (Information Security in Project Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.8",
+    "target_control_id": "ISO 27002 5.1 (Policies for Information Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.9",
+    "target_control_id": "ISO 27002 5.9 (Inventory of Information and Other Associated Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.9",
+    "target_control_id": "ISO 27002 5.10 (Acceptable Use of Information and Other Associated Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.10",
+    "target_control_id": "ISO 27002 5.10 (Acceptable Use of Information and Other Associated Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.10",
+    "target_control_id": "ISO 27002 5.9 (Inventory of Information and Other Associated Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.11",
+    "target_control_id": "ISO 27002 5.11 (Return of Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.12",
+    "target_control_id": "ISO 27002 5.12 (Classification of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.12",
+    "target_control_id": "ISO 27002 5.13 (Labelling of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.12",
+    "target_control_id": "SOC 2 C1 (Confidentiality)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.13",
+    "target_control_id": "ISO 27002 5.13 (Labelling of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.13",
+    "target_control_id": "ISO 27002 5.12 (Classification of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.13",
+    "target_control_id": "NIST CSF 2.0  ID.AM-07 (Data and Metadata Inventory)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.14",
+    "target_control_id": "ISO 27002 5.14 (Information Transfer)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.15",
+    "target_control_id": "ISO 27002 5.15 (Access Control)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.15",
+    "target_control_id": "PCI DSS 7.1 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.15",
+    "target_control_id": "PCI DSS 9.1 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.16",
+    "target_control_id": "ISO 27002 5.16 (Identity Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.17",
+    "target_control_id": "ISO 27002 5.17 (Authentication Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.17",
+    "target_control_id": "HIPAA 164.308(a)(5)(ii)(D) (Password Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.18",
+    "target_control_id": "ISO 27002 5.18 (Access Rights)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.18",
+    "target_control_id": "HIPAA 164.308(a)(4)(ii)(C) (Access Establishment and Modification)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.19",
+    "target_control_id": "ISO 27002 5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.19",
+    "target_control_id": "NIST CSF 2.0  ID.AM-04 (Supplier Services Inventory)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.19",
+    "target_control_id": "NIST CSF 2.0 ID.RA-10 (Critical Supplier Assessment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.20",
+    "target_control_id": "ISO 27002 5.20 (Addressing Information Security within Supplier Agreements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.21",
+    "target_control_id": "ISO 27002 5.21 (Managing Information Security in the ICT Supply Chain)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.21",
+    "target_control_id": "NIST CSF 2.0 GV.SC-09 (Supply Chain Security Lifecycle)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.21",
+    "target_control_id": "ISO 27002 5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.22",
+    "target_control_id": "ISO 27002 5.22 (Monitoring, Review and Change Management of Supplier Services)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.23",
+    "target_control_id": "ISO 27002 5.23 (Information Security for Use of Cloud Services)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.24",
+    "target_control_id": "ISO 27002 5.24 (Information Security Incident Management Planning and Preparation)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.25",
+    "target_control_id": "ISO 27002 5.25 (Assessment and Decision on Information Security Events)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.25",
+    "target_control_id": "ISO 27002 6.8 (Information Security Event Reporting)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.26",
+    "target_control_id": "ISO 27002 5.26 (Response to Information Security Incidents)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.26",
+    "target_control_id": "HIPAA 164.308(a)(6) (Security Incident Procedures)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.27",
+    "target_control_id": "ISO 27002 5.27 (Learning from Information Security Incidents)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.28",
+    "target_control_id": "ISO 27002 5.28 (Collection of Evidence)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.29",
+    "target_control_id": "ISO 27002 5.29 (Information Security During Disruption)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.30",
+    "target_control_id": "ISO 27002 5.30 (ICT Readiness for Business Continuity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.30",
+    "target_control_id": "HIPAA 164.308(a)(7)(ii)(B) (Disaster Recovery Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.30",
+    "target_control_id": "NIST CSF 2.0 RC.RP-01 (Recovery Plan Execution)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.31",
+    "target_control_id": "ISO 27002 5.31 (Legal, Statutory, Regulatory and Contractual Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.31",
+    "target_control_id": "NIST CSF 2.0 GV.OC-03 (Legal Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.32",
+    "target_control_id": "ISO 27002 5.32 (Intellectual Property Rights)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.33",
+    "target_control_id": "ISO 27002 5.33 (Protection of Records)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.34",
+    "target_control_id": "ISO 27002 5.34 (Privacy and Protection of PII)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.34",
+    "target_control_id": "SOC 2 P1 (Privacy)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.35",
+    "target_control_id": "ISO 27002 5.35 (Independent Review of Information Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.35",
+    "target_control_id": "HIPAA 164.308(a)(1)(ii)(D) (Information System Activity Review)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.36",
+    "target_control_id": "ISO 27002 5.36 (Compliance with Policies, Rules and Standards for Information Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.5.37",
+    "target_control_id": "ISO 27002 5.37 (Documented Operating Procedures)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.1",
+    "target_control_id": "ISO 27002 6.1 (Screening)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.2",
+    "target_control_id": "ISO 27002 6.2 (Terms and Conditions of Employment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.3",
+    "target_control_id": "ISO 27002 6.3 (Information Security Awareness, Education and Training)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.3",
+    "target_control_id": "HIPAA 164.308(a)(5)(ii)(A) (Security Reminders)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.4",
+    "target_control_id": "ISO 27002 6.4 (Disciplinary Process)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.5",
+    "target_control_id": "ISO 27002 6.5 (Responsibilities After Termination or Change of Employment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.6",
+    "target_control_id": "ISO 27002 6.6 (Confidentiality or Non-Disclosure Agreements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.7",
+    "target_control_id": "ISO 27002 6.7 (Remote Working)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.8",
+    "target_control_id": "ISO 27002 6.8 (Information Security Event Reporting)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.8",
+    "target_control_id": "NIST CSF 2.0 DE.AE-06 (Adverse Event Reporting)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.6.8",
+    "target_control_id": "ISO 27002 5.25 (Assessment and Decision on Information Security Events)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.1",
+    "target_control_id": "ISO 27002 7.1 (Physical Security Perimeters)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.1",
+    "target_control_id": "HIPAA 164.310(a)(1) (Facility Access Controls)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.1",
+    "target_control_id": "HIPAA 164.310(a)(2)(ii) (Facility Security Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.2",
+    "target_control_id": "ISO 27002 7.2 (Physical Entry)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.2",
+    "target_control_id": "HIPAA 164.310(a)(1) (Facility Access Controls)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.3",
+    "target_control_id": "ISO 27002 7.3 (Securing Offices, Rooms and Facilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.4",
+    "target_control_id": "ISO 27002 7.4 (Physical Security Monitoring)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.4",
+    "target_control_id": "NIST CSF 2.0 DE.CM-02 (Physical Environment Monitoring)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.5",
+    "target_control_id": "ISO 27002 7.5 (Protecting Against Physical and Environmental Threats)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.5",
+    "target_control_id": "NIST CSF 2.0 PR.IR-02 (Environmental Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.6",
+    "target_control_id": "ISO 27002 7.6 (Working in Secure Areas)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.7",
+    "target_control_id": "ISO 27002 7.7 (Clear Desk and Clear Screen)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.8",
+    "target_control_id": "ISO 27002 7.8 (Equipment Siting and Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.8",
+    "target_control_id": "NIST CSF 2.0 PR.IR-02 (Environmental Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.8",
+    "target_control_id": "NIST CSF 2.0 PR.AA-06 (Physical Access Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.9",
+    "target_control_id": "ISO 27002 7.9 (Security of Assets Off-Premises)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.10",
+    "target_control_id": "ISO 27002 7.10 (Storage Media)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.10",
+    "target_control_id": "PCI DSS 9.5 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.10",
+    "target_control_id": "PCI DSS 9.5.1 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.11",
+    "target_control_id": "ISO 27002 7.11 (Supporting Utilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.12",
+    "target_control_id": "ISO 27002 7.12 (Cabling Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.12",
+    "target_control_id": "HIPAA 164.310(a)(2)(ii) (Facility Security Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.12",
+    "target_control_id": "HIPAA 164.310(c) (Workstation Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.13",
+    "target_control_id": "ISO 27002 7.13 (Equipment Maintenance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.13",
+    "target_control_id": "NIST CSF 2.0 PR.PS-03 (Hardware Lifecycle Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.7.14",
+    "target_control_id": "ISO 27002 7.14 (Secure Disposal or Re-Use of Equipment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.1",
+    "target_control_id": "ISO 27002 8.1 (User Endpoint Devices)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.2",
+    "target_control_id": "ISO 27002 8.2 (Privileged Access Rights)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.3",
+    "target_control_id": "ISO 27002 8.3 (Information Access Restriction)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.3",
+    "target_control_id": "NIST CSF 2.0 PR.AA-05 (Access Permissions and Authorization)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.4",
+    "target_control_id": "ISO 27002 8.4 (Access to Source Code)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.4",
+    "target_control_id": "ISO 27002 8.5 (Secure Authentication)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.5",
+    "target_control_id": "ISO 27002 8.5 (Secure Authentication)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.5",
+    "target_control_id": "HIPAA 164.312(a)(1) (Access Control)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.5",
+    "target_control_id": "SOC 2 CC6 (Logical and Physical Access)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.6",
+    "target_control_id": "ISO 27002 8.6 (Capacity Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.6",
+    "target_control_id": "NIST CSF 2.0 PR.IR-04 (Resource Capacity Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.7",
+    "target_control_id": "ISO 27002 8.7 (Protection Against Malware)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.8",
+    "target_control_id": "ISO 27002 8.8 (Management of Technical Vulnerabilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.8",
+    "target_control_id": "NIST CSF 2.0 ID.RA-01 (Vulnerability Identification)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.9",
+    "target_control_id": "ISO 27002 8.9 (Configuration Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.9",
+    "target_control_id": "NIST CSF 2.0 PR.PS-01 (Configuration Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.10",
+    "target_control_id": "ISO 27002 8.10 (Information Deletion)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.10",
+    "target_control_id": "PCI DSS 3.2.1 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.10",
+    "target_control_id": "SOC 2 P1 (Privacy)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.11",
+    "target_control_id": "ISO 27002 8.11 (Data Masking)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.11",
+    "target_control_id": "HIPAA 164.312(c)(1) (Integrity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.12",
+    "target_control_id": "ISO 27002 8.12 (Data Leakage Prevention)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.13",
+    "target_control_id": "ISO 27002 8.13 (Information Backup)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.13",
+    "target_control_id": "NIST CSF 2.0 PR.DS-11 (Data Backup and Recovery)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.13",
+    "target_control_id": "HIPAA 164.308(a)(7)(ii)(A) (Data Backup Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.14",
+    "target_control_id": "ISO 27002 8.14 (Redundancy of Information Processing Facilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.15",
+    "target_control_id": "ISO 27002 8.15 (Logging)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.15",
+    "target_control_id": "PCI DSS 10.2 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.15",
+    "target_control_id": "HIPAA 164.312(b) (Audit Controls)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.16",
+    "target_control_id": "ISO 27002 8.16 (Monitoring Activities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.17",
+    "target_control_id": "ISO 27002 8.17 (Clock Synchronization)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.18",
+    "target_control_id": "ISO 27002 8.18 (Use of Privileged Utility Programs)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.19",
+    "target_control_id": "ISO 27002 8.19 (Installation of Software on Operational Systems)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.20",
+    "target_control_id": "ISO 27002 8.20 (Networks Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.20",
+    "target_control_id": "ISO 27002 8.22 (Segregation of Networks)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.21",
+    "target_control_id": "ISO 27002 8.21 (Security of Network Services)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.22",
+    "target_control_id": "ISO 27002 8.22 (Segregation of Networks)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.22",
+    "target_control_id": "ISO 27002 8.20 (Networks Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.23",
+    "target_control_id": "ISO 27002 8.23 (Web Filtering)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.24",
+    "target_control_id": "ISO 27002 8.24 (Use of Cryptography)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.25",
+    "target_control_id": "ISO 27002 8.25 (Secure Development Life Cycle)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.25",
+    "target_control_id": "NIST CSF 2.0 PR.PS-06 (Secure Software Development)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.26",
+    "target_control_id": "ISO 27002 8.26 (Application Security Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.26",
+    "target_control_id": "NIST CSF 2.0 PR.PS-06 (Secure Software Development)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.26",
+    "target_control_id": "ISO 27002 8.28 (Secure Coding)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.27",
+    "target_control_id": "ISO 27002 8.27 (Secure System Architecture and Engineering Principles)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.28",
+    "target_control_id": "ISO 27002 8.28 (Secure Coding)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.28",
+    "target_control_id": "NIST CSF 2.0 PR.PS-06 (Secure Software Development)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.28",
+    "target_control_id": "ISO 27002 8.26 (Application Security Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.29",
+    "target_control_id": "ISO 27002 8.29 (Security Testing in Development and Acceptance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.30",
+    "target_control_id": "ISO 27002 8.30 (Outsourced Development)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.30",
+    "target_control_id": "NIST CSF 2.0  ID.AM-04 (Supplier Services Inventory)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.30",
+    "target_control_id": "ISO 27002 5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.31",
+    "target_control_id": "ISO 27002 8.31 (Separation of Development, Test and Production Environments)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.32",
+    "target_control_id": "ISO 27002 8.32 (Change Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.32",
+    "target_control_id": "PCI DSS 1.2.2 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.33",
+    "target_control_id": "ISO 27002 8.33 (Test Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.33",
+    "target_control_id": "HIPAA 164.312(c)(1) (Integrity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "A.8.34",
+    "target_control_id": "ISO 27002 8.34 (Protection of Information Systems During Audit Testing)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.1",
+    "target_control_id": "ISO 27001 A.5.8 (Information Security in Project Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.2",
+    "target_control_id": "ISO 27001 A.5.2 (Information Security Roles and Responsibilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.2",
+    "target_control_id": "NIST CSF 2.0 GV.RR-02 (Cyber security Roles, responsibilities, and authorities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.3",
+    "target_control_id": "ISO 27001 A.5.3 (Segregation of Duties)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.4",
+    "target_control_id": "ISO 27001 A.5.4 (Management Responsibilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.4",
+    "target_control_id": "NIS2 Article 20 (Governance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.5",
+    "target_control_id": "ISO 27001 A.5.5 (Contact with Authorities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.6",
+    "target_control_id": "ISO 27001 A.5.6 (Contact with Special Interest Groups)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.7",
+    "target_control_id": "ISO 27001 A.5.7 (Threat Intelligence)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.7",
+    "target_control_id": "NIST CSF 2.0 ID.RA-02 (Cyber Threat Intelligence)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.8",
+    "target_control_id": "ISO 27001 A.5.8 (Information Security in Project Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.9",
+    "target_control_id": "ISO 27001 A.5.9 (Inventory of Information and Other Associated Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.9",
+    "target_control_id": "ISO 27001 A.5.10 (Acceptable Use of Information and Other Associated Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.10",
+    "target_control_id": "ISO 27001 A.5.10 (Acceptable Use of Information and Other Associated Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.10",
+    "target_control_id": "ISO 27001 A.5.9 (Inventory of Information and Other Associated Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.11",
+    "target_control_id": "ISO 27001 A.5.11 (Return of Assets)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.12",
+    "target_control_id": "ISO 27001 A.5.12 (Classification of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.12",
+    "target_control_id": "ISO 27001 A.5.13 (Labelling of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.12",
+    "target_control_id": "SOC 2 C1 (Confidentiality)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.13",
+    "target_control_id": "ISO 27001 A.5.13 (Labelling of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.13",
+    "target_control_id": "ISO 27001 A.5.12 (Classification of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.13",
+    "target_control_id": "NIST CSF 2.0  ID.AM-07 (Data and Metadata Inventory)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.14",
+    "target_control_id": "ISO 27001 A.5.14 (Information Transfer)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.15",
+    "target_control_id": "ISO 27001 A.5.15 (Access Control)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.15",
+    "target_control_id": "PCI DSS 7.1 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.15",
+    "target_control_id": "PCI DSS 9.1 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.16",
+    "target_control_id": "ISO 27001 A.5.16 (Identity Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.17",
+    "target_control_id": "ISO 27001 A.5.17 (Authentication Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.17",
+    "target_control_id": "HIPAA 164.308(a)(5)(ii)(D) (Password Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.18",
+    "target_control_id": "ISO 27001 A.5.18 (Access Rights)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.18",
+    "target_control_id": "HIPAA 164.308(a)(4)(ii)(C) (Access Establishment and Modification)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.19",
+    "target_control_id": "ISO 27001 A.5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.19",
+    "target_control_id": "NIST CSF 2.0  ID.AM-04 (Supplier Services Inventory)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.19",
+    "target_control_id": "NIST CSF 2.0 ID.RA-10 (Critical Supplier Assessment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.20",
+    "target_control_id": "ISO 27001 A.5.20 (Addressing Information Security within Supplier Agreements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.21",
+    "target_control_id": "ISO 27001 A.5.21 (Managing Information Security in the ICT Supply Chain)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.21",
+    "target_control_id": "NIST CSF 2.0 GV.SC-09 (Supply Chain Security Lifecycle)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.21",
+    "target_control_id": "ISO 27001 A.5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.22",
+    "target_control_id": "ISO 27001 A.5.22 (Monitoring, Review and Change Management of Supplier Services)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.23",
+    "target_control_id": "ISO 27001 A.5.23 (Information Security for Use of Cloud Services)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.24",
+    "target_control_id": "ISO 27001 A.5.24 (Information Security Incident Management Planning and Preparation)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.25",
+    "target_control_id": "ISO 27001 A.5.25 (Assessment and Decision on Information Security Events)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.25",
+    "target_control_id": "ISO 27001 A.6.8 (Information Security Event Reporting)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.26",
+    "target_control_id": "ISO 27001 A.5.26 (Response to Information Security Incidents)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.26",
+    "target_control_id": "HIPAA 164.308(a)(6) (Security Incident Procedures)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.27",
+    "target_control_id": "ISO 27001 A.5.27 (Learning from Information Security Incidents)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.28",
+    "target_control_id": "ISO 27001 A.5.28 (Collection of Evidence)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.29",
+    "target_control_id": "ISO 27001 A.5.29 (Information Security During Disruption)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.30",
+    "target_control_id": "ISO 27001 A.5.30 (ICT Readiness for Business Continuity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.30",
+    "target_control_id": "HIPAA 164.308(a)(7)(ii)(B) (Disaster Recovery Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.30",
+    "target_control_id": "NIST CSF 2.0 RC.RP-01 (Recovery Plan Execution)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.31",
+    "target_control_id": "ISO 27001 A.5.31 (Legal, Statutory, Regulatory and Contractual Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.31",
+    "target_control_id": "NIST CSF 2.0 GV.OC-03 (Legal Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.32",
+    "target_control_id": "ISO 27001 A.5.32 (Intellectual Property Rights)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.33",
+    "target_control_id": "ISO 27001 A.5.33 (Protection of Records)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.34",
+    "target_control_id": "ISO 27001 A.5.34 (Privacy and Protection of PII)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.34",
+    "target_control_id": "SOC 2 P1 (Privacy)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.35",
+    "target_control_id": "ISO 27001 A.5.35 (Independent Review of Information Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.35",
+    "target_control_id": "HIPAA 164.308(a)(1)(ii)(D) (Information System Activity Review)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.36",
+    "target_control_id": "ISO 27001 A.5.36 (Compliance with Policies, Rules and Standards for Information Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.37",
+    "target_control_id": "ISO 27001 A.5.37 (Documented Operating Procedures)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.1",
+    "target_control_id": "ISO 27001 A.6.1 (Screening)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.2",
+    "target_control_id": "ISO 27001 A.6.2 (Terms and Conditions of Employment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.3",
+    "target_control_id": "ISO 27001 A.6.3 (Information Security Awareness, Education and Training)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.3",
+    "target_control_id": "HIPAA 164.308(a)(5)(ii)(A) (Security Reminders)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.4",
+    "target_control_id": "ISO 27001 A.6.4 (Disciplinary Process)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.5",
+    "target_control_id": "ISO 27001 A.6.5 (Responsibilities After Termination or Change of Employment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.6",
+    "target_control_id": "ISO 27001 A.6.6 (Confidentiality or Non-Disclosure Agreements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.7",
+    "target_control_id": "ISO 27001 A.6.7 (Remote Working)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.8",
+    "target_control_id": "ISO 27001 A.6.8 (Information Security Event Reporting)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.8",
+    "target_control_id": "NIST CSF 2.0 DE.AE-06 (Adverse Event Reporting)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.8",
+    "target_control_id": "ISO 27001 A.5.25 (Assessment and Decision on Information Security Events)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.1",
+    "target_control_id": "ISO 27001 A.7.1 (Physical Security Perimeters)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.1",
+    "target_control_id": "HIPAA 164.310(a)(1) (Facility Access Controls)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.1",
+    "target_control_id": "HIPAA 164.310(a)(2)(ii) (Facility Security Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.2",
+    "target_control_id": "ISO 27001 A.7.2 (Physical Entry)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.2",
+    "target_control_id": "HIPAA 164.310(a)(1) (Facility Access Controls)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.3",
+    "target_control_id": "ISO 27001 A.7.3 (Securing Offices, Rooms and Facilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.4",
+    "target_control_id": "ISO 27001 A.7.4 (Physical Security Monitoring)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.4",
+    "target_control_id": "NIST CSF 2.0 DE.CM-02 (Physical Environment Monitoring)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.5",
+    "target_control_id": "ISO 27001 A.7.5 (Protecting Against Physical and Environmental Threats)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.5",
+    "target_control_id": "NIST CSF 2.0 PR.IR-02 (Environmental Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.6",
+    "target_control_id": "ISO 27001 A.7.6 (Working in Secure Areas)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.7",
+    "target_control_id": "ISO 27001 A.7.7 (Clear Desk and Clear Screen)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.8",
+    "target_control_id": "ISO 27001 A.7.8 (Equipment Siting and Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.8",
+    "target_control_id": "NIST CSF 2.0 PR.IR-02 (Environmental Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.8",
+    "target_control_id": "NIST CSF 2.0 PR.AA-06 (Physical Access Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.9",
+    "target_control_id": "ISO 27001 A.7.9 (Security of Assets Off-Premises)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.10",
+    "target_control_id": "ISO 27001 A.7.10 (Storage Media)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.10",
+    "target_control_id": "PCI DSS 9.5 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.10",
+    "target_control_id": "PCI DSS 9.5.1 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.11",
+    "target_control_id": "ISO 27001 A.7.11 (Supporting Utilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.12",
+    "target_control_id": "ISO 27001 A.7.12 (Cabling Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.12",
+    "target_control_id": "HIPAA 164.310(a)(2)(ii) (Facility Security Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.12",
+    "target_control_id": "HIPAA 164.310(c) (Workstation Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.13",
+    "target_control_id": "ISO 27001 A.7.13 (Equipment Maintenance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.13",
+    "target_control_id": "NIST CSF 2.0 PR.PS-03 (Hardware Lifecycle Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.14",
+    "target_control_id": "ISO 27001 A.7.14 (Secure Disposal or Re-Use of Equipment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.1",
+    "target_control_id": "ISO 27001 A.8.1 (User Endpoint Devices)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.2",
+    "target_control_id": "ISO 27001 A.8.2 (Privileged Access Rights)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.3",
+    "target_control_id": "ISO 27001 A.8.3 (Information Access Restriction)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.3",
+    "target_control_id": "NIST CSF 2.0 PR.AA-05 (Access Permissions and Authorization)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.4",
+    "target_control_id": "ISO 27001 A.8.4 (Access to Source Code)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.4",
+    "target_control_id": "ISO 27001 A.8.5 (Secure Authentication)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.5",
+    "target_control_id": "ISO 27001 A.8.5 (Secure Authentication)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.5",
+    "target_control_id": "HIPAA 164.312(a)(1) (Access Control)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.5",
+    "target_control_id": "SOC 2 CC6 (Logical and Physical Access)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.6",
+    "target_control_id": "ISO 27001 A.8.6 (Capacity Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.6",
+    "target_control_id": "NIST CSF 2.0 PR.IR-04 (Resource Capacity Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.7",
+    "target_control_id": "ISO 27001 A.8.7 (Protection Against Malware)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.8",
+    "target_control_id": "ISO 27001 A.8.8 (Management of Technical Vulnerabilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.8",
+    "target_control_id": "NIST CSF 2.0 ID.RA-01 (Vulnerability Identification)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.9",
+    "target_control_id": "ISO 27001 A.8.9 (Configuration Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.9",
+    "target_control_id": "NIST CSF 2.0 PR.PS-01 (Configuration Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.10",
+    "target_control_id": "ISO 27001 A.8.10 (Information Deletion)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.10",
+    "target_control_id": "PCI DSS 3.2.1 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.10",
+    "target_control_id": "SOC 2 P1 (Privacy)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.11",
+    "target_control_id": "ISO 27001 A.8.11 (Data Masking)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.11",
+    "target_control_id": "HIPAA 164.312(c)(1) (Integrity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.12",
+    "target_control_id": "ISO 27001 A.8.12 (Data Leakage Prevention)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.13",
+    "target_control_id": "ISO 27001 A.8.13 (Information Backup)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.13",
+    "target_control_id": "NIST CSF 2.0 PR.DS-11 (Data Backup and Recovery)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.13",
+    "target_control_id": "HIPAA 164.308(a)(7)(ii)(A) (Data Backup Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.14",
+    "target_control_id": "ISO 27001 A.8.14 (Redundancy of Information Processing Facilities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.15",
+    "target_control_id": "ISO 27001 A.8.15 (Logging)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.15",
+    "target_control_id": "PCI DSS 10.2 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.15",
+    "target_control_id": "HIPAA 164.312(b) (Audit Controls)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.16",
+    "target_control_id": "ISO 27001 A.8.16 (Monitoring Activities)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.17",
+    "target_control_id": "ISO 27001 A.8.17 (Clock Synchronization)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.18",
+    "target_control_id": "ISO 27001 A.8.18 (Use of Privileged Utility Programs)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.19",
+    "target_control_id": "ISO 27001 A.8.19 (Installation of Software on Operational Systems)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.20",
+    "target_control_id": "ISO 27001 A.8.20 (Networks Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.20",
+    "target_control_id": "ISO 27001 A.8.22 (Segregation of Networks)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.21",
+    "target_control_id": "ISO 27001 A.8.21 (Security of Network Services)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.22",
+    "target_control_id": "ISO 27001 A.8.22 (Segregation of Networks)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.22",
+    "target_control_id": "ISO 27001 A.8.20 (Networks Security)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.23",
+    "target_control_id": "ISO 27001 A.8.23 (Web Filtering)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.24",
+    "target_control_id": "ISO 27001 A.8.24 (Use of Cryptography)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.25",
+    "target_control_id": "ISO 27001 A.8.25 (Secure Development Life Cycle)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.25",
+    "target_control_id": "NIST CSF 2.0 PR.PS-06 (Secure Software Development)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.26",
+    "target_control_id": "ISO 27001 A.8.26 (Application Security Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.26",
+    "target_control_id": "NIST CSF 2.0 PR.PS-06 (Secure Software Development)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.26",
+    "target_control_id": "ISO 27001 A.8.28 (Secure Coding)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.27",
+    "target_control_id": "ISO 27001 A.8.27 (Secure System Architecture and Engineering Principles)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.28",
+    "target_control_id": "ISO 27001 A.8.28 (Secure Coding)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.28",
+    "target_control_id": "NIST CSF 2.0 PR.PS-06 (Secure Software Development)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.28",
+    "target_control_id": "ISO 27001 A.8.26 (Application Security Requirements)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.29",
+    "target_control_id": "ISO 27001 A.8.29 (Security Testing in Development and Acceptance)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.30",
+    "target_control_id": "ISO 27001 A.8.30 (Outsourced Development)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.30",
+    "target_control_id": "NIST CSF 2.0  ID.AM-04 (Supplier Services Inventory)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.30",
+    "target_control_id": "ISO 27001 A.5.19 (Information Security in Supplier Relationships)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.31",
+    "target_control_id": "ISO 27001 A.8.31 (Separation of Development, Test and Production Environments)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.32",
+    "target_control_id": "ISO 27001 A.8.32 (Change Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.32",
+    "target_control_id": "PCI DSS 1.2.2 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.33",
+    "target_control_id": "ISO 27001 A.8.33 (Test Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.33",
+    "target_control_id": "HIPAA 164.312(c)(1) (Integrity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.34",
+    "target_control_id": "ISO 27001 A.8.34 (Protection of Information Systems During Audit Testing)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.1",
+    "target_control_id": "NIST 800-53 PM-9",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.1.1",
+    "target_control_id": "NIST 800-53 AC-1",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.1.2",
+    "target_control_id": "NIST 800-53 PS-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.2",
+    "target_control_id": "NIST 800-53 CM-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.2.1",
+    "target_control_id": "NIST 800-53 CM-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.2.2",
+    "target_control_id": "NIST 800-53 CM-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.2.3",
+    "target_control_id": "NIST 800-53 PM-5",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.2.4",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.2.5",
+    "target_control_id": "NIST 800-53 CM-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.2.6",
+    "target_control_id": "NIST 800-53 SC-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.2.7",
+    "target_control_id": "NIST 800-53 CA-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.2.8",
+    "target_control_id": "NIST 800-53 CM-5",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.3",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.3.1",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.3.2",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.3.3",
+    "target_control_id": "NIST 800-53 AC-18",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.4",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.4.1",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.4.2",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.4.3",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.4.4",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.4.5",
+    "target_control_id": "NIST 800-53 SC-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.5",
+    "target_control_id": "NIST 800-53 AC-17",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "1.5.1",
+    "target_control_id": "NIST 800-53 CM-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2",
+    "target_control_id": "NIST 800-53 CM-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.1",
+    "target_control_id": "NIST 800-53 CM-1",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.1.1",
+    "target_control_id": "NIST 800-53 CM-1",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.1.2",
+    "target_control_id": "NIST 800-53 PS-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.2",
+    "target_control_id": "NIST 800-53 CM-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.2.1",
+    "target_control_id": "NIST 800-53 CM-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.2.2",
+    "target_control_id": "NIST 800-53 CM-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.2.3",
+    "target_control_id": "NIST 800-53 SI-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.2.4",
+    "target_control_id": "NIST 800-53 RA-5",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.3",
+    "target_control_id": "NIST 800-53 AC-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.3.1",
+    "target_control_id": "NIST 800-53 AC-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "2.3.2",
+    "target_control_id": "NIST 800-53 AC-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3",
+    "target_control_id": "NIST 800-53 SC-28",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.1",
+    "target_control_id": "NIST 800-53 CP-9",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.1.1",
+    "target_control_id": "NIST 800-53 PL-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.1.2",
+    "target_control_id": "NIST 800-53 PS-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.2",
+    "target_control_id": "NIST 800-53 SC-28",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.2.1",
+    "target_control_id": "NIST 800-53 CP-9",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.2.2",
+    "target_control_id": "NIST 800-53 SC-28",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.3",
+    "target_control_id": "NIST 800-53 SC-28",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.3.1",
+    "target_control_id": "NIST 800-53 SC-28",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.4",
+    "target_control_id": "NIST 800-53 SC-28",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.4.1",
+    "target_control_id": "NIST 800-53 SC-28",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "3.5",
+    "target_control_id": "NIST 800-53 SC-12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "4",
+    "target_control_id": "NIST 800-53 SC-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "4.1",
+    "target_control_id": "NIST 800-53 SC-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "4.1.1",
+    "target_control_id": "NIST 800-53 PL-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "4.1.2",
+    "target_control_id": "NIST 800-53 PS-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "4.2",
+    "target_control_id": "NIST 800-53 SC-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "4.2.1",
+    "target_control_id": "NIST 800-53 SC-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "4.2.2",
+    "target_control_id": "NIST 800-53 SC-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "4.2.3",
+    "target_control_id": "NIST 800-53 SC-17",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5",
+    "target_control_id": "NIST 800-53 SI-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.1",
+    "target_control_id": "NIST 800-53 SI-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.1.1",
+    "target_control_id": "NIST 800-53 PL-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.1.2",
+    "target_control_id": "NIST 800-53 PS-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.2",
+    "target_control_id": "NIST 800-53 RA-5",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.2.1",
+    "target_control_id": "NIST 800-53 RA-5",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.3",
+    "target_control_id": "NIST 800-53 SI-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.3.1",
+    "target_control_id": "NIST 800-53 SI-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.3.2",
+    "target_control_id": "NIST 800-53 SI-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "5.3.3",
+    "target_control_id": "NIST 800-53 CM-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6",
+    "target_control_id": "NIST 800-53 SA-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.1",
+    "target_control_id": "NIST 800-53 SA-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.1.1",
+    "target_control_id": "NIST 800-53 PL-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.2",
+    "target_control_id": "NIST 800-53 SA-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.2.1",
+    "target_control_id": "NIST 800-53 SA-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.3",
+    "target_control_id": "NIST 800-53 SI-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.3.1",
+    "target_control_id": "NIST 800-53 SI-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.3.2",
+    "target_control_id": "NIST 800-53 SI-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.4",
+    "target_control_id": "NIST 800-53 SI-4",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "6.4.1",
+    "target_control_id": "NIST 800-53 SI-4",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7",
+    "target_control_id": "NIST 800-53 AC-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.1",
+    "target_control_id": "NIST 800-53 AC-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.1.1",
+    "target_control_id": "NIST 800-53 PL-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.2",
+    "target_control_id": "NIST 800-53 AC-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.2.1",
+    "target_control_id": "NIST 800-53 AC-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.2.2",
+    "target_control_id": "NIST 800-53 AC-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.2.3",
+    "target_control_id": "NIST 800-53 AC-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.3",
+    "target_control_id": "NIST 800-53 AC-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "7.3.1",
+    "target_control_id": "NIST 800-53 AC-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8",
+    "target_control_id": "NIST 800-53 IA-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.1",
+    "target_control_id": "NIST 800-53 IA-1",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.1.1",
+    "target_control_id": "NIST 800-53 PL-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.2",
+    "target_control_id": "NIST 800-53 IA-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.2.1",
+    "target_control_id": "NIST 800-53 IA-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.3",
+    "target_control_id": "NIST 800-53 IA-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.3.1",
+    "target_control_id": "NIST 800-53 IA-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.3.2",
+    "target_control_id": "NIST 800-53 IA-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.4",
+    "target_control_id": "NIST 800-53 IA-5",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "8.4.1",
+    "target_control_id": "NIST 800-53 IA-5",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "9",
+    "target_control_id": "NIST 800-53 PE-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "9.1",
+    "target_control_id": "NIST 800-53 PE-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "9.2",
+    "target_control_id": "NIST 800-53 PE-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "9.2.1",
+    "target_control_id": "NIST 800-53 PE-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "9.3",
+    "target_control_id": "NIST 800-53 PE-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "9.4",
+    "target_control_id": "NIST 800-53 PE-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "9.4.1",
+    "target_control_id": "NIST 800-53 PE-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "9.5",
+    "target_control_id": "NIST 800-53 MP-4",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "9.5.1",
+    "target_control_id": "NIST 800-53 MP-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "10",
+    "target_control_id": "NIST 800-53 AU-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "10.1",
+    "target_control_id": "NIST 800-53 AU-1",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "10.2",
+    "target_control_id": "NIST 800-53 AU-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "10.2.1",
+    "target_control_id": "NIST 800-53 AU-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "10.3",
+    "target_control_id": "NIST 800-53 AU-9",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "10.3.1",
+    "target_control_id": "NIST 800-53 AU-9",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "10.4",
+    "target_control_id": "NIST 800-53 AU-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "10.4.1",
+    "target_control_id": "NIST 800-53 AU-6",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "10.5",
+    "target_control_id": "NIST 800-53 AU-11",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "11",
+    "target_control_id": "NIST 800-53 CA-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "11.1",
+    "target_control_id": "NIST 800-53 CA-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "11.2",
+    "target_control_id": "NIST 800-53 RA-5",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "11.2.1",
+    "target_control_id": "NIST 800-53 RA-5",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "11.3",
+    "target_control_id": "NIST 800-53 CA-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "11.3.1",
+    "target_control_id": "NIST 800-53 CA-8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "11.4",
+    "target_control_id": "NIST 800-53 SI-4",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "11.5",
+    "target_control_id": "NIST 800-53 SI-7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12",
+    "target_control_id": "NIST 800-53 PM-1",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12.1",
+    "target_control_id": "NIST 800-53 PM-1",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12.2",
+    "target_control_id": "NIST 800-53 RA-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12.3",
+    "target_control_id": "NIST 800-53 PM-1",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12.4",
+    "target_control_id": "NIST 800-53 CA-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12.5",
+    "target_control_id": "NIST 800-53 SA-9",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12.6",
+    "target_control_id": "NIST 800-53 AT-2",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12.7",
+    "target_control_id": "NIST 800-53 PS-3",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12.8",
+    "target_control_id": "NIST 800-53 IR-4",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "12.9",
+    "target_control_id": "NIST 800-53 SA-9",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 5",
+    "target_control_id": "ISO 27001 Clause 5, NIST GV, NIS2 Article 20, HIPAA Privacy Rule",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 24",
+    "target_control_id": "ISO 27001 Clause 5, NIS2 Article 20, PCI DSS Requirement 12, HIPAA 164.308",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 25",
+    "target_control_id": "ISO 27001 A.8.25, NIST PR, PCI DSS Requirement 6, HIPAA 164.312",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 30",
+    "target_control_id": "ISO 27001:2022 Clause 7.5, NIST CSF GV, NIS2 Article 20, HIPAA Documentation Requirements",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 32",
+    "target_control_id": "ISO 27001:2022 Annex A, NIST CSF Protect Function, NIS2 Article 21, PCI DSS 4.0 Requirements 3 & 4, HIPAA Security Rule 164.312",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 33",
+    "target_control_id": "NIS2 Article 23, ISO 27001:2022 5.24, PCI DSS Requirement 12, HIPAA Breach Notification Rule",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 34",
+    "target_control_id": "NIS2 Article 23, ISO 27001:2022 5.24, HIPAA Breach Notification Rule, PCI DSS Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 20",
+    "target_control_id": "ISO 27001 Clause 5, PCI DSS Requirement 12, GDPR Article 24, HIPAA 164.308",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 21",
+    "target_control_id": "ISO 27001:2022 5.7 & 8.8, PCI DSS 4.0 Requirement 12, GDPR Article 32, HIPAA Security Rule 164.308",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 23",
+    "target_control_id": "ISO 27001:2022 5.24, PCI DSS Requirement 12, GDPR Articles 33 & 34, HIPAA Breach Notification Rule",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 24",
+    "target_control_id": "ISO 27001 Certification, PCI DSS Compliance, Cybersecurity Act",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 25",
+    "target_control_id": "ISO 27001, PCI DSS, NIST CSF",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 29",
+    "target_control_id": "ISO 27001 Internal Audit, PCI DSS Assessment, GDPR Supervisory Authority",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "Article 32",
+    "target_control_id": "GDPR Administrative Fines, ISO 27001 Compliance, PCI DSS Compliance",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(1)(ii)(A)",
+    "target_control_id": "ISO 27001:2022 Clause 6.1.2, NIST CSF ID.RA, NIS2 Article 21, GDPR Article 32, PCI DSS 4.0 Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(1)(ii)(B)",
+    "target_control_id": "ISO 27001:2022 Clause 6.1.3, NIST CSF ID.RA & PR.IP, NIS2 Article 21, GDPR Article 32, PCI DSS 4.0 Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(1)(ii)(C)",
+    "target_control_id": "ISO 27001:2022 Clause 5.4, NIST CSF GV, GDPR Article 24, NIS2 Article 20",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(1)(ii)(D)",
+    "target_control_id": "ISO 27001:2022 A.8.15, NIST CSF DE.CM, PCI DSS Requirement 10, GDPR Article 32, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(2)",
+    "target_control_id": "ISO 27001:2022 Clause 5.3, NIST CSF GV.OV, NIS2 Article 20, GDPR Article 24, PCI DSS 4.0 Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(3)(ii)(A)",
+    "target_control_id": "ISO 27001:2022 A.5.15, NIST CSF PR.AC, GDPR Article 32, NIS2 Article 21, PCI DSS Requirement 7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(3)(ii)(B)",
+    "target_control_id": "ISO 27001:2022 A.5.16, NIST CSF PR.AC, GDPR Article 32, NIS2 Article 21, PCI DSS Requirement 7",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(3)(ii)(C)",
+    "target_control_id": "ISO 27001:2022 A.5.18, NIST CSF PR.AC, GDPR Article 32, NIS2 Article 21, PCI DSS Requirement 8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(4)(ii)(A)",
+    "target_control_id": "ISO 27001:2022 A.8.20, NIST CSF PR.AC, PCI DSS Requirement 1, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(4)(ii)(B)",
+    "target_control_id": "ISO 27001:2022 A.5.15, NIST CSF PR.AC, GDPR Article 32, PCI DSS Requirement 7, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(4)(ii)(C)",
+    "target_control_id": "ISO 27001:2022 A.5.18, NIST CSF PR.AC, GDPR Article 32, PCI DSS Requirement 7, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(5)(ii)(A)",
+    "target_control_id": "ISO 27001:2022 A.6.3, NIST CSF PR.AT, GDPR Article 24, NIS2 Article 20",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(5)(ii)(B)",
+    "target_control_id": "ISO 27001:2022 A.8.7, NIST CSF PR.PT, PCI DSS Requirement 5, GDPR Article 32, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(5)(ii)(C)",
+    "target_control_id": "ISO 27001:2022 A.8.15, NIST CSF DE.CM, PCI DSS Requirement 10, GDPR Article 32, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(5)(ii)(D)",
+    "target_control_id": "ISO 27001:2022 A.5.17, NIST CSF PR.AC, PCI DSS Requirement 8, GDPR Article 32, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(6)",
+    "target_control_id": "ISO 27001:2022 A.5.24, NIST CSF RS, GDPR Articles 33 & 34, NIS2 Article 23, PCI DSS Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(7)(ii)(A)",
+    "target_control_id": "ISO 27001:2022 A.8.13, NIST CSF PR.IP, PCI DSS Requirement 9, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(7)(ii)(B)",
+    "target_control_id": "ISO 27001:2022 A.5.30, NIST CSF RC, NIS2 Article 21, PCI DSS Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(7)(ii)(C)",
+    "target_control_id": "ISO 27001:2022 A.5.30, NIST CSF RC, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(7)(ii)(D)",
+    "target_control_id": "ISO 27001:2022 A.5.30, NIST CSF RC.IM, NIS2 Article 21, PCI DSS Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(7)(ii)(E)",
+    "target_control_id": "ISO 27001:2022 A.5.9, NIST CSF ID.AM, NIS2 Article 21, PCI DSS Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(a)(8)",
+    "target_control_id": "ISO 27001:2022 Clause 9.2, NIST CSF GV.OV, GDPR Article 24, NIS2 Article 21, PCI DSS Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.308(b)",
+    "target_control_id": "ISO 27001:2022 A.5.19, NIST CSF GV.SC, GDPR Article 28, NIS2 Article 21, PCI DSS Requirement 12",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(a)(1)",
+    "target_control_id": "ISO 27001:2022 A.7.1, NIST CSF PR.PS, PCI DSS Requirement 9, NIS2 Article 21, GDPR Article 32",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(a)(2)(i)",
+    "target_control_id": "ISO 27001:2022 A.7.1, NIST CSF RC, NIS2 Article 21, PCI DSS Requirement 9",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(a)(2)(ii)",
+    "target_control_id": "ISO 27001:2022 A.7.1, NIST CSF PR.PS, PCI DSS Requirement 9, GDPR Article 32, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(a)(2)(iii)",
+    "target_control_id": "ISO 27001:2022 A.7.2, NIST CSF PR.PS, PCI DSS Requirement 9, NIS2 Article 21, GDPR Article 32",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(a)(2)(iv)",
+    "target_control_id": "ISO 27001:2022 A.7.13, NIST CSF ID.AM, PCI DSS Requirement 9",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(b)",
+    "target_control_id": "ISO 27001:2022 A.7.7, NIST CSF PR.PS, PCI DSS Requirement 9, GDPR Article 32, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(c)",
+    "target_control_id": "ISO 27001:2022 A.7.8, NIST CSF PR.PS, PCI DSS Requirement 9, GDPR Article 32, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(d)(1)",
+    "target_control_id": "ISO 27001:2022 A.7.10, NIST CSF PR.DS, PCI DSS Requirement 9, GDPR Article 32, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(d)(2)(i)",
+    "target_control_id": "ISO 27001:2022 A.7.14, NIST CSF PR.DS, PCI DSS Requirement 9, GDPR Article 32",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(d)(2)(ii)",
+    "target_control_id": "ISO 27001:2022 A.7.14, NIST CSF PR.DS, PCI DSS Requirement 9, GDPR Article 32, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(d)(2)(iii)",
+    "target_control_id": "ISO 27001:2022 A.5.9, NIST CSF ID.AM, PCI DSS Requirement 9, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.310(d)(2)(iv)",
+    "target_control_id": "ISO 27001:2022 A.8.13, NIST CSF PR.IP, PCI DSS Requirement 9, NIS2 Article 21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(a)(1)",
+    "target_control_id": "ISO 27001:2022 A.5.15, NIST CSF PR.AC, PCI DSS Req.7 & Req.8, GDPR Art.32, NIS2 Art.21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(a)(2)(i)",
+    "target_control_id": "ISO 27001:2022 A.5.16, NIST CSF PR.AC, PCI DSS Req.8, GDPR Art.32, NIS2 Art.21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(a)(2)(ii)",
+    "target_control_id": "ISO 27001:2022 A.5.18, NIST CSF RC, NIS2 Art.21, PCI DSS Req.8",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(a)(2)(iii)",
+    "target_control_id": "ISO 27001:2022 A.8.5, NIST CSF PR.AC, PCI DSS Req.8, GDPR Art.32, NIS2 Art.21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(a)(2)(iv)",
+    "target_control_id": "ISO 27001:2022 A.8.24, NIST CSF PR.DS, PCI DSS Req.3, GDPR Art.32, NIS2 Art.21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(b)",
+    "target_control_id": "ISO 27001:2022 A.8.15, NIST CSF DE.CM, PCI DSS Req.10, GDPR Art.30, NIS2 Art.21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(c)(1)",
+    "target_control_id": "ISO 27001:2022 A.8.15, NIST CSF PR.DS, PCI DSS Req.11, GDPR Art.5, NIS2 Art.21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(c)(2)",
+    "target_control_id": "ISO 27001:2022 A.8.15, NIST CSF PR.DS, PCI DSS Req.11",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(d)",
+    "target_control_id": "ISO 27001:2022 A.5.17, NIST CSF PR.AC, PCI DSS Req.8, GDPR Art.32, NIS2 Art.21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(e)(1)",
+    "target_control_id": "ISO 27001:2022 A.8.24, NIST CSF PR.DS, PCI DSS Req.4, GDPR Art.32, NIS2 Art.21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(e)(2)(i)",
+    "target_control_id": "ISO 27001:2022 A.8.15, NIST CSF PR.DS, PCI DSS Req.4",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "164.312(e)(2)(ii)",
+    "target_control_id": "ISO 27001:2022 A.8.24, NIST CSF PR.DS, PCI DSS Req.4, GDPR Art.32, NIS2 Art.21",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC3",
+    "target_control_id": "HIPAA 164.308(a)(1)(ii)(A) (Risk Analysis)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC3",
+    "target_control_id": "PCI DSS 12.2 (N/A)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC3",
+    "target_control_id": "NIST CSF 2.0 DE.AE-04 (Impact and Scope Assessment)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC6",
+    "target_control_id": "HIPAA 164.312(a)(1) (Access Control)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC6",
+    "target_control_id": "ISO 27001 A.5.15 (Access Control)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC6",
+    "target_control_id": "ISO 27001 A.8.5 (Secure Authentication)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC8",
+    "target_control_id": "NIST CSF 2.0 PR.PS-01 (Configuration Management)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC9",
+    "target_control_id": "HIPAA 164.308(a)(7)(ii)(B) (Disaster Recovery Plan)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC9",
+    "target_control_id": "ISO 27001 A.5.30 (ICT Readiness for Business Continuity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "CC9",
+    "target_control_id": "ISO 27002 5.30 (ICT Readiness for Business Continuity)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "C1",
+    "target_control_id": "NIST CSF 2.0 PR.DS-01 (Data-at-Rest Protection)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "C1",
+    "target_control_id": "ISO 27001 A.5.12 (Classification of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "C1",
+    "target_control_id": "ISO 27002 5.12 (Classification of Information)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "P1",
+    "target_control_id": "ISO 27001 A.5.34 (Privacy and Protection of PII)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "P1",
+    "target_control_id": "ISO 27001 A.8.10 (Information Deletion)",
+    "equivalence_level": "Unknown"
+  },
+  {
+    "source_control_id": "P1",
+    "target_control_id": "ISO 27002 5.34 (Privacy and Protection of PII)",
+    "equivalence_level": "Unknown"
+  }
+]

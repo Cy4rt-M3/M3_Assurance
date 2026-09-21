@@ -28,3 +28,22 @@ def safe_pct(numerator: int, denominator: int) -> float:
     if denominator == 0:
         return 0.0
     return round(numerator / denominator * 100, 1)
+
+
+def weighted_risk_score(
+    cvss: float,
+    epss: float,
+    blast_radius: float,
+) -> float:
+    """Combine CVSS, EPSS and blast radius into a 0-100 risk score."""
+    cvss_score = cvss * 10
+    epss_score = epss * 100
+    score = cvss_score * 0.50 + epss_score * 0.30 + blast_radius * 0.20
+    return round(min(score, 100.0), 1)
+
+
+def severity_to_score(severity_id: int) -> float:
+    """Map an OCSF severity id to a 0-100 detection risk score."""
+    step = 20
+    clamped = max(0, min(severity_id, 5))
+    return float(clamped * step)

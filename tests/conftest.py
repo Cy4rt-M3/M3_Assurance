@@ -55,9 +55,33 @@ async def redis_client(redis_url: str) -> AsyncGenerator[Redis, None]:
     await client.aclose()
 
 
+_TABLE_NAMES = (
+    "engagements",
+    "verdicts",
+    "evidence_links",
+    "control_statuses",
+    "frameworks",
+    "controls",
+    "cross_walks",
+    "resilience_scores",
+    "gap_analyses",
+    "reports",
+    "deliveries",
+)
+
+
 @pytest_asyncio.fixture(scope="session", autouse=True)
 async def seed_db(db_engine: AsyncEngine) -> None:
-    """Load fixture JSON files into the test DB once per session."""
+    """Reset the test DB, then load fixture JSON files once per session."""
+    async with db_engine.begin() as conn:
+        await conn.execute(
+            text(f"TRUNCATE {', '.join(_TABLE_NAMES)} RESTART IDENTITY CASCADE")
+        )
+    await load_fixture_registry(db_engine)
+
+
+async def load_fixture_registry(db_engine: AsyncEngine) -> None:
+    """Insert the fixture frameworks/controls into the test DB."""
     async with db_engine.begin() as conn:
         for framework in _load("frameworks.json"):
             await conn.execute(
@@ -102,3 +126,31 @@ def _load(filename: str) -> list[dict[str, Any]]:
 def make_client(app: FastAPI) -> AsyncClient:
     """Create a test ASGI client for a FastAPI app (no running server needed)."""
     return AsyncClient(transport=ASGITransport(app=app), base_url="http://test")
+
+
+@pytest_asyncio.fixture(scope="session", autouse=True)
+async def service_apps_on_test_db(
+    db_engine: AsyncEngine,
+    db_session_factory: async_sessionmaker[AsyncSession],
+) -> AsyncGenerator[None, None]:
+    """Point every service app at the test database for the whole session."""
+    from apps.control_mapping import main as control_mapping_main
+    from apps.evidence_aggregator import main as evidence_aggregator_main
+    from apps.gap_analyzer import main as gap_analyzer_main
+    from apps.pipeline import engine as pipeline_engine
+    from apps.report_generator import main as report_generator_main
+    from apps.report_publisher import main as report_publisher_main
+    from apps.resilience_scorer import main as resilience_scorer_main
+
+    for module in (
+        control_mapping_main,
+        evidence_aggregator_main,
+        gap_analyzer_main,
+        report_generator_main,
+        report_publisher_main,
+        resilience_scorer_main,
+        pipeline_engine,
+    ):
+        setattr(module, "_engine", db_engine)  # noqa: B010
+        setattr(module, "_session_factory", db_session_factory)  # noqa: B010
+    yield
