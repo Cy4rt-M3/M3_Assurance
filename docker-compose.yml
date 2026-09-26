@@ -6,12 +6,16 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-assurance}
       POSTGRES_DB: ${POSTGRES_DB:-assurance}
     ports:
-      - "${POSTGRES_PORT:-5433}:5432"
+      - "5434:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/01_init.sql:ro
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-assurance} -d ${POSTGRES_DB:-assurance}"]
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-assurance} -d ${POSTGRES_DB:-assurance}"
+        ]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -20,13 +24,74 @@ services:
   redis:
     image: redis:7-alpine
     ports:
-      - "${REDIS_PORT:-6380}:6379"
+      - "6380:6379"
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
       timeout: 5s
       retries: 10
       start_period: 5s
+
+  framework_registry:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    environment:
+      DATABASE_URL: postgresql+asyncpg://assurance:assurance@postgres:5432/assurance
+      REDIS_URL: redis://redis:6379/0
+      PORT_FRAMEWORK_REGISTRY: 10006
+    ports:
+      - "10006:10006"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  control_mapping:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    environment:
+      DATABASE_URL: postgresql+asyncpg://assurance:assurance@postgres:5432/assurance
+      REDIS_URL: redis://redis:6379/0
+      PORT_CONTROL_MAPPING: 10001
+    command:
+      [
+        "uv",
+        "run",
+        "uvicorn",
+        "apps.control_mapping.main:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "10001"
+      ]
+    ports:
+      - "10001:10001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        NEXT_PUBLIC_FRAMEWORK_API_URL: http://localhost:10006
+        NEXT_PUBLIC_MAPPING_API_URL: http://localhost:10001
+    environment:
+      NEXT_PUBLIC_FRAMEWORK_API_URL: http://localhost:10006
+      NEXT_PUBLIC_MAPPING_API_URL: http://localhost:10001
+    ports:
+      - "3000:3000"
+    depends_on:
+      framework_registry:
+        condition: service_started
+      control_mapping:
+        condition: service_started
 
 volumes:
   postgres_data:
