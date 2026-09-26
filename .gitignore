@@ -66,3 +66,11 @@ postgres_data/
 
 # Alembic auto-generated
 alembic/__pycache__/
+scripts_load_crosswalks.py.backup
+scripts_load_crosswalks.py.bak
+scripts_load_crosswalks_backup.py
+README.md.backup
+frontend/.next/
+frontend/dev.log
+frontend/server.log
+.DS_Store

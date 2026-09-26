@@ -3,6 +3,200 @@
 CyArt Tech LLP — Compliance, Evidence & Resilience Scoring Engine.
 
 ---
+## Pod Nova — Docker Integration
+
+This branch (`Docker_Integrated_PodNova`) provides a Dockerized setup for the M3 Assurance platform, including the Pod Nova backend services and the integrated frontend dashboard.
+
+### Architecture
+
+The Docker Compose setup runs five services:
+
+| Service              | Purpose                        | Host Port |
+| -------------------- | ------------------------------ | --------: |
+| `postgres`           | PostgreSQL database            |    `5434` |
+| `redis`              | Redis cache/service dependency |    `6380` |
+| `framework_registry` | Framework Registry API         |   `10006` |
+| `control_mapping`    | Control Mapping API            |   `10001` |
+| `dashboard`          | Next.js frontend dashboard     |    `3000` |
+
+The backend services use PostgreSQL and Redis through the Docker Compose network. The dashboard communicates with the backend APIs through the exposed localhost ports.
+
+### Prerequisites
+
+* Docker Desktop installed and running
+* Git
+* A free host port for `3000`, `10001`, `10006`, `5434`, and `6380`
+
+### Environment Configuration
+
+The Docker Compose setup provides default values for the PostgreSQL configuration:
+
+```text
+POSTGRES_USER=assurance
+POSTGRES_PASSWORD=assurance
+POSTGRES_DB=assurance
+```
+
+Backend containers use the Docker service names for internal communication:
+
+```text
+DATABASE_URL=postgresql+asyncpg://assurance:assurance@postgres:5432/assurance
+REDIS_URL=redis://redis:6379/0
+```
+
+The dashboard uses:
+
+```text
+NEXT_PUBLIC_FRAMEWORK_API_URL=http://localhost:10006
+NEXT_PUBLIC_MAPPING_API_URL=http://localhost:10001
+```
+
+No manual database or Redis installation is required when using Docker Compose.
+
+### Build and Start
+
+From the repository root:
+
+```bash
+docker compose build
+docker compose up -d
+```
+
+Check the container status:
+
+```bash
+docker compose ps
+```
+
+All five services should be running, with PostgreSQL and Redis showing healthy status.
+
+### Dashboard Access
+
+Open the dashboard in a browser:
+
+```text
+http://localhost:3000
+```
+
+The dashboard retrieves framework and control data from the Framework Registry API and mapping data from the Control Mapping API.
+
+### API Verification
+
+Framework Registry health check:
+
+```bash
+curl http://localhost:10006/health
+```
+
+List available frameworks:
+
+```bash
+curl http://localhost:10006/frameworks
+```
+
+Test a control mapping:
+
+```bash
+curl "http://localhost:10001/mappings/gdpr:Article%2024"
+```
+
+A successful mapping request returns the mapped target control and equivalence level.
+
+### Data Persistence
+
+PostgreSQL data is stored in the Docker named volume:
+
+```text
+postgres_data
+```
+
+The database initialization script is mounted read-only from:
+
+```text
+docker/postgres/init.sql
+```
+
+Do not use `docker compose down -v` unless database volume deletion is intentionally required, because this removes the PostgreSQL Docker volume.
+
+### Stopping the Services
+
+To stop the complete Docker Compose environment:
+
+```bash
+docker compose down
+```
+
+To stop only the dashboard while keeping the backend services running:
+
+```bash
+docker stop m3_assurance-dashboard-1
+```
+
+The dashboard can then be started again with:
+
+```bash
+docker compose start dashboard
+```
+
+### Troubleshooting
+
+#### Port 3000 already in use
+
+If the dashboard cannot start because port `3000` is already occupied, stop the application using that port or stop the separate frontend development server before running the Docker dashboard.
+
+Check the port with:
+
+```bash
+lsof -i :3000
+```
+
+#### Backend service unavailable
+
+Check the service logs:
+
+```bash
+docker compose logs --tail=50 framework_registry
+docker compose logs --tail=50 control_mapping
+```
+
+#### Dashboard logs
+
+```bash
+docker compose logs --tail=50 dashboard
+```
+
+#### Check service status
+
+```bash
+docker compose ps
+```
+
+### Verification Performed
+
+The Docker integration was verified with:
+
+* Successful `docker compose config` validation
+* Successful `docker compose build`
+* All five containers running
+* PostgreSQL health check passing
+* Redis health check passing
+* Framework Registry `/health` returning successfully
+* Framework Registry framework listing verified
+* Control Mapping API verified with a GDPR control mapping
+* Dashboard successfully loading at `http://localhost:3000`
+* Framework and control data displayed in the dashboard
+* Control mapping information displayed in the dashboard
+* Container logs checked with no application errors observed
+
+### Known Limitations
+
+* The dashboard currently expects the backend APIs to be reachable through the host's localhost ports.
+* Host ports `3000`, `10001`, `10006`, `5434`, and `6380` must be available.
+* The Docker setup uses default development credentials for PostgreSQL and should use secure credentials for production deployments.
+* The existing root project README also documents the non-Docker development and testing workflow; the Docker workflow above is intended for the integrated Pod Nova environment.
+
+---
+
 
 ## Requirements
 
