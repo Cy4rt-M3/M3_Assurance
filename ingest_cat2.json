@@ -1,0 +1,25 @@
+﻿{
+  "class_uid": 2001,
+  "class_name": "Security Finding",
+  "category_uid": 2,
+  "category_name": "Findings",
+  "activity_id": 1,
+  "activity_name": "Create",
+  "severity_id": 4,
+  "severity": "High",
+  "type_uid": 200101,
+  "time": 1774448805000,
+  "metadata": { "version": "1.1.0", "profiles": ["web_app"] },
+  "finding_info": {
+    "title": "SQL Injection Detected on API Gateway",
+    "uid": "alert_sqli_902",
+    "desc": "Payload contained 'UNION SELECT' attempt against user table.",
+    "types": ["CWE-89", "T1190"]
+  },
+  "resources": [
+    { "name": "/api/v1/users/search", "type": "HTTP Endpoint" },
+    { "name": "prod-user-db", "type": "Database" }
+  ],
+  "status_id": 1,
+  "status": "New"
+}

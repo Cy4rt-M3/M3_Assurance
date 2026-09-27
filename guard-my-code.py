@@ -64,7 +64,18 @@ def _typecheck() -> None:
 def _dead_code() -> None:
     _step(
         "🦅 Detecting dead code with vulture...",
-        ["uv", "run", "vulture", "--exclude", ".venv", ".", "--min-confidence", "100"],
+        [
+            "uv",
+            "run",
+            "python",
+            "-m",
+            "vulture",
+            "--exclude",
+            ".venv",
+            ".",
+            "--min-confidence",
+            "100",
+        ],
     )
 
 

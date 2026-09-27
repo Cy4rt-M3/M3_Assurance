@@ -1,0 +1,27 @@
+﻿[
+  {
+    "_test_case": "1. Wrong Data Types (Words used instead of Numbers)",
+    "class_uid": "3002",
+    "class_name": "Authentication",
+    "activity_id": "ONE",
+    "time": "2026-09-25T14:11:00Z",
+    "metadata": { "version": "1.1.0" }
+  },
+  {
+    "_test_case": "2. Missing Important ID Fields (No class_uid or type_uid)",
+    "category_uid": 1,
+    "severity_id": 2,
+    "user": { "name": "malicious_actor" }
+  },
+  {
+    "_test_case": "3. Invalid Number Code (severity_id 99 does not exist)",
+    "class_uid": 3002,
+    "class_name": "Authentication",
+    "category_uid": 3,
+    "type_uid": 300201,
+    "activity_id": 1,
+    "severity_id": 99,
+    "time": 1727273400000,
+    "metadata": { "version": "1.1.0" }
+  }
+]

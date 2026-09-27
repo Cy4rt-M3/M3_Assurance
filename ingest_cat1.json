@@ -1,0 +1,27 @@
+﻿{
+  "engagement_id": "ENG-2026-CAT1",
+  "frameworks": ["nist_csf_2_0_2"],
+  "events": [
+    {
+      "class_uid": 3002,
+      "class_name": "Authentication",
+      "category_uid": 3,
+      "category_name": "Identity & Access Management",
+      "activity_id": 1,
+      "activity_name": "Logon",
+      "severity_id": 1,
+      "severity": "Informational",
+      "type_uid": 300201,
+      "type_name": "Authentication: Logon",
+      "time": 1727273400000,
+      "metadata": {
+        "version": "1.1.0",
+        "product": { "name": "Cybreach Auth Engine", "vendor_name": "Cybreach" }
+      },
+      "user": { "name": "sneha", "uid": "usr_9921", "type": "User" },
+      "src_endpoint": { "ip": "192.168.1.105", "port": 54321 },
+      "status_id": 1,
+      "status": "Success"
+    }
+  ]
+}

@@ -130,9 +130,7 @@ def _download_response(
     else:
         media_type = "application/pdf"
         extension = "pdf"
-    headers = {
-        "Content-Disposition": f'attachment; filename="{report_id}.{extension}"'
-    }
+    headers = {"Content-Disposition": f'attachment; filename="{report_id}.{extension}"'}
     return Response(content=content, media_type=media_type, headers=headers)
 
 

@@ -66,3 +66,4 @@ postgres_data/
 
 # Alembic auto-generated
 alembic/__pycache__/
+*.py,cover

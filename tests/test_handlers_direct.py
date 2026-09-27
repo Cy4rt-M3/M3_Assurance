@@ -34,7 +34,7 @@ from apps.report_publisher.models import DeliveryRequest
 from apps.resilience_scorer.main import calculate_score
 from apps.resilience_scorer.models import ResilienceScore, ScoreRequest
 
-_HASH = "a3f5c2d1e8b4a7f0c9d2e5b8a1f4c7d0e3b6a9f2c5d8e1b4a7f0c3d6e9b2a5f8"
+_HASH = "a3f5c2d1e8b4a7f0c9d2e5b8a1f4c7d0e3b6a9f2c5d8e1b4a7f0c3d6e9b2a5f8"  # pragma: allowlist secret
 
 
 async def _seed_engagement(session: AsyncSession, engagement_id: str) -> None:

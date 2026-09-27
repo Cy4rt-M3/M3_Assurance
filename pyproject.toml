@@ -58,7 +58,8 @@ exclude = [
     ".venv",
     "alembic",
     "master_setup.py",
-    "guard-my-code.py"
+    "guard-my-code.py",
+    "frontend"
 ]
 venvPath = "."
 venv = ".venv"

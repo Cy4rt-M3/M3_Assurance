@@ -70,10 +70,22 @@ def test_cvss_for_severity():
 
 
 def test_overall_risk_from_statistics_thresholds():
-    assert overall_risk_from_statistics({"critical": 0, "high": 0, "medium": 0, "low": 0}) == "Low"
-    assert overall_risk_from_statistics({"critical": 0, "high": 0, "medium": 6, "low": 0}) == "Medium"
-    assert overall_risk_from_statistics({"critical": 0, "high": 5, "medium": 0, "low": 0}) == "High"
-    assert overall_risk_from_statistics({"critical": 3, "high": 0, "medium": 0, "low": 0}) == "Critical"
+    assert (
+        overall_risk_from_statistics({"critical": 0, "high": 0, "medium": 0, "low": 0})
+        == "Low"
+    )
+    assert (
+        overall_risk_from_statistics({"critical": 0, "high": 0, "medium": 6, "low": 0})
+        == "Medium"
+    )
+    assert (
+        overall_risk_from_statistics({"critical": 0, "high": 5, "medium": 0, "low": 0})
+        == "High"
+    )
+    assert (
+        overall_risk_from_statistics({"critical": 3, "high": 0, "medium": 0, "low": 0})
+        == "Critical"
+    )
 
 
 def test_build_findings_orders_by_priority():
@@ -134,14 +146,16 @@ def test_build_report_data_full_payload():
         engagement=_engagement(),
         score=_score(),
         statuses={"DE.AE-02": "Met"},
-        controls=[Control(
-            control_id="DE.AE-02",
-            framework_id="nist_csf_2_0_2",
-            category="Detect",
-            name="AED 02",
-            description="Detects events",
-            attack_mapping=["T1486"],
-        )],
+        controls=[
+            Control(
+                control_id="DE.AE-02",
+                framework_id="nist_csf_2_0_2",
+                category="Detect",
+                name="AED 02",
+                description="Detects events",
+                attack_mapping=["T1486"],
+            )
+        ],
         verdicts=[{"verdict_id": "v1", "technique_id": "T1486", "outcome": "Detected"}],
         gaps=[_gap(1)],
         report_id="RPT-0001",
@@ -177,7 +191,12 @@ def test_build_report_data_full_payload():
 
 def test_build_report_data_no_score_no_findings():
     data = build_report_data(
-        engagement={"engagement_id": "e2", "name": "Blank", "organization": "Org", "frameworks": []},
+        engagement={
+            "engagement_id": "e2",
+            "name": "Blank",
+            "organization": "Org",
+            "frameworks": [],
+        },
         score=None,
         statuses={},
         controls=[],

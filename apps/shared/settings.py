@@ -8,10 +8,10 @@ class Settings(BaseSettings):
 
     # Database
     database_url: str = (
-        "postgresql+asyncpg://assurance:assurance@localhost:5432/assurance"
+        "postgresql+asyncpg://assurance:assurance@localhost:5432/assurance"  # noqa: E501  # pragma: allowlist secret
     )
     database_test_url: str = (
-        "postgresql+asyncpg://assurance:assurance@localhost:5432/assurance_test"
+        "postgresql+asyncpg://assurance:assurance@localhost:5432/assurance_test"  # noqa: E501  # pragma: allowlist secret
     )
 
     # Redis

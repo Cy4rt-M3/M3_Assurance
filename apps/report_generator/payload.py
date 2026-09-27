@@ -196,9 +196,7 @@ def build_report_data(
     del statuses, controls, verdicts
 
     organization = str(engagement.get("organization") or "Organization")
-    framework_items = cast(
-        "list[Any]", engagement.get("frameworks") or []
-    )
+    framework_items = cast("list[Any]", engagement.get("frameworks") or [])
     frameworks = [f"{item}" for item in framework_items]
     framework_label = ", ".join(frameworks) or "NIST Cyber Security Framework"
 
@@ -206,9 +204,7 @@ def build_report_data(
     statistics = build_statistics(findings)
 
     band = score.band if score is not None else ""
-    overall_risk = (
-        BAND_RISK.get(band, "") or overall_risk_from_statistics(statistics)
-    )
+    overall_risk = BAND_RISK.get(band, "") or overall_risk_from_statistics(statistics)
 
     total_findings = len(findings)
     critical = statistics.get("critical", 0)

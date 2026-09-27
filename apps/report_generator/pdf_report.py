@@ -450,9 +450,7 @@ class NumberedCanvas(pdfcanvas.Canvas):
         self.setFillColor(HexColor(THEME.muted))
         page_number = getattr(self, "_pageNumber", 0)
         text = f"Page {page_number} of {total_pages}"
-        self.drawRightString(
-            THEME.page_size[0] - THEME.margin_side, 1.15 * cm, text
-        )
+        self.drawRightString(THEME.page_size[0] - THEME.margin_side, 1.15 * cm, text)
 
 
 class ReportDocTemplate(BaseDocTemplate):
@@ -514,9 +512,7 @@ def _header_footer_content(
     canvas_obj.restoreState()
 
 
-def _cover_page_background(
-    canvas_obj: pdfcanvas.Canvas, doc: BaseDocTemplate
-) -> None:
+def _cover_page_background(canvas_obj: pdfcanvas.Canvas, doc: BaseDocTemplate) -> None:
     """Full-bleed navy background + classification banners for the cover."""
     setattr(canvas_obj, "_is_cover_page", True)  # noqa: B010
     canvas_obj.saveState()
@@ -590,9 +586,7 @@ def build_cover(
         generated_str = generated_at.strftime("%d %B %Y")
     else:
         generated_str = (
-            str(generated_at)
-            if generated_at
-            else datetime.now().strftime("%d %B %Y")
+            str(generated_at) if generated_at else datetime.now().strftime("%d %B %Y")
         )
 
     story.append(Spacer(1, 6.8 * cm))
@@ -603,9 +597,7 @@ def build_cover(
         )
     )
     story.append(Spacer(1, 4))
-    story.append(
-        Paragraph(scope.get("assessment_type", ""), styles["CoverSubtitle"])
-    )
+    story.append(Paragraph(scope.get("assessment_type", ""), styles["CoverSubtitle"]))
     story.append(Spacer(1, 2.2 * cm))
 
     meta_rows = [
@@ -696,11 +688,16 @@ def build_document_control(
 
     story.append(Paragraph("Distribution List", styles["SubHeading"]))
     org = data["organization"]
-    story.append(_kv_table([
-        ("Organization", org.get("name", "")),
-        ("Contact", org.get("contact_person", "")),
-        ("Email", org.get("email", "")),
-    ], styles))
+    story.append(
+        _kv_table(
+            [
+                ("Organization", org.get("name", "")),
+                ("Contact", org.get("contact_person", "")),
+                ("Email", org.get("email", "")),
+            ],
+            styles,
+        )
+    )
     story.append(PageBreak())
 
 
@@ -765,9 +762,7 @@ def build_executive_summary(
 
     avg_cvss = stats.get("average_cvss", "N/A")
     total_findings = sum(int(stats.get(s, 0) or 0) for s in SEVERITY_ORDER)
-    critical_high = int(stats.get("critical", 0) or 0) + int(
-        stats.get("high", 0) or 0
-    )
+    critical_high = int(stats.get("critical", 0) or 0) + int(stats.get("high", 0) or 0)
     stat_cells = [
         ("Total Findings", str(total_findings)),
         ("Average CVSS", str(avg_cvss)),
@@ -816,24 +811,31 @@ def build_scope_and_methodology(
 
     story.append(Paragraph("Scope & Methodology", styles["SectionHeading"]))
     story.append(Paragraph("Assessment Scope", styles["SubHeading"]))
-    story.append(_kv_table([
-        ("Assessment Name", scope.get("assessment_name", "")),
-        ("Assessment Type", scope.get("assessment_type", "")),
-        ("Target", scope.get("target", "")),
-        ("Assessment Period", scope.get("assessment_period", "")),
-        ("Assessment Team", scope.get("assessment_team", "")),
-        ("Framework", scope.get("framework", "")),
-        ("Testing Type", scope.get("testing_type", "")),
-    ], styles))
+    story.append(
+        _kv_table(
+            [
+                ("Assessment Name", scope.get("assessment_name", "")),
+                ("Assessment Type", scope.get("assessment_type", "")),
+                ("Target", scope.get("target", "")),
+                ("Assessment Period", scope.get("assessment_period", "")),
+                ("Assessment Team", scope.get("assessment_team", "")),
+                ("Framework", scope.get("framework", "")),
+                ("Testing Type", scope.get("testing_type", "")),
+            ],
+            styles,
+        )
+    )
     story.append(Spacer(1, 14))
 
     story.append(Paragraph("Methodology", styles["SubHeading"]))
-    story.append(Paragraph(
-        "The assessment was conducted in accordance with the phases below, "
-        "combining automated tooling with manual validation to minimize "
-        "false positives and confirm real-world exploitability.",
-        styles["Body"],
-    ))
+    story.append(
+        Paragraph(
+            "The assessment was conducted in accordance with the phases below, "
+            "combining automated tooling with manual validation to minimize "
+            "false positives and confirm real-world exploitability.",
+            styles["Body"],
+        )
+    )
     story.append(Spacer(1, 6))
 
     phase_rows = [
@@ -862,10 +864,13 @@ def build_asset_inventory(
     """Tabular inventory of in-scope assets."""
     assets = data["assets"]
     story.append(Paragraph("Asset Inventory", styles["SectionHeading"]))
-    story.append(Paragraph(
-        f"{len(assets)} asset(s) were included within the scope of this assessment.",
-        styles["Body"],
-    ))
+    story.append(
+        Paragraph(
+            f"{len(assets)} asset(s) were included within the scope of this "
+            "assessment.",
+            styles["Body"],
+        )
+    )
     story.append(Spacer(1, 8))
 
     header = [
@@ -879,15 +884,17 @@ def build_asset_inventory(
     ]
     table_data = [[Paragraph(h, styles["TableCellHeader"]) for h in header]]
     for asset in assets:
-        table_data.append([
-            Paragraph(str(asset.get("hostname", "")), styles["TableCell"]),
-            Paragraph(str(asset.get("ip_address", "")), styles["TableCell"]),
-            Paragraph(str(asset.get("asset_type", "")), styles["TableCell"]),
-            Paragraph(str(asset.get("operating_system", "")), styles["TableCell"]),
-            Paragraph(str(asset.get("environment", "")), styles["TableCell"]),
-            Paragraph(str(asset.get("criticality", "")), styles["TableCell"]),
-            Paragraph(str(asset.get("owner", "")), styles["TableCell"]),
-        ])
+        table_data.append(
+            [
+                Paragraph(str(asset.get("hostname", "")), styles["TableCell"]),
+                Paragraph(str(asset.get("ip_address", "")), styles["TableCell"]),
+                Paragraph(str(asset.get("asset_type", "")), styles["TableCell"]),
+                Paragraph(str(asset.get("operating_system", "")), styles["TableCell"]),
+                Paragraph(str(asset.get("environment", "")), styles["TableCell"]),
+                Paragraph(str(asset.get("criticality", "")), styles["TableCell"]),
+                Paragraph(str(asset.get("owner", "")), styles["TableCell"]),
+            ]
+        )
 
     t = Table(
         table_data,
@@ -929,16 +936,17 @@ def build_risk_matrix(
     """Per-severity finding count grid, colored by band."""
     matrix = data["risk_matrix"]
     story.append(Paragraph("Risk Matrix", styles["SectionHeading"]))
-    story.append(Paragraph(
-        "The table below summarizes the number of findings identified per "
-        "severity classification.",
-        styles["Body"],
-    ))
+    story.append(
+        Paragraph(
+            "The table below summarizes the number of findings identified per "
+            "severity classification.",
+            styles["Body"],
+        )
+    )
     story.append(Spacer(1, 8))
 
     header = [
-        Paragraph(SEVERITY_LABELS[s], styles["TableCellHeader"])
-        for s in SEVERITY_ORDER
+        Paragraph(SEVERITY_LABELS[s], styles["TableCellHeader"]) for s in SEVERITY_ORDER
     ]
     values = [
         Paragraph(
@@ -972,11 +980,14 @@ def build_findings(
     """One detailed write-up per finding with severity, CVSS and remediation."""
     findings = data["findings"]
     story.append(Paragraph("Detailed Findings", styles["SectionHeading"]))
-    story.append(Paragraph(
-        f"This section documents all {len(findings)} finding(s) identified during the "
-        "assessment, ordered by severity, along with recommended remediation.",
-        styles["Body"],
-    ))
+    story.append(
+        Paragraph(
+            f"This section documents all {len(findings)} finding(s) identified "
+            "during the assessment, ordered by severity, along with recommended "
+            "remediation.",
+            styles["Body"],
+        )
+    )
     story.append(Spacer(1, 10))
 
     severity_rank = {s: i for i, s in enumerate(SEVERITY_ORDER)}
@@ -988,13 +999,15 @@ def build_findings(
     for finding in ordered:
         block: list[Any] = []
         title_row = Table(
-            [[
-                Paragraph(
-                    f"{finding.get('finding_id', '')}: {finding.get('title', '')}",
-                    styles["FindingTitle"],
-                ),
-                severity_badge_table(finding.get("severity", "")),
-            ]],
+            [
+                [
+                    Paragraph(
+                        f"{finding.get('finding_id', '')}: {finding.get('title', '')}",
+                        styles["FindingTitle"],
+                    ),
+                    severity_badge_table(finding.get("severity", "")),
+                ]
+            ],
             colWidths=[14.6 * cm, 2.3 * cm],
         )
         title_row.setStyle(
@@ -1021,11 +1034,18 @@ def build_findings(
         block.append(cvss_row)
         block.append(Spacer(1, 6))
 
-        block.append(_kv_table([
-            ("Affected Asset", finding.get("affected_asset", "")),
-            ("Status", finding.get("status", "")),
-            ("Compliance Ref.", finding.get("compliance_framework", "")),
-        ], styles, label_width=3.5 * cm, value_width=13.4 * cm))
+        block.append(
+            _kv_table(
+                [
+                    ("Affected Asset", finding.get("affected_asset", "")),
+                    ("Status", finding.get("status", "")),
+                    ("Compliance Ref.", finding.get("compliance_framework", "")),
+                ],
+                styles,
+                label_width=3.5 * cm,
+                value_width=13.4 * cm,
+            )
+        )
         block.append(Spacer(1, 6))
 
         block.append(Paragraph("Description", styles["Label"]))
@@ -1053,21 +1073,25 @@ def build_recommendations(
     """Prioritized remediation actions table."""
     recs = data["recommendations"]
     story.append(Paragraph("Recommendations", styles["SectionHeading"]))
-    story.append(Paragraph(
-        "The following remediation actions are prioritized to deliver the "
-        "greatest reduction in organizational risk.",
-        styles["Body"],
-    ))
+    story.append(
+        Paragraph(
+            "The following remediation actions are prioritized to deliver the "
+            "greatest reduction in organizational risk.",
+            styles["Body"],
+        )
+    )
     story.append(Spacer(1, 8))
 
     header = ["Priority", "Recommendation", "Description"]
     table_data = [[Paragraph(h, styles["TableCellHeader"]) for h in header]]
     for rec in sorted(recs, key=lambda r: r.get("priority", 999)):
-        table_data.append([
-            Paragraph(str(rec.get("priority", "")), styles["TableCell"]),
-            Paragraph(str(rec.get("title", "")), styles["TableCell"]),
-            Paragraph(str(rec.get("description", "")), styles["TableCell"]),
-        ])
+        table_data.append(
+            [
+                Paragraph(str(rec.get("priority", "")), styles["TableCell"]),
+                Paragraph(str(rec.get("title", "")), styles["TableCell"]),
+                Paragraph(str(rec.get("description", "")), styles["TableCell"]),
+            ]
+        )
     t = Table(table_data, colWidths=[1.8 * cm, 5.0 * cm, 10.1 * cm], repeatRows=1)
     t.setStyle(
         TableStyle(
@@ -1107,10 +1131,12 @@ def build_compliance_and_appendix(
     header = ["Framework", "Control Reference"]
     table_data = [[Paragraph(h, styles["TableCellHeader"]) for h in header]]
     for row in compliance:
-        table_data.append([
-            Paragraph(str(row.get("framework", "")), styles["TableCell"]),
-            Paragraph(str(row.get("control", "")), styles["TableCell"]),
-        ])
+        table_data.append(
+            [
+                Paragraph(str(row.get("framework", "")), styles["TableCell"]),
+                Paragraph(str(row.get("control", "")), styles["TableCell"]),
+            ]
+        )
     t = Table(table_data, colWidths=[8.4 * cm, 8.5 * cm])
     t.setStyle(
         TableStyle(
@@ -1143,10 +1169,12 @@ def build_compliance_and_appendix(
 
     story.append(Spacer(1, 20))
     footer = data["footer"]
-    story.append(Paragraph(
-        f'{footer.get("copyright", "")} \u2014 {footer.get("confidentiality", "")}',
-        styles["BodyMuted"],
-    ))
+    story.append(
+        Paragraph(
+            f"{footer.get('copyright', '')} \u2014 {footer.get('confidentiality', '')}",
+            styles["BodyMuted"],
+        )
+    )
 
 
 # =====================================================
@@ -1190,14 +1218,18 @@ def render_report_pdf(report_data: dict[str, Any], output: str | BytesIO) -> str
         author="M3 Offensive Security Team",
         subject="Security Assessment Report",
     )
-    doc.addPageTemplates([
-        PageTemplate(id="cover", frames=[cover_frame], onPage=_cover_page_background),
-        PageTemplate(
-            id="standard",
-            frames=[content_frame],
-            onPage=lambda c, d: _header_footer_content(c, d, report_title),
-        ),
-    ])
+    doc.addPageTemplates(
+        [
+            PageTemplate(
+                id="cover", frames=[cover_frame], onPage=_cover_page_background
+            ),
+            PageTemplate(
+                id="standard",
+                frames=[content_frame],
+                onPage=lambda c, d: _header_footer_content(c, d, report_title),
+            ),
+        ]
+    )
 
     story: list[Any] = []
     build_cover(story, styles, report_data)

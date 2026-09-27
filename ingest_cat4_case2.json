@@ -1,0 +1,13 @@
+{
+  "engagement_id": "week9-cat4-case2",
+  "name": "Week 9 Cat4 Case2",
+  "organization": "CyArt Tech",
+  "frameworks": ["nist_csf_2.0"],
+  "events": [
+    {
+      "category_uid": 1,
+      "severity_id": 2,
+      "user": { "name": "malicious_actor" }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "engagement_id": "week9-cat4-case3",
+  "name": "Week 9 Cat4 Case3",
+  "organization": "CyArt Tech",
+  "frameworks": ["nist_csf_2.0"],
+  "events": [
+    {
+      "class_uid": 3002,
+      "class_name": "Authentication",
+      "category_uid": 3,
+      "type_uid": 300201,
+      "activity_id": 1,
+      "severity_id": 99,
+      "time": 1727273400000,
+      "metadata": { "version": "1.1.0" }
+    }
+  ]
+}

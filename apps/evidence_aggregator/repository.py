@@ -235,13 +235,11 @@ async def create_verdict(
     verdict: dict[str, Any],
 ) -> dict[str, Any]:
     """Persist one verdict row."""
+    columns_sql = ", ".join(_VERDICT_COLUMNS)
+    placeholders_sql = ", ".join(f":{c}" for c in _VERDICT_COLUMNS)
+    query = f"INSERT INTO verdicts ({columns_sql}) VALUES ({placeholders_sql})"  # nosec B608 - column names from hardcoded _VERDICT_COLUMNS constant; all values bound via named parameters
     await session.execute(
-        text(
-            f"""
-            INSERT INTO verdicts ({", ".join(_VERDICT_COLUMNS)})
-            VALUES ({", ".join(f":{c}" for c in _VERDICT_COLUMNS)})
-            """
-        ),
+        text(query),
         verdict,
     )
     await session.commit()
@@ -253,14 +251,10 @@ async def get_verdict(
     verdict_id: str,
 ) -> dict[str, Any] | None:
     """Return one verdict row, or None when missing."""
+    columns_sql = ", ".join(_VERDICT_COLUMNS)
+    query = f"SELECT {columns_sql} FROM verdicts WHERE verdict_id = :verdict_id"  # nosec B608 - column names from hardcoded _VERDICT_COLUMNS constant; all values bound via named parameters
     result = await session.execute(
-        text(
-            f"""
-            SELECT {", ".join(_VERDICT_COLUMNS)}
-            FROM verdicts
-            WHERE verdict_id = :verdict_id
-            """
-        ),
+        text(query),
         {"verdict_id": verdict_id},
     )
     row = result.one_or_none()
@@ -281,15 +275,13 @@ async def list_verdicts(
     engagement_id: str,
 ) -> list[dict[str, Any]]:
     """Return all verdicts for an engagement, oldest first."""
+    columns_sql = ", ".join(_VERDICT_COLUMNS)
+    query = (
+        f"SELECT {columns_sql} FROM verdicts "  # nosec B608 - column names from hardcoded _VERDICT_COLUMNS constant; all values bound via named parameters
+        "WHERE engagement_id = :engagement_id ORDER BY created_at ASC"
+    )
     result = await session.execute(
-        text(
-            f"""
-            SELECT {", ".join(_VERDICT_COLUMNS)}
-            FROM verdicts
-            WHERE engagement_id = :engagement_id
-            ORDER BY created_at ASC
-            """
-        ),
+        text(query),
         {"engagement_id": engagement_id},
     )
 

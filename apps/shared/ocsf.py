@@ -25,8 +25,15 @@ _DISPOSITION_OUTCOMES: dict[str, str] = {
 }
 
 
-def outcome_from_disposition(disposition: str) -> str:
-    """Map an OCSF disposition to a Module 2 verdict outcome."""
+def outcome_from_disposition(disposition: str | None) -> str:
+    """Map an OCSF disposition to a Module 2 verdict outcome.
+
+    A missing disposition (Python None) means no data was recorded.
+    The literal string "None" is also treated as No Data.
+    Any other unrecognized value (including empty string) is Partial.
+    """
+    if disposition is None:
+        return "No Data"
     return _DISPOSITION_OUTCOMES.get(disposition, "Partial")
 
 
@@ -85,11 +92,13 @@ def verdict_data(
     engagement_id: str,
 ) -> dict[str, Any]:
     """Build the row payload for the verdicts table from an OCSF event."""
+    raw_disposition = event.get("disposition")
+    disposition = str(raw_disposition) if raw_disposition is not None else None
     return {
         "verdict_id": verdict_id,
         "engagement_id": engagement_id,
         "technique_id": technique_id_from_event(event),
-        "outcome": outcome_from_disposition(str(event.get("disposition") or "")),
+        "outcome": outcome_from_disposition(disposition),
         "severity_id": severity_id_from_event(event),
         "evidence_hash": evidence_hash(event),
     }

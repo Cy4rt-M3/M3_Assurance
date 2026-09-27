@@ -115,7 +115,9 @@ def test_content_hash_deterministic_and_len():
 def test_content_hash_bytes():
     import hashlib
 
-    assert generator.content_hash_bytes(b"hello") == hashlib.sha256(b"hello").hexdigest()
+    assert (
+        generator.content_hash_bytes(b"hello") == hashlib.sha256(b"hello").hexdigest()
+    )
     assert generator.content_hash_bytes(b"hello world") != generator.content_hash(
         "hello"
     )
@@ -461,9 +463,7 @@ async def test_generate_report_pdf_and_download(
         assert detail.status_code == 200
         assert detail.headers["content-type"].startswith("application/json")
 
-        download = await client.get(
-            f"/api/v1/reports/{body['report_id']}/download"
-        )
+        download = await client.get(f"/api/v1/reports/{body['report_id']}/download")
         assert download.status_code == 200
         assert download.headers["content-type"].startswith("application/pdf")
         assert "attachment" in download.headers["content-disposition"]
@@ -483,9 +483,10 @@ async def test_generate_report_pdf_and_download(
         assert html_download.status_code == 200
         assert html_download.headers["content-type"].startswith("text/html")
         assert html_download.content.startswith(b"<!DOCTYPE html>")
-        assert generator.content_hash_bytes(html_download.content) == html_generate.json()[
-            "content_hash"
-        ]
+        assert (
+            generator.content_hash_bytes(html_download.content)
+            == html_generate.json()["content_hash"]
+        )
 
         missing = await client.get("/api/v1/reports/nope/download")
         assert missing.status_code == 404

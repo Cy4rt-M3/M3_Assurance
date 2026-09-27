@@ -152,21 +152,42 @@ def _data() -> dict[str, Any]:
         },
         "risk_matrix": {"Critical": 1, "High": 1, "Medium": 1, "Low": 0},
         "recommendations": [
-            {"priority": 1, "title": "Upgrade Apache", "description": "Upgrade to the latest stable version."},
-            {"priority": 2, "title": "Prevent SQL Injection", "description": "Adopt parameterized queries."},
-            {"priority": 3, "title": "Disable Weak TLS", "description": "Enforce TLS 1.2+ only."},
+            {
+                "priority": 1,
+                "title": "Upgrade Apache",
+                "description": "Upgrade to the latest stable version.",
+            },
+            {
+                "priority": 2,
+                "title": "Prevent SQL Injection",
+                "description": "Adopt parameterized queries.",
+            },
+            {
+                "priority": 3,
+                "title": "Disable Weak TLS",
+                "description": "Enforce TLS 1.2+ only.",
+            },
         ],
         "appendix": {
             "tools": ["Nmap", "Nessus", "Burp Suite Professional", "OWASP ZAP"],
             "report_version": "1.0",
             "classification": "Confidential",
         },
-        "references": ["OWASP Top 10", "NIST Cyber Security Framework", "MITRE ATT&CK", "CIS Controls"],
+        "references": [
+            "OWASP Top 10",
+            "NIST Cyber Security Framework",
+            "MITRE ATT&CK",
+            "CIS Controls",
+        ],
         "compliance_mapping": [
             {"framework": "NIST CSF", "control": "PR.IP-12"},
             {"framework": "ISO 27001", "control": "A.12.6.1"},
         ],
-        "footer": {"company": "CYART", "copyright": "\u00a9 2026 CYART", "confidentiality": "CONFIDENTIAL"},
+        "footer": {
+            "company": "CYART",
+            "copyright": "\u00a9 2026 CYART",
+            "confidentiality": "CONFIDENTIAL",
+        },
         "executive_summary": {
             "summary_text": (
                 "The assessment identified 1 Critical, 1 High, 1 Medium and 0 Low severity "
@@ -195,10 +216,21 @@ def _empty_data() -> dict[str, Any]:
         "methodology": {"Phase A": True},
         "assets": [],
         "findings": [],
-        "statistics": {"critical": 0, "high": 0, "medium": 0, "low": 0, "informational": 0, "average_cvss": 0.0},
+        "statistics": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0,
+            "informational": 0,
+            "average_cvss": 0.0,
+        },
         "risk_matrix": {"Critical": 0, "High": 0, "Medium": 0, "Low": 0},
         "recommendations": [],
-        "appendix": {"tools": [], "report_version": "1.0", "classification": "Confidential"},
+        "appendix": {
+            "tools": [],
+            "report_version": "1.0",
+            "classification": "Confidential",
+        },
         "references": [],
         "compliance_mapping": [],
         "footer": {"copyright": "", "confidentiality": ""},
