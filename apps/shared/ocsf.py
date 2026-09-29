@@ -2,9 +2,11 @@
 
 import hashlib
 import json
+import re
 from typing import Any, TypeGuard, cast
 
 DEFAULT_TECHNIQUE_ID = "T1078"
+_TECHNIQUE_PATTERN = re.compile(r"\bT\d{4}(?:\.\d{3})?\b")
 
 _SEVERITY_NAMES: dict[int, str] = {
     0: "Unknown",
@@ -62,16 +64,46 @@ def _top_level_technique_id(event: dict[str, Any]) -> str | None:
     return None
 
 
+def _nested_technique_id(event: dict[str, Any]) -> str | None:
+    """Return attack.technique_uid when present."""
+    nested = event.get("attack")
+    if not isinstance(nested, dict):
+        return None
+    return _nonempty_str(cast("dict[str, Any]", nested).get("technique_uid"))
+
+
+def _match_technique(value: object) -> str | None:
+    """Return the first ATT&CK id (T1190, T1059.001) found in a string."""
+    if not isinstance(value, str):
+        return None
+    found = _TECHNIQUE_PATTERN.search(value)
+    return found.group(0) if found else None
+
+
+def _technique_in_types(types: object) -> str | None:
+    """Return the first ATT&CK id found in a list of finding types."""
+    if not isinstance(types, list):
+        return None
+    found = map(_match_technique, cast("list[Any]", types))
+    return next(filter(None, found), None)
+
+
+def _finding_technique_id(event: dict[str, Any]) -> str | None:
+    """Return an ATT&CK id from finding_info.types (e.g. SQL injection -> T1190)."""
+    info = event.get("finding_info")
+    if not isinstance(info, dict):
+        return None
+    return _technique_in_types(cast("dict[str, Any]", info).get("types"))
+
+
 def technique_id_from_event(event: dict[str, Any]) -> str:
     """Extract the ATT&CK technique id from an OCSF event."""
-    nested = event.get("attack")
-    raw: str | None = None
-    if isinstance(nested, dict):
-        attack = cast("dict[str, Any]", nested)
-        raw = _nonempty_str(attack.get("technique_uid"))
-    if raw is not None:
-        return raw
-    return _top_level_technique_id(event) or DEFAULT_TECHNIQUE_ID
+    return (
+        _nested_technique_id(event)
+        or _top_level_technique_id(event)
+        or _finding_technique_id(event)
+        or DEFAULT_TECHNIQUE_ID
+    )
 
 
 def severity_name(severity_id: int) -> str:
