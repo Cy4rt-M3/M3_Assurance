@@ -160,11 +160,13 @@ async def test_ingest_ocsf_handler_direct(
     events: list[dict[str, Any]] = [
         {
             "class_uid": 4001,
+            "type_uid": 400101,
             "disposition": "Allowed",
             "attack": {"technique_uid": "T1486"},
         },
         {
             "class_uid": 4001,
+            "type_uid": 400101,
             "disposition": "Missed",
             "attack": {"technique_uid": "T1078"},
         },

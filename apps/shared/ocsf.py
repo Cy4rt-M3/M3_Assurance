@@ -1,8 +1,8 @@
-"""OCSF event conversion helpers. Cyclomatic complexity ≤4."""
+"""OCSF event conversion helpers. Cyclomatic complexity <=4."""
 
 import hashlib
 import json
-from typing import Any, cast
+from typing import Any, TypeGuard, cast
 
 DEFAULT_TECHNIQUE_ID = "T1078"
 
@@ -13,6 +13,7 @@ _SEVERITY_NAMES: dict[int, str] = {
     3: "Medium",
     4: "High",
     5: "Critical",
+    6: "Fatal",
 }
 
 _DISPOSITION_OUTCOMES: dict[str, str] = {
@@ -23,6 +24,14 @@ _DISPOSITION_OUTCOMES: dict[str, str] = {
     "No Data": "No Data",
     "None": "No Data",
 }
+
+_FIELD_RULES: tuple[tuple[str, bool], ...] = (
+    ("class_uid", True),
+    ("type_uid", True),
+    ("activity_id", False),
+    ("severity_id", False),
+)
+_MAX_SEVERITY_ID = 6
 
 
 def outcome_from_disposition(disposition: str | None) -> str:
@@ -78,6 +87,47 @@ def severity_id_from_event(event: dict[str, Any]) -> int:
     if isinstance(raw, int):
         return raw
     return 0
+
+
+def _is_int(value: object) -> TypeGuard[int]:
+    """Return True for real integers (bool is not accepted)."""
+    return isinstance(value, int) and not isinstance(value, bool)
+
+
+def _int_problem(event: dict[str, Any], name: str, *, required: bool) -> str | None:
+    """Describe why field `name` is invalid, or None when it is fine."""
+    if name not in event:
+        return f"{name} is required" if required else None
+    if not _is_int(event[name]):
+        return f"{name} must be an integer"
+    return None
+
+
+def _severity_problem(event: dict[str, Any]) -> str | None:
+    """Reject severity ids outside the valid OCSF range 0-6."""
+    value = event.get("severity_id")
+    if _is_int(value) and not (0 <= value <= _MAX_SEVERITY_ID):
+        return f"severity_id must be between 0 and {_MAX_SEVERITY_ID}"
+    return None
+
+
+def event_problems(event: dict[str, Any]) -> list[str]:
+    """Return every schema problem in one OCSF event (empty when valid)."""
+    found = [_int_problem(event, n, required=r) for n, r in _FIELD_RULES]
+    found.append(_severity_problem(event))
+    return [problem for problem in found if problem is not None]
+
+
+def validate_events(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Return events unchanged, or raise ValueError listing every problem."""
+    errors = [
+        f"events[{index}]: {problem}"
+        for index, event in enumerate(events)
+        for problem in event_problems(event)
+    ]
+    if errors:
+        raise ValueError("; ".join(errors))
+    return events
 
 
 def evidence_hash(event: dict[str, Any]) -> str:
