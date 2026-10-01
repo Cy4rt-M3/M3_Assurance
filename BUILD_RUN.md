@@ -1,6 +1,6 @@
 # Build & Run — M3_Assurance
 
-Quick on-ramp for new team members. The full ten-point setup (Python 3.11+/uv-managed deps pinned by `uv.lock`, Postgres 16, Redis 7, 9 microservices, FFmpeg-less PDF/Hypercore-verified report pipeline) is captured in `README.md` and `master_setup.sh`; this file is the person-to-person quickstart.
+Quick on-ramp for new team members. The full ten-point setup (Python 3.12/uv-managed deps pinned by `uv.lock`, Postgres 16, Redis 7, 9 microservices, FFmpeg-less PDF/Hypercore-verified report pipeline) is captured in `README.md` and `master_setup.sh`; this file is the person-to-person quickstart.
 
 ## 1. Clone
 
@@ -18,6 +18,12 @@ Requires **Docker** (for Postgres + Redis) and **uv**. Install uv if missing:
 curl -LsSf https://astral.sh/uv/install.sh | sh   # or: pip install uv
 ```
 
+### Python version
+
+Primary validation environment: **Python 3.12.13** (the version pinned by the project). Validated results: 249 tests passing at 100% coverage, and `guard-my-code.py` passing end to end.
+
+Fallback only: if Python 3.12 cannot be used on a machine (for example, its DLLs are blocked by the OS), Python 3.14 can be used as a workaround. Set `UV_PYTHON` to the 3.14 interpreter before running `uv sync`.
+
 ## 3. Environment
 
 ```bash
@@ -32,7 +38,7 @@ credential or a hash not on the `.secrets.baseline` allowlist.
 ## 4. Build
 
 ```bash
-uv sync                      # creates .venv, exact versions from uv.lock (no drift)
+uv sync --all-groups --all-extras                      # creates .venv, exact versions from uv.lock (no drift)
 docker compose up -d         # postgres:5432 (internal), redis:6379; healthchecks gate startup
 uv run python master_setup.py  # runs alembic migrations + seeds framework/crosswalk definitions
 ```
@@ -57,8 +63,8 @@ those defaults; if yours differ, trust the settings file, not this doc.)
 ## 6. Verify
 
 ```bash
-uv run pytest                # full suite; requires postgres+redis up (no mocks, real deps)
-uv run guard-my-code.py      # ruff + pyright strict + bandit + detect-secrets + pip-audit, 100% coverage gate
+uv run python -m pytest                # full suite; requires postgres+redis up (no mocks, real deps)
+uv run python guard-my-code.py      # ruff + pyright strict + bandit + detect-secrets + pip-audit, 100% coverage gate
 for p in 10001 10002 10003 10004 10005 10006 10007; do
   curl -s http://127.0.0.1:$p/health | head -1; echo " <- $p"
 done
@@ -68,10 +74,16 @@ done
 
 ```bash
 git checkout final && git pull
-uv sync                      # refresh exact pins
+uv sync --all-groups --all-extras                      # refresh exact pins
 uv run python master_setup.py
 docker compose up -d
 ```
+
+## Windows notes
+
+- Dev tools (pytest, ruff, pyright, bandit and so on) are installed as an extra. Use `uv sync --all-groups --all-extras`, otherwise `pytest` will be missing from `.venv`.
+- Windows Application Control can block executables that `uv run` launches (os error 4551), for example `alembic.exe`, `vulture`, `detect-secrets-hook` and `pip-audit`. Launch them through Python instead: `uv run python -m alembic upgrade head`, `uv run python -m pip_audit .`, `uv run python -m uvicorn ...`. `guard-my-code.py` already does this.
+- The duplicate-code check in `guard-my-code.py` is skipped when `npx` (Node.js) is not installed.
 
 ## Trust note
 
