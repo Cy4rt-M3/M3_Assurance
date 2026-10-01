@@ -98,7 +98,11 @@ def _secrets() -> None:
         [
             "uv",
             "run",
-            "detect-secrets-hook",
+            "python",
+            "-c",
+            "import sys; "
+            "from detect_secrets.pre_commit_hook import main; "
+            "sys.exit(main(sys.argv[1:]))",
             "--baseline",
             ".secrets.baseline",
             *tracked,
@@ -107,7 +111,10 @@ def _secrets() -> None:
 
 
 def _audit_deps() -> None:
-    _step("🔎 Auditing dependencies for CVEs...", ["uv", "run", "pip-audit", "."])
+    _step(
+        "🔎 Auditing dependencies for CVEs...",
+        ["uv", "run", "python", "-m", "pip_audit", "."],
+    )
 
 
 def _migrate_test_db() -> None:
