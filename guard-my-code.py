@@ -122,7 +122,7 @@ def _migrate_test_db() -> None:
     test_db_url = settings.database_test_url
     print("\n🗃️ Running migrations on test DB...")
     env = {**os.environ, "DATABASE_URL": test_db_url}
-    _run(["uv", "run", "alembic", "upgrade", "head"], env=env)
+    _run(["uv", "run", "python", "-m", "alembic", "upgrade", "head"], env=env)
 
 
 def _tests() -> None:
