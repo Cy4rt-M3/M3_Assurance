@@ -29,7 +29,7 @@ class IngestRequest(BaseModel):
 
     @field_validator("events")
     @classmethod
-    def check_events(cls, events: list[dict[str, object]]) -> list[dict[str, object]]:
+    def check_events(_cls, events: list[dict[str, object]]) -> list[dict[str, object]]:
         """Reject malformed OCSF events with a 422 before anything is stored."""
         return validate_events(events)
 

@@ -1,4 +1,4 @@
-﻿"""Tests for ATT&CK technique extraction from OCSF events."""
+"""Tests for ATT&CK technique extraction from OCSF events."""
 
 from typing import Any
 
