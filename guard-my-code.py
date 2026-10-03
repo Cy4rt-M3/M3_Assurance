@@ -58,7 +58,7 @@ def _duplicates() -> None:
 
 
 def _typecheck() -> None:
-    _step("🧠 Type-checking with pyright...", ["uv", "run", "pyright"])
+    _step("🧠 Type-checking with pyright...", ["uv", "run", "python", "-m", "pyright"])
 
 
 def _dead_code() -> None:
