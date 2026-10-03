@@ -13,7 +13,7 @@ from apps.report_generator.repository import list_reports, save_report
 from apps.resilience_scorer.compute import assemble_score
 from apps.resilience_scorer.repository import list_scores, save_score
 from apps.shared.db import build_engine, build_session_factory
-from apps.shared.ocsf import verdict_data
+from apps.shared.ocsf import evidence_hash, verdict_data
 from apps.shared.settings import Settings
 
 _settings = Settings()
@@ -28,13 +28,14 @@ async def _create_pending_verdicts(
     existing: set[str],
 ) -> None:
     """Persist verdicts for events not already ingested."""
-    for index, event in enumerate(events, start=1):
-        verdict_id = f"{engagement_id}-vrd-{index:04d}"
+    for event in events:
+        verdict_id = f"{engagement_id}-vrd-{evidence_hash(event)}"
         if verdict_id in existing:
             continue
         await evidence_repository.create_verdict(
             session, verdict_data(event, verdict_id, engagement_id)
         )
+        existing.add(verdict_id)
 
 
 async def run_pipeline(

@@ -8,6 +8,7 @@ from apps.evidence_aggregator.chain_validator import completeness_pct, is_valid_
 from apps.evidence_aggregator.main import app
 from apps.evidence_aggregator.models import EvidenceLink, EvidenceSummary
 from apps.evidence_aggregator.repository import list_engagements
+from apps.shared.ocsf import evidence_hash
 from tests.conftest import make_client
 
 _VALID_HASH = "a3f5c2d1e8b4a7f0c9d2e5b8a1f4c7d0e3b6a9f2c5d8e1b4a7f0c3d6e9b2a5f8"
@@ -98,6 +99,8 @@ def _event(
 @pytest.mark.asyncio
 async def test_ingest_ocsf_created():
     engagement_id = "ing-est-001"
+    ev1 = _event()
+    ev2 = _event("Missed", "T1486")
     async with make_client(app) as client:
         resp = await client.post(
             "/api/v1/ingest-ocsf",
@@ -106,16 +109,49 @@ async def test_ingest_ocsf_created():
                 "name": "Ingest Test",
                 "organization": "CyArt",
                 "frameworks": ["nist_csf_2.0"],
-                "events": [_event(), _event("Missed", "T1486")],
+                "events": [ev1, ev2],
             },
         )
         assert resp.status_code == 201
         body = resp.json()
         assert body["ingested"] == 2
         assert body["verdict_ids"] == [
-            f"{engagement_id}-vrd-0000",
-            f"{engagement_id}-vrd-0001",
+            f"{engagement_id}-vrd-{evidence_hash(ev1)}",
+            f"{engagement_id}-vrd-{evidence_hash(ev2)}",
         ]
+
+
+@pytest.mark.asyncio
+async def test_ingest_ocsf_multiple_batches_do_not_drop_events():
+    engagement_id = "ing-est-multibatch"
+    ev1 = _event("Allowed", "T1078")
+    ev2 = _event("Missed", "T1486")
+    async with make_client(app) as client:
+        first = await client.post(
+            "/api/v1/ingest-ocsf",
+            json={
+                "engagement_id": engagement_id,
+                "events": [ev1],
+            },
+        )
+        assert first.status_code == 201
+        assert first.json()["ingested"] == 1
+
+        second = await client.post(
+            "/api/v1/ingest-ocsf",
+            json={
+                "engagement_id": engagement_id,
+                "events": [ev2],
+            },
+        )
+        assert second.status_code == 201
+        assert second.json()["ingested"] == 1
+        assert second.json()["verdict_ids"] == [
+            f"{engagement_id}-vrd-{evidence_hash(ev2)}"
+        ]
+
+        all_verdicts = await client.get(f"/api/v1/verdicts/{engagement_id}/engagement")
+        assert len(all_verdicts.json()) == 2
 
 
 @pytest.mark.asyncio
@@ -230,6 +266,7 @@ async def test_evidence_summary_counts(
 @pytest.mark.asyncio
 async def test_verdict_endpoints():
     engagement_id = "ing-vrd-001"
+    ev = _event("Allowed", "T1078")
     async with make_client(app) as client:
         await client.post(
             "/api/v1/ingest-ocsf",
@@ -238,10 +275,10 @@ async def test_verdict_endpoints():
                 "name": "Verdict Test",
                 "organization": "CyArt",
                 "frameworks": [],
-                "events": [_event("Allowed", "T1078")],
+                "events": [ev],
             },
         )
-        verdict_id = f"{engagement_id}-vrd-0000"
+        verdict_id = f"{engagement_id}-vrd-{evidence_hash(ev)}"
         detail = await client.get(f"/api/v1/verdicts/{verdict_id}")
         assert detail.status_code == 200
         assert detail.json()["technique_id"] == "T1078"

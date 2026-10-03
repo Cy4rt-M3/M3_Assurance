@@ -25,7 +25,7 @@ from apps.evidence_aggregator.repository import (
     list_verdicts,
 )
 from apps.shared.db import build_engine, build_session_factory, check_db
-from apps.shared.ocsf import verdict_data
+from apps.shared.ocsf import evidence_hash, verdict_data
 from apps.shared.settings import Settings
 
 _settings = Settings()
@@ -79,12 +79,13 @@ async def ingest_ocsf(
         v["verdict_id"] for v in await list_verdicts(session, payload.engagement_id)
     }
     verdict_ids: list[str] = []
-    for index, event in enumerate(payload.events):
-        verdict_id = f"{payload.engagement_id}-vrd-{index:04d}"
+    for event in payload.events:
+        verdict_id = f"{payload.engagement_id}-vrd-{evidence_hash(event)}"
         if verdict_id in existing:
             continue
         verdict = verdict_data(event, verdict_id, payload.engagement_id)
         await create_verdict(session, verdict)
+        existing.add(verdict_id)
         verdict_ids.append(verdict_id)
 
     return IngestResponse(

@@ -64,12 +64,39 @@ def _top_level_technique_id(event: dict[str, Any]) -> str | None:
     return None
 
 
-def _nested_technique_id(event: dict[str, Any]) -> str | None:
-    """Return attack.technique_uid when present."""
-    nested = event.get("attack")
-    if not isinstance(nested, dict):
+def _attack_dict_technique(item: object) -> str | None:
+    """Extract a technique id from an attack dictionary."""
+    if not isinstance(item, dict):
         return None
-    return _nonempty_str(cast("dict[str, Any]", nested).get("technique_uid"))
+    d = cast("dict[str, object]", item)
+    direct = _nonempty_str(d.get("technique_uid")) or _nonempty_str(
+        d.get("technique_id")
+    )
+    if direct is not None:
+        return direct
+    tech = d.get("technique")
+    if isinstance(tech, dict):
+        t = cast("dict[str, object]", tech)
+        return _nonempty_str(t.get("uid")) or _nonempty_str(t.get("id"))
+    return None
+
+
+def _nested_technique_id(event: dict[str, Any]) -> str | None:
+    """Return attack.technique_uid or attack.technique.uid when present."""
+    nested = event.get("attack")
+    return _attack_dict_technique(nested)
+
+
+def _attacks_list_technique_id(event: dict[str, Any]) -> str | None:
+    """Return the first technique id found in attacks list."""
+    attacks = event.get("attacks")
+    if not isinstance(attacks, list):
+        return None
+    for item in cast("list[object]", attacks):
+        found = _attack_dict_technique(item)
+        if found is not None:
+            return found
+    return None
 
 
 def _match_technique(value: object) -> str | None:
@@ -100,6 +127,7 @@ def technique_id_from_event(event: dict[str, Any]) -> str:
     """Extract the ATT&CK technique id from an OCSF event."""
     return (
         _nested_technique_id(event)
+        or _attacks_list_technique_id(event)
         or _top_level_technique_id(event)
         or _finding_technique_id(event)
         or DEFAULT_TECHNIQUE_ID

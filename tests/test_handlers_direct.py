@@ -33,6 +33,7 @@ from apps.report_publisher.main import publish
 from apps.report_publisher.models import DeliveryRequest
 from apps.resilience_scorer.main import calculate_score
 from apps.resilience_scorer.models import ResilienceScore, ScoreRequest
+from apps.shared.ocsf import evidence_hash
 
 _HASH = "a3f5c2d1e8b4a7f0c9d2e5b8a1f4c7d0e3b6a9f2c5d8e1b4a7f0c3d6e9b2a5f8"  # pragma: allowlist secret
 
@@ -185,8 +186,8 @@ async def test_ingest_ocsf_handler_direct(
     assert first.ingested == 2
     assert second.ingested == 0
     assert first.verdict_ids == [
-        f"{engagement_id}-vrd-0000",
-        f"{engagement_id}-vrd-0001",
+        f"{engagement_id}-vrd-{evidence_hash(events[0])}",
+        f"{engagement_id}-vrd-{evidence_hash(events[1])}",
     ]
 
 
