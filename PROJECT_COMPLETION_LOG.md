@@ -222,6 +222,6 @@ python -m apps.pipeline ~/Downloads/sample_ocsf_logs.json --engagement-id ENG-20
 4. `vulture --exclude .venv . --min-confidence 100`
 5. `bandit -r apps`
 6. `detect-secrets scan --baseline .secrets.baseline`
-7. `DATABASE_URL=postgresql+asyncpg://assurance:assurance@127.0.0.1:5432/assurance_test alembic upgrade head`
+7. `DATABASE_URL=postgresql+asyncpg://assurance:assurance@127.0.0.1:5432/assurance_test alembic upgrade head` <!-- pragma: allowlist secret -->
 
 All steps green. Backend M3 assurance module is complete.
