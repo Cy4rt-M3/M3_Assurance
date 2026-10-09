@@ -19,10 +19,13 @@ from apps.resilience_scorer.models import (
     BlastRadiusResponse,
     ResilienceScore,
     ScoreRequest,
+    ThreatIntelRequest,
+    ThreatIntelResponse,
     WeightedRiskRequest,
     WeightedRiskResponse,
 )
 from apps.resilience_scorer.repository import list_scores, save_score
+from apps.resilience_scorer.threat_intel import fetch_cvss, fetch_epss
 from apps.shared.db import build_engine, build_session_factory, check_db
 from apps.shared.settings import Settings
 
@@ -119,4 +122,17 @@ async def weighted_risk(
         cve_id=request.cve_id,
         final_score=final_score,
         band=score_band(final_score),
+    )
+@app.post("/api/v1/threat-intel", response_model=ThreatIntelResponse)
+async def threat_intel(
+    request: ThreatIntelRequest,
+) -> ThreatIntelResponse:
+    """Fetch CVSS and EPSS values for a CVE."""
+    cvss = await fetch_cvss(request.cve_id)
+    epss = await fetch_epss(request.cve_id)
+
+    return ThreatIntelResponse(
+        cve_id=request.cve_id,
+        cvss_score=cvss,
+        epss_score=epss,
     )

@@ -43,3 +43,15 @@ class WeightedRiskResponse(BaseModel):
     cve_id: str
     final_score: float = Field(..., ge=0.0, le=100.0)
     band: str
+class ThreatIntelRequest(BaseModel):
+    """Request for fetching threat intelligence."""
+
+    cve_id: str
+
+
+class ThreatIntelResponse(BaseModel):
+    """Threat intelligence fetched from external APIs."""
+
+    cve_id: str
+    cvss_score: float = Field(..., ge=0.0, le=10.0)
+    epss_score: float = Field(..., ge=0.0, le=1.0)
