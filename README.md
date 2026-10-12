@@ -246,3 +246,51 @@ git push --force-with-lease   # force push is safe here — use --force-with-lea
 | Push after a rebase | `git push --force-with-lease` |
 | See what's different from main | `git diff main...HEAD` |
 | See all commits on your branch | `git log main..HEAD --oneline` |
+
+---
+
+## Docker Integration — Pod 2 (Evidence Aggregator)
+
+This repository includes the complete Dockerized Evidence Aggregator implementation for Pod 2.
+
+### Services Architecture
+
+The Docker Compose configuration (`docker-compose.yml`) defines the following services:
+
+| Service | Image / Build | Container Port | Host Port | Purpose |
+|---|---|---|---|---|
+| `postgres` | `postgres:16-alpine` | `5432` | `5433` | Persistent relational database initialized with database schemas |
+| `redis` | `redis:7-alpine` | `6379` | `6380` | High-performance cache / key-value store for Evidence Aggregator |
+| `evidence-aggregator` | `Dockerfile` (Python 3.12-slim) | `10002` | `10002` | FastAPI Evidence Aggregator service running via `uv` + `uvicorn` |
+| `frontend` | `../Dashboard-frontend` | `3000` | `3000` | Next.js Dashboard web UI |
+
+### Prerequisites
+
+- Docker Desktop installed and running
+- Sibling repository `Dashboard-frontend` checked out alongside `M3_Assurance` (for the frontend service)
+
+### Build and Run
+
+```bash
+# Build images and start all services in detached mode
+docker compose up -d --build
+
+# Verify container status and healthchecks
+docker compose ps
+
+# View service logs
+docker compose logs -f evidence-aggregator
+
+# Stop all containers
+docker compose down
+
+# Stop and reset database volume
+docker compose down -v
+```
+
+### Key Endpoints
+
+- **Evidence Aggregator API**: `http://localhost:10002`
+- **Interactive OpenAPI Docs**: `http://localhost:10002/docs`
+- **Health Check**: `http://localhost:10002/health`
+- **Dashboard UI**: `http://localhost:3000`
