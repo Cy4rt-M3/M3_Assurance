@@ -44,18 +44,8 @@ def _patch_client(monkeypatch: pytest.MonkeyPatch, response: _FakeResponse) -> N
     monkeypatch.setattr(threat_intel.httpx, "AsyncClient", _FakeClient)
 
 
-def test_extract_cvss_v31() -> None:
-    metrics = {"cvssMetricV31": [{"cvssData": {"baseScore": 9.8}}]}
-    assert threat_intel._extract_cvss(metrics) == 9.8
-
-
-def test_extract_cvss_v30() -> None:
-    metrics = {"cvssMetricV30": [{"cvssData": {"baseScore": 7.5}}]}
-    assert threat_intel._extract_cvss(metrics) == 7.5
-
-
-def test_extract_cvss_missing() -> None:
-    assert threat_intel._extract_cvss({}) == 0.0
+def _cvss_payload(metrics: dict[str, Any]) -> dict[str, Any]:
+    return {"vulnerabilities": [{"cve": {"metrics": metrics}}]}
 
 
 @pytest.mark.asyncio
@@ -72,13 +62,22 @@ async def test_fetch_cvss_no_vulnerabilities(monkeypatch: pytest.MonkeyPatch) ->
 
 @pytest.mark.asyncio
 async def test_fetch_cvss_success(monkeypatch: pytest.MonkeyPatch) -> None:
-    payload = {
-        "vulnerabilities": [
-            {"cve": {"metrics": {"cvssMetricV31": [{"cvssData": {"baseScore": 9.8}}]}}}
-        ]
-    }
-    _patch_client(monkeypatch, _FakeResponse(200, payload))
+    metrics = {"cvssMetricV31": [{"cvssData": {"baseScore": 9.8}}]}
+    _patch_client(monkeypatch, _FakeResponse(200, _cvss_payload(metrics)))
     assert await threat_intel.fetch_cvss(CVE) == 9.8
+
+
+@pytest.mark.asyncio
+async def test_fetch_cvss_v30(monkeypatch: pytest.MonkeyPatch) -> None:
+    metrics = {"cvssMetricV30": [{"cvssData": {"baseScore": 7.5}}]}
+    _patch_client(monkeypatch, _FakeResponse(200, _cvss_payload(metrics)))
+    assert await threat_intel.fetch_cvss(CVE) == 7.5
+
+
+@pytest.mark.asyncio
+async def test_fetch_cvss_no_metrics(monkeypatch: pytest.MonkeyPatch) -> None:
+    _patch_client(monkeypatch, _FakeResponse(200, _cvss_payload({})))
+    assert await threat_intel.fetch_cvss(CVE) == 0.0
 
 
 @pytest.mark.asyncio
