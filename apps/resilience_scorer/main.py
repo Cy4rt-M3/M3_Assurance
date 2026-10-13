@@ -123,6 +123,8 @@ async def weighted_risk(
         final_score=final_score,
         band=score_band(final_score),
     )
+
+
 @app.post("/api/v1/threat-intel", response_model=ThreatIntelResponse)
 async def threat_intel(
     request: ThreatIntelRequest,

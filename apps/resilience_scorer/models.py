@@ -43,6 +43,8 @@ class WeightedRiskResponse(BaseModel):
     cve_id: str
     final_score: float = Field(..., ge=0.0, le=100.0)
     band: str
+
+
 class ThreatIntelRequest(BaseModel):
     """Request for fetching threat intelligence."""
 
