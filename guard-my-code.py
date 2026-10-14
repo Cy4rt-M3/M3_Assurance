@@ -82,7 +82,7 @@ def _dead_code() -> None:
 def _security() -> None:
     _step(
         "🛡️  Security audit with bandit...",
-        ["uv", "run", "bandit", "-r", "apps"],
+        ["uv", "run", "python", "-m", "bandit", "-r", "apps"],
     )
 
 
